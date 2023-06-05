@@ -15,8 +15,7 @@ Arch Linux along with the Xfce4 desktop environment. It has been carefully creat
 based on my own experience of installation Arch Linux on multiple devices over the years.
 This guide aims to make your installation process as smooth as possible.
 
-To begin your Arch Linux installation journey, please refer to the guide's table of contents
-and follow the step-by-step instructions provided.
+To begin your Arch Linux installation, please follow the step-by-step instructions provided below.
 
 ### Support and Feedback
 
