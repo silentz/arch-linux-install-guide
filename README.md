@@ -353,21 +353,21 @@ sudo pacman -S yubikey-personalization-gui yubikey-manager
 
 ### DevTools
 ```
-# general
+# General
 sudo pacman -S neovim stow sqlite3 tldr jq tmux openvpn \
                wireguard-tools zip unzip virtualbox
 
-# devops
+# Devops
 sudo pacman -S docker kubectl helm aws-cli-v2 terraform
 
-# c++
+# C++
 sudo pacman -S gcc gdb cmake ninja clang
 sudo pacman -S radare2 strace ltrace
 
-# lua
+# Lua
 sudo pacman -S lua
 
-# golang
+# Golang
 sudo pacman -S golang
 
 # Javascript
