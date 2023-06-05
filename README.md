@@ -438,7 +438,7 @@ tlmgr option repository http://mirrors.rit.edu/CTAN/systems/texlive/tlnet
 tlmgr install scheme-full
 ```
 
-## Setup android DevTools
+## Setup Android DevTools
 
 * Download zip-archive from here: https://developer.android.com/studio
 (*Command line tools only* section).
