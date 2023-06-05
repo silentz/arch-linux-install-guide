@@ -4,9 +4,7 @@
 <br>
 <sub>*Author: Maxim Pershin*</sub>
 
-### Preview
-
-TODO
+<img src="./logo.png" height="250px" />
 
 ### Getting Started
 
