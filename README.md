@@ -2,7 +2,7 @@
 
 <sub>*Updated: June 2023*</sub>
 <br>
-<sub>*Author: Maxim Pershin*</sub>
+<sub>*Author: <a href="https://github.com/silentz">Maxim Pershin</a>*</sub>
 
 <img src="./logo.png" height="250px" />
 
