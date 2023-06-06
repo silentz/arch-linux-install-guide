@@ -4,7 +4,7 @@
 <br>
 <sub>*Author: <a href="https://github.com/silentz">Maxim Pershin</a>*</sub>
 
-<img src="./logo.png" height="250px" />
+<img src="./logo.png" />
 
 ### Getting Started
 
