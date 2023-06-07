@@ -358,6 +358,7 @@ sudo pacman -S neovim stow sqlite3 tldr jq tmux openvpn \
 
 # Devops
 sudo pacman -S docker kubectl helm aws-cli-v2 terraform
+sudo systemctl enable docker
 
 # C++
 sudo pacman -S gcc gdb cmake ninja clang
