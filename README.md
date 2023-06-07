@@ -278,7 +278,7 @@ sudo systemctl enable bluetooth
 
 9. Impreove battary usage:
 ```
-sudo pacman -S tlp tlp-rdw powertop acpi acpi_call
+sudo pacman -S tlp tlp-rdw acpi acpi_call
 sudo systemctl enable tlp
 sudo systemctl mask systemd-rfkill.service
 sudo systemctl mask systemd-rfkill.socket
