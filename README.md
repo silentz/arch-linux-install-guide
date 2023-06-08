@@ -166,7 +166,7 @@ locale-gen
 12. Configure timezone, set your own:
 ```
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
-ln -sf /usr/share/zoneinfo/Europe/ /etc/localtime
+ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 ```
 
 13. Setting up hardware clock:
