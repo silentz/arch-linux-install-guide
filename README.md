@@ -166,7 +166,7 @@ locale-gen
 12. Configure timezone, set your own:
 ```
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
-ln -sf /usr/share/zoneinfo/Asia/Nicosia /etc/localtime
+ln -sf /usr/share/zoneinfo/Europe/ /etc/localtime
 ```
 
 13. Setting up hardware clock:
@@ -294,6 +294,11 @@ sudo pacman -S ttf-liberation ttf-droid ttf-roboto terminus-font
 ```
 sudo pacman -S arc-gtk-theme
 sudo pacman -S papirus-icon-theme
+```
+
+12. Setup the fastest pacman mirror, choose nearest countries:
+```
+sudo reflector --country Germany,Austria,Switzerland --protocol https --sort delay --save /etc/pacman.d/mirrorlist
 ```
 
 ## Hibernation support
