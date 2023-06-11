@@ -298,7 +298,7 @@ sudo pacman -S papirus-icon-theme
 
 12. Setup the fastest pacman mirror, choose nearest countries:
 ```
-sudo reflector --country Germany,Austria,Switzerland --protocol https --sort delay --save /etc/pacman.d/mirrorlist
+sudo reflector --country Germany,Austria,Switzerland --sort delay --save /etc/pacman.d/mirrorlist
 ```
 
 ## Hibernation support
@@ -415,13 +415,7 @@ sudo pacman -S texlive-core
 ```
 
 2. Go to `/usr/share/texmf-dist/scripts/texlive/tlmgr.pl` and replace:
-```
-$Master = "$Master/../..";
-```
-with
-```
-$Master = "${Master}/../../..";
-```
+`$Master = "$Master/../..";` with `$Master = "${Master}/../../..";`
 
 3. Create an alias in your `.bashrc`:
 ```
