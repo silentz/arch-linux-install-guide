@@ -378,6 +378,10 @@ sudo pacman -S wine wine-mono wine-gecko winetricks zenity
 winetricks settings fontsmooth=rgb
 ```
 
+**Important**: if you are stuck with error
+`wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.`,
+go to `~/.wine/dosdevices`, remove `z:` symbolic link and make it point to your `$HOME`.
+
 ### DevTools
 ```
 # General
