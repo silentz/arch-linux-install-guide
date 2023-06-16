@@ -373,6 +373,11 @@ sudo pacman -Syu
 sudo pacman -S wine wine-mono wine-gecko winetricks zenity
 ```
 
+4. Configure smooth font:
+```
+winetricks settings fontsmooth=rgb
+```
+
 ### DevTools
 ```
 # General
