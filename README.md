@@ -298,7 +298,7 @@ sudo pacman -S papirus-icon-theme
 
 12. Setup the fastest pacman mirror, choose nearest countries:
 ```
-sudo reflector --country Germany,Austria,Switzerland --sort delay --save /etc/pacman.d/mirrorlist
+sudo reflector --country Germany,Austria,Switzerland --fastest 10 --save /etc/pacman.d/mirrorlist
 ```
 
 ## Hibernation support
