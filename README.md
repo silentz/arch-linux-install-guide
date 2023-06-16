@@ -355,6 +355,24 @@ sudo pacman -S chromium telegram-desktop fontforge gparted obs-studio \
 sudo pacman -S yubikey-personalization-gui yubikey-manager
 ```
 
+### Wine
+
+1. Go to `/etc/pacman.conf` and uncomment (or add) following lines:
+```
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+```
+
+2. Update pacman package databases:
+```
+sudo pacman -Syu
+```
+
+3. Install wine using pacman:
+```
+sudo pacman -S wine wine-mono wine-gecko
+```
+
 ### DevTools
 ```
 # General
