@@ -420,9 +420,8 @@ yay -S python36 python37 python38 python39 python310
 ### Install with manual download
 
 1. Slack desktop client
-2. Wine
-3. Flutter (+dart inside flutter distribution)
-4. Python pip
+2. Flutter (+dart inside flutter distribution)
+3. Python pip
 
 ### Install texlive (LaTeX)
 
