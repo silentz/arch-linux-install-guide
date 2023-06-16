@@ -370,7 +370,7 @@ sudo pacman -Syu
 
 3. Install wine using pacman:
 ```
-sudo pacman -S wine wine-mono wine-gecko
+sudo pacman -S wine wine-mono wine-gecko winetricks
 ```
 
 ### DevTools
