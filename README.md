@@ -487,7 +487,9 @@ Windows binaries:
 `IDA Pro`, `Ghidra`, `cutter` + `rz-ghidra` + `cutterref`, `angr-management`
 
 Python: `pycdc`
+
 Java: `jd-gui`, `jadx`
+
 C#: `Avalonia ILSpy`
 
 ## Grub resolution fix
