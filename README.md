@@ -479,11 +479,11 @@ tlmgr install scheme-full
 ## Tools for reverse engineering CTF's
 
 Linux binaries:
-`gdb`, `strace`, `ltrace`, `lld`, `objdump` `radare2`
+`gdb`, `strace`, `ltrace`, `lld`, `objdump` `radare2`, `frida`,
 `Ghidra`, `IDA Pro`, `cutter` + `rz-ghidra` + `cutterref`, `angr-management`
 
 Windows binaries:
-`gdb` (MinGW), `API Monitor`, `PEiD`, `UpxUnpacker`,
+`gdb` (MinGW), `API Monitor`, `PEiD`, `UpxUnpacker`, `frida`,
 `IDA Pro`, `Ghidra`, `cutter` + `rz-ghidra` + `cutterref`, `angr-management`
 
 Python: `pycdc`
