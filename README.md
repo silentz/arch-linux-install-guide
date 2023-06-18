@@ -394,7 +394,6 @@ sudo systemctl enable docker
 
 # C++
 sudo pacman -S gcc gdb cmake ninja clang
-sudo pacman -S radare2 strace ltrace
 
 # Lua
 sudo pacman -S lua
@@ -476,6 +475,20 @@ tlmgr install scheme-full
 * Run `sdkmanager "build-tools" "build-tools;29.0.3"`
 * Run `sdkmanager --licenses`
 * Run `sdkmanager --update`
+
+## Tools for reverse engineering CTF's
+
+Linux binaries:
+`gdb`, `strace`, `ltrace`, `lld`, `objdump` `radare2`
+`Ghidra`, `IDA Pro`, `cutter` + `rz-ghidra` + `cutterref`, `angr-management`
+
+Windows binaries:
+`gdb` (MinGW), `API Monitor`, `PEiD`, `UpxUnpacker`,
+`IDA Pro`, `Ghidra`, `cutter` + `rz-ghidra` + `cutterref`, `angr-management`
+
+Python: `pycdc`
+Java: `jd-gui`, `jadx`
+C#: `Avalonia ILSpy`
 
 ## Grub resolution fix
 
