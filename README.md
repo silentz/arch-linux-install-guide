@@ -301,6 +301,11 @@ sudo pacman -S papirus-icon-theme
 sudo reflector --country Germany,Austria,Switzerland --fastest 10 --save /etc/pacman.d/mirrorlist
 ```
 
+13. Intall printing settings:
+```
+sudo pacman -S cups cups-filters cups-pdf system-config-printer --needed
+```
+
 ## Hibernation support
 
 1. Open you `/etc/fstab` and find UUID for your swap partition.
