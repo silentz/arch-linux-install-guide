@@ -389,7 +389,7 @@ sudo pacman -S neovim stow sqlite3 tldr jq tmux openvpn \
                wireguard-tools zip unzip virtualbox nmap masscan
 
 # Devops
-sudo pacman -S docker kubectl helm aws-cli-v2 terraform
+sudo pacman -S docker docker-compose kubectl helm aws-cli-v2 terraform
 sudo systemctl enable docker
 
 # C++
