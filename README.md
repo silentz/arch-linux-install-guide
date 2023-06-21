@@ -309,9 +309,7 @@ sudo systemctl enable cups.service
 
 **Important** if there is no option for system-config-printer in xfce4-settings-manager,
 go to `/usr/share/applications/system-config-printer.desktop` and set
-```
-Categories=System;Settings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;
-```
+`Categories=System;Settings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;`
 
 14. Install NetworkManager additionals:
 ```
@@ -320,9 +318,7 @@ sudo pacman -S nm-connection-editor networkmanager-openvpn
 
 **Important** if there is no option for nm-connection-editor in xfce4-settings-manager,
 go to `/usr/share/applications/nm-connection-editor.desktop` and set
-```
-Categories=System;Settings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;
-```
+`Categories=System;Settings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;`
 
 15. Reboot again:
 ```
