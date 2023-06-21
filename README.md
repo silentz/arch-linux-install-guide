@@ -243,7 +243,7 @@ nmcli device wifi connect <SSID> password <password>
 sudo pacman -S xorg xorg-apps xorg-xinit
 ```
 
-4. Install useful packaged:
+4. Install useful packages:
 ```
 sudo pacman -S iw wpa_supplicant dialog intel-ucode git reflector rsync
 sudo pacman -S base-devel lshw zip unzip htop wget xsel tree fuse2
