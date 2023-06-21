@@ -304,6 +304,17 @@ sudo reflector --country Germany,Austria,Switzerland --fastest 10 --save /etc/pa
 13. Intall printing settings:
 ```
 sudo pacman -S cups cups-filters cups-pdf system-config-printer --needed
+sudo systemctl enable cups.service
+```
+
+14. Install NetworkManager additionals:
+```
+sudo pacman -S nm-connection-editor networkmanager-openvpn
+```
+
+15. Reboot again:
+```
+reboot
 ```
 
 ## Hibernation support
