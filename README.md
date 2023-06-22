@@ -410,7 +410,8 @@ go to `~/.wine/dosdevices`, remove `z:` symbolic link and make it point to your 
 ```
 # General
 sudo pacman -S neovim stow sqlite3 tldr jq tmux openvpn \
-               wireguard-tools zip unzip virtualbox nmap masscan
+               wireguard-tools zip unzip virtualbox nmap masscan \
+               pgcli redis
 
 # Devops
 sudo pacman -S docker docker-compose kubectl helm aws-cli-v2 terraform
