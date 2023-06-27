@@ -425,6 +425,7 @@ sudo pacman -S lua
 
 # Golang
 sudo pacman -S golang
+go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
 
 # Javascript
 sudo pacman -S nodejs npm yarn
@@ -448,7 +449,6 @@ makepkg -si
 
 ```
 yay -S python36 python37 python38 python39 python310
-yay -S grpcurl
 ```
 
 ### Install with manual download
