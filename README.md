@@ -413,6 +413,8 @@ sudo pacman -S neovim stow sqlite3 tldr jq tmux openvpn \
                wireguard-tools zip unzip virtualbox nmap masscan \
                pgcli redis
 
+sudo setcap 'cap_net_raw+epi' /usr/bin/masscan
+
 # Devops
 sudo pacman -S docker docker-compose kubectl helm aws-cli-v2 terraform
 sudo systemctl enable docker
