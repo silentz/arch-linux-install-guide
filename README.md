@@ -448,6 +448,7 @@ makepkg -si
 
 ```
 yay -S python36 python37 python38 python39 python310
+yay -S grpcurl
 ```
 
 ### Install with manual download
