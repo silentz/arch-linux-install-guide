@@ -1,6 +1,6 @@
 # Arch Linux with Xfce4 Installation Guide
 
-<sub>*Updated: June 2023*</sub>
+<sub>*Updated: August 2023*</sub>
 <br>
 <sub>*Author: <a href="https://github.com/silentz">Maxim Pershin</a>*</sub>
 
@@ -437,6 +437,10 @@ sudo pacman -S jdk20-openjdk
 
 # Solidity
 sudo pacman -S solidity
+
+# Virtualbox
+sudo pacman -S virtualbox-host-dkms
+sudo pacman -S virtualbox
 ```
 
 ### Install AUR package manager
