@@ -411,7 +411,7 @@ go to `~/.wine/dosdevices`, remove `z:` symbolic link and make it point to your 
 # General
 sudo pacman -S neovim stow sqlite3 tldr jq tmux openvpn \
                wireguard-tools zip unzip virtualbox nmap masscan \
-               pgcli redis plantuml
+               pgcli redis plantuml ripgrep
 
 sudo setcap 'cap_net_raw+epi' /usr/bin/masscan
 
