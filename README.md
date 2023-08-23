@@ -1,4 +1,4 @@
-# Arch Linux with Xfce4 Installation Guide
+# Arch Linux with Xfce4/i3 Installation Guide
 
 <sub>*Updated: August 2023*</sub>
 <br>
@@ -262,6 +262,11 @@ sudo pacman -S dbus xfce4 xfce4-screenshooter \
   xfce4-xkb-plugin xfce4-battery-plugin xfce4-datetime-plugin xfce4-mount-plugin \
   xfce4-netload-plugin xfce4-notifyd xfce4-pulseaudio-plugin xfce4-screensaver \
   xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin network-manager-applet
+```
+or install i3
+```
+sudo pacman -S i3-wm i3status i3blocks i3lock lxappearance
+sudo pacman -S rofi ranger alacritty
 ```
 
 7. Install desktop manager:
