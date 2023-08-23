@@ -266,8 +266,8 @@ sudo pacman -S dbus xfce4 xfce4-screenshooter \
 
 7. Install desktop manager:
 ```
-sudo pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --needed
-sudo systemctl enable lightdm
+sudo pacman -S ly
+sudo systemctl enable ly
 ```
 
 8. Setup bluetooth:
