@@ -186,7 +186,7 @@ vim /etc/hosts
 
 15. Add new user:
 ```
-useradd -m -G wheel,storage,power,audio,docker -s /bin/bash max
+useradd -m -G wheel,storage,power,audio,video,docker -s /bin/bash max
 ```
 
 16. Setup root and user passwords:
