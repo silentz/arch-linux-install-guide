@@ -159,7 +159,7 @@ arch-chroot /mnt
 11. Setup system locale:
 ```
 vim /etc/locale.gen
-# uncomment `en_US.UTF-8` inside /etc/locale.gen
+# uncomment `en_US.UTF-8` and `en_GB.UTF-8` inside /etc/locale.gen
 locale-gen
 ```
 
@@ -240,7 +240,7 @@ nmcli device wifi connect <SSID> password <password>
 
 3. Install Xorg:
 ```
-sudo pacman -S xorg xorg-apps xorg-xinit
+sudo pacman -S xorg xorg-apps xorg-xinit xdotool
 ```
 
 4. Install useful packages:
@@ -266,7 +266,8 @@ sudo pacman -S dbus xfce4 xfce4-screenshooter \
 or install i3
 ```
 sudo pacman -S i3-wm i3status i3blocks i3lock lxappearance
-sudo pacman -S polybar rofi ranger alacritty conky system-config-printer light
+sudo pacman -S polybar rofi ranger alacritty dunst feh xss-lock \
+               system-config-printer light pango flameshot gsimplecal
 ```
 
 7. Install desktop manager:
@@ -376,7 +377,7 @@ sudo systemctl hibernate
 ```
 sudo pacman -S chromium telegram-desktop fontforge gparted obs-studio \
                tilix vlc remmina wireshark-qt neofetch evince gimp spotify-launcher \
-               shotwell file-roller shotcut inkscape evolution mousepad redshift
+               shotwell file-roller shotcut inkscape evolution mousepad redshift klawaro
 ```
 
 ### Yubikey
