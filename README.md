@@ -377,7 +377,7 @@ sudo systemctl hibernate
 ```
 sudo pacman -S chromium telegram-desktop fontforge gparted obs-studio \
                tilix vlc remmina wireshark-qt neofetch evince gimp spotify-launcher \
-               shotwell file-roller shotcut inkscape evolution mousepad redshift klawaro
+               shotwell file-roller shotcut inkscape evolution mousepad redshift klavaro
 ```
 
 ### Yubikey
