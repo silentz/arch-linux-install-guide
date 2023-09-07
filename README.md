@@ -266,7 +266,7 @@ sudo pacman -S dbus xfce4 xfce4-screenshooter \
 or install i3
 ```
 sudo pacman -S i3-wm i3status i3blocks i3lock lxappearance
-sudo pacman -S polybar rofi ranger alacritty dunst feh xss-lock \
+sudo pacman -S polybar rofi ranger thunar alacritty dunst feh xss-lock \
                system-config-printer light pango flameshot gsimplecal
 ```
 
