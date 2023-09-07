@@ -475,7 +475,6 @@ yay -S python36 python37 python38 python39 python310
 ### Requires manual download
 
 1. Dart / Flutter (https://docs.flutter.dev/get-started/install/linux)
-2. 
 
 ### Install texlive (LaTeX)
 
