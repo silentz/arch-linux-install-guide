@@ -375,7 +375,7 @@ sudo systemctl hibernate
 
 ### General
 ```
-sudo pacman -S chromium telegram-desktop fontforge gparted obs-studio \
+sudo pacman -S chromium telegram-desktop discord fontforge gparted obs-studio \
                tilix vlc remmina wireshark-qt neofetch evince gimp spotify-launcher \
                shotwell file-roller shotcut inkscape evolution mousepad redshift klavaro
 ```
@@ -426,8 +426,11 @@ sudo pacman -S docker docker-compose kubectl helm aws-cli-v2 terraform
 sudo systemctl enable docker
 sudo usermod -a -G docker max
 
+# Python
+sudo pacman -S python-pip python-poetry
+
 # C++
-sudo pacman -S gcc gdb cmake ninja clang
+sudo pacman -S gcc gdb cmake ninja clang cuda
 
 # Lua
 sudo pacman -S lua
@@ -459,21 +462,22 @@ makepkg -si
 ### Install AUR packages
 
 ```
-# solidity (for blockchain ctfs)
+# Slack
+yay -S slack-desktop
+
+# Solidity
 yay -S solidity
 
-# legacy multiple python versions for compat testing
+# Legacy python versions
 yay -S python36 python37 python38 python39 python310
 ```
 
-### Install with manual download
+### Requires manual download
 
-1. Slack desktop client
-2. Flutter (+dart inside flutter distribution)
-3. Python pip
+1. Dart / Flutter (https://docs.flutter.dev/get-started/install/linux)
+2. 
 
 ### Install texlive (LaTeX)
-
 
 1. Install `texlive-core`
 ```
