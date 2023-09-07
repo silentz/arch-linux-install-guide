@@ -524,7 +524,7 @@ tlmgr install scheme-full
 ## Tools for reverse engineering CTF's
 
 Binaries:
-`gdb`, `strace`, `ltrace`, `lld`, `objdump` `radare2`, `frida`,
+`gdb`, `strace`, `ltrace`, `ldd`, `objdump` `radare2`, `frida`,
 `Ghidra`, `IDA Pro`, `cutter` + `rz-ghidra` + `cutterref`, `angr-management`
 `API Monitor`, `PEiD`, `UpxUnpacker`
 
