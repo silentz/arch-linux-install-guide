@@ -1,6 +1,6 @@
 # Arch Linux with Xfce4/i3 Installation Guide
 
-<sub>*Updated: August 2023*</sub>
+<sub>*Updated: September 2023*</sub>
 <br>
 <sub>*Author: <a href="https://github.com/silentz">Maxim Pershin</a>*</sub>
 
@@ -433,7 +433,7 @@ sudo pacman -S gcc gdb cmake ninja clang
 sudo pacman -S lua
 
 # Golang
-sudo pacman -S golang
+sudo pacman -S go
 go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
 
 # Javascript
@@ -442,10 +442,8 @@ sudo pacman -S nodejs npm yarn
 # Java
 sudo pacman -S jdk20-openjdk
 
-# Solidity
-sudo pacman -S solidity
-
 # Virtualbox
+sudo pacman -S linux-headers
 sudo pacman -S virtualbox-host-dkms
 sudo pacman -S virtualbox
 ```
@@ -461,6 +459,10 @@ makepkg -si
 ### Install AUR packages
 
 ```
+# solidity (for blockchain ctfs)
+yay -S solidity
+
+# legacy multiple python versions for compat testing
 yay -S python36 python37 python38 python39 python310
 ```
 
