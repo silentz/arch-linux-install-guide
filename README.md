@@ -517,7 +517,7 @@ tlmgr install scheme-full
 * Run `rmdir cmdline-tools` (downloaded one, not in `~/Android/...`).
 * Set `ANDROID_HOME` environment variable to `$HOME/Andoird`.
 * Run `sdkmanager "platform-tools" "platforms;android-29"`
-* Run `sdkmanager "build-tools" "build-tools;29.0.3"`
+* Run `sdkmanager "build-tools;29.0.3"`
 * Run `sdkmanager --licenses`
 * Run `sdkmanager --update`
 
