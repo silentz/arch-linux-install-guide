@@ -245,7 +245,7 @@ sudo pacman -S xorg xorg-apps xorg-xinit xdotool
 
 4. Install useful packages:
 ```
-sudo pacman -S iw wpa_supplicant dialog intel-ucode git reflector rsync
+sudo pacman -S iw wpa_supplicant dialog intel-ucode git reflector rsync bash-completion w3m
 sudo pacman -S base-devel lshw zip unzip htop wget xsel tree fuse2 keychain
 sudo pacman -S sof-firmware pulseaudio alsa-utils alsa-plugins pavucontrol
 ```
