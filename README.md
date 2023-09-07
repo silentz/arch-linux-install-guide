@@ -424,6 +424,7 @@ sudo setcap 'cap_net_raw+epi' /usr/bin/masscan
 # Devops
 sudo pacman -S docker docker-compose kubectl helm aws-cli-v2 terraform
 sudo systemctl enable docker
+sudo usermod -a -G docker max
 
 # C++
 sudo pacman -S gcc gdb cmake ninja clang
