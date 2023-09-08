@@ -241,7 +241,7 @@ nmcli device wifi connect <SSID> password <password>
 
 3. Install Xorg:
 ```
-sudo pacman -S xorg xorg-apps xorg-xinit xdotool
+sudo pacman -S xorg xorg-apps xorg-xinit xdotool xclip
 ```
 
 4. Install useful packages:
