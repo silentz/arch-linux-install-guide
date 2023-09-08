@@ -293,7 +293,7 @@ sudo systemctl mask systemd-rfkill.socket
 
 10. Install essential fonts:
 ```
-sudo pacman -S noto-fonts ttf-ubuntu-font-family ttf-dejavu ttf-freefont
+sudo pacman -S noto-fonts noto-fonts-emoji ttf-ubuntu-font-family ttf-dejavu ttf-freefont
 sudo pacman -S ttf-liberation ttf-droid ttf-roboto terminus-font
 ```
 
