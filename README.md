@@ -212,10 +212,11 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 19. Install NetworkManager:
 ```
-pacman -S dhcpcd networkmanager
+pacman -S dhcpcd networkmanager resolvconf
 systemctl enable sshd
 systemctl enable dhcpcd
 systemctl enable NetworkManager
+systemctl enable systemd-resolved
 ```
 
 20. Exit chroot, unmount all disks and reboot:
@@ -245,7 +246,7 @@ sudo pacman -S xorg xorg-apps xorg-xinit xdotool
 
 4. Install useful packages:
 ```
-sudo pacman -S iw wpa_supplicant dialog intel-ucode git reflector rsync bash-completion w3m
+sudo pacman -S iw wpa_supplicant resolvconf dialog intel-ucode git reflector rsync bash-completion w3m
 sudo pacman -S base-devel lshw zip unzip htop wget xsel tree fuse2 keychain axel
 sudo pacman -S sof-firmware pulseaudio alsa-utils alsa-plugins pavucontrol
 ```
