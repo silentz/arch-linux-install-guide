@@ -479,32 +479,26 @@ yay -S python36 python37 python38 python39 python310
 
 ### Install texlive (LaTeX)
 
-1. Install `texlive-core`
+1. Donwload texlive installer
 ```
-sudo pacman -S texlive-core
-```
-
-2. Go to `/usr/share/texmf-dist/scripts/texlive/tlmgr.pl` and replace:
-`$Master = "$Master/../..";` with `$Master = "${Master}/../../..";`
-
-3. Create an alias in your `.bashrc`:
-```
-alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
+wget http://mirrors.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 ```
 
-4. initialize tlmgr in user mode:
+2. Upack archive
 ```
-tlmgr init-usertree
-```
-
-5. Set your preferred mirror. For example:
-```
-tlmgr option repository http://mirrors.rit.edu/CTAN/systems/texlive/tlnet
+mkdir ./texlive
+tar -xvf install-tl-unx.tar.gz -C texlive --strip-components=1
 ```
 
-6. Now you can install CTAN packages. Install scheme-full (all packages):
+3. Enter `texlive` dir
 ```
-tlmgr install scheme-full
+cd ./texlive
+```
+
+4. Make profile file and run install:
+```
+echo "selected_scheme scheme-full" > profile
+sudo ./install-tl -profile ./profile
 ```
 
 ## Setup Android DevTools
