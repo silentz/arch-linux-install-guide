@@ -495,10 +495,9 @@ tar -xvf install-tl-unx.tar.gz -C texlive --strip-components=1
 cd ./texlive
 ```
 
-4. Make profile file and run install:
+4. Run install (and select nearest CTAN mirror):
 ```
-echo "selected_scheme scheme-full" > profile
-sudo ./install-tl -profile ./profile
+sudo ./install-tl -select-repository
 ```
 
 ## Setup Android DevTools
