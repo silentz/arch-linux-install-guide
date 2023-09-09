@@ -267,8 +267,8 @@ sudo pacman -S dbus xfce4 xfce4-screenshooter \
 or install i3
 ```
 sudo pacman -S i3-wm i3status i3lock lxappearance
-sudo pacman -S polybar rofi ranger thunar alacritty dunst feh xss-lock \
-               system-config-printer light pango flameshot gsimplecal
+sudo pacman -S polybar rofi ranger thunar alacritty dunst feh \
+               xss-lock picom light pango flameshot gsimplecal
 ```
 
 7. Install desktop manager:
@@ -418,7 +418,7 @@ go to `~/.wine/dosdevices`, remove `z:` symbolic link and make it point to your 
 # General
 sudo pacman -S neovim stow sqlite3 tldr jq tmux openvpn \
                wireguard-tools zip unzip virtualbox nmap masscan \
-               pgcli redis plantuml ripgrep gitui gpick
+               pgcli redis plantuml ripgrep gitui lazygit gpick
 
 sudo setcap 'cap_net_raw+epi' /usr/bin/masscan
 
