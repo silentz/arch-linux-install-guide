@@ -562,5 +562,6 @@ P.S. *your screen output name, like eDP-1 in my case, can be found in `xrandr -q
 
 ## Other small fixes:
 
+* Activate file-roller dark mode: `gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'`
 * Slack remove annoying menu bar: `Window -> Always show menu bar -> disable`
 * If system goes to sleep after 3-5 minutes, this might be screensaver. To stop this, disable option `Settings -> Screensaver -> Activate Screensaver when computer is idle`
