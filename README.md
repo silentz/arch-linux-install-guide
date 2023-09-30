@@ -268,7 +268,8 @@ or install i3
 ```
 sudo pacman -S i3-wm i3status i3lock lxappearance
 sudo pacman -S polybar rofi ranger thunar alacritty dunst feh \
-               xss-lock picom light pango flameshot gsimplecal
+               xss-lock picom light pango flameshot gsimplecal \
+               thunar-archive-plugin thunar-media-tags-plugin
 ```
 
 7. Install desktop manager:
