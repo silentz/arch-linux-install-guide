@@ -1,6 +1,6 @@
 # Arch Linux with Xfce4/i3 Installation Guide
 
-<sub>*Updated: September 2023*</sub>
+<sub>*Updated: October 2023*</sub>
 <br>
 <sub>*Author: <a href="https://github.com/silentz">Maxim Pershin</a>*</sub>
 
@@ -477,6 +477,7 @@ yay -S python36 python37 python38 python39 python310
 ### Requires manual download
 
 1. Dart / Flutter (https://docs.flutter.dev/get-started/install/linux)
+2. Joplin (https://joplinapp.org/help/#installation)
 
 ### Install texlive (LaTeX)
 
