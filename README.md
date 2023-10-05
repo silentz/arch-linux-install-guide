@@ -451,6 +451,9 @@ sudo pacman -S jdk20-openjdk
 sudo pacman -S linux-headers
 sudo pacman -S virtualbox-host-dkms
 sudo pacman -S virtualbox
+
+# Hugo
+sudo pacman -S hugo
 ```
 
 ### Install AUR package manager
