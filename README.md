@@ -453,7 +453,7 @@ sudo pacman -S virtualbox-host-dkms
 sudo pacman -S virtualbox
 
 # Hugo
-sudo pacman -S hugo
+sudo pacman -S hugo dart-sass
 ```
 
 ### Install AUR package manager
