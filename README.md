@@ -417,7 +417,7 @@ go to `~/.wine/dosdevices`, remove `z:` symbolic link and make it point to your 
 ### DevTools
 ```
 # General
-sudo pacman -S neovim stow sqlite3 tldr jq tmux openvpn \
+sudo pacman -S neovim tree-sitter stow sqlite3 tldr jq tmux openvpn \
                wireguard-tools zip unzip virtualbox nmap masscan \
                pgcli redis plantuml ripgrep gitui lazygit gpick
 
