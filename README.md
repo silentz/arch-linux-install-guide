@@ -1,6 +1,6 @@
 # Arch Linux with Xfce4/i3 Installation Guide
 
-<sub>*Updated: October 2023*</sub>
+<sub>*Updated: December 2023*</sub>
 <br>
 <sub>*Author: <a href="https://github.com/silentz">Maxim Pershin</a>*</sub>
 
@@ -428,6 +428,7 @@ sudo setcap 'cap_net_raw+epi' /usr/bin/masscan
 sudo pacman -S docker docker-compose kubectl helm aws-cli-v2 terraform
 sudo systemctl enable docker
 sudo usermod -a -G docker max
+newgrp docker
 
 # Python
 sudo pacman -S python-pip python-poetry
