@@ -1,6 +1,6 @@
 # Arch Linux with Xfce4/i3 Installation Guide
 
-<sub>*Updated: December 2023*</sub>
+<sub>*Updated: January 2024*</sub>
 <br>
 <sub>*Author: <a href="https://github.com/silentz">Maxim Pershin</a>*</sub>
 
@@ -433,8 +433,9 @@ newgrp docker
 # Python
 sudo pacman -S python-pip python-poetry
 
-# C++
+# C, C++ and Low Level Tools
 sudo pacman -S gcc gdb cmake ninja clang cuda
+sudo pacman -S nasm cdrtools qemu-full
 
 # Lua
 sudo pacman -S lua
