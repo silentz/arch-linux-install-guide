@@ -425,7 +425,7 @@ sudo pacman -S neovim tree-sitter tree-sitter-cli stow sqlite3 tldr \
 sudo setcap 'cap_net_raw+epi' /usr/bin/masscan
 
 # Devops
-sudo pacman -S docker docker-compose kubectl helm aws-cli-v2 terraform
+sudo pacman -S docker docker-compose kubectl helm aws-cli-v2 terraform etcdctl
 sudo systemctl enable docker
 sudo usermod -a -G docker max
 newgrp docker
@@ -470,6 +470,9 @@ makepkg -si
 ### Install AUR packages
 
 ```
+# Etcd
+yay -S etcd
+
 # Slack
 yay -S slack-desktop
 
