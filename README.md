@@ -450,6 +450,9 @@ sudo pacman -S nodejs npm yarn
 # Java
 sudo pacman -S jdk20-openjdk
 
+# Rust
+sudo pacman -S rust
+
 # Virtualbox
 sudo pacman -S linux-headers
 sudo pacman -S virtualbox-host-dkms
