@@ -555,18 +555,23 @@ Put it in `/usr/lib/systemd/system-sleep/xhci.sh`:
 ```
 #!/bin/sh
 
-if [ "${1}" == "pre" ]; then
-    # Do the thing you want before suspend here:
+run_pre_hook() {
     echo "Disable broken xhci module before suspending at $(date)..." >> /tmp/systemd_suspend_log
     grep XHC.*enable /proc/acpi/wakeup && echo XHC > /proc/acpi/wakeup
-elif [ "${1}" == "post" ]; then
-    # Do the thing you want after resume here:
+}
+
+run_post_hook() {
     echo "Enable broken xhci module at wakeup from $(date)" >> /tmp/systemd_suspend_log
     grep XHC.*disable /proc/acpi/wakeup && echo XHC > /proc/acpi/wakeup
-fi
+}
+
+case $1 in
+    pre)  run_pre_hook  ;;
+    post) run_post_hook ;;
+esac
 ```
 
-Source: https://gist.github.com/ioggstream/8f380d398aef989ac455b93b92d42048
+Original solution: https://gist.github.com/ioggstream/8f380d398aef989ac455b93b92d42048
 
 ## Grub resolution fix
 
