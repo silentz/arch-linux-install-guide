@@ -551,7 +551,7 @@ the system right after you launch hibernation process. If you see errors like th
 [80136.941062] xhci_hcd 0000:00:14.0: PM: dpm_run_callback(): pci_pm_freeze+0x0/0xc0 returns -16
 [80136.941073] xhci_hcd 0000:00:14.0: PM: failed to freeze async: error -16
 ```
-Put it in `/usr/lib/systemd/system-sleep/xhci.sh`:
+Put it in `/usr/lib/systemd/system-sleep/xhci` (file must be executable):
 ```
 #!/bin/sh
 
