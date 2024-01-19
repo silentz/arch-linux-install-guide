@@ -541,6 +541,33 @@ Java: `jd-gui`, `jadx`
 
 C#: `Avalonia ILSpy`
 
+## Fix broken hibernation
+
+In some Linux kernels there are some broken USB 3.0 device drivers, that _sometimes_ wake up
+the system right after you launch hibernation process. If you see errors like this in your
+`dmesg` command output after an unsuccessful hibernation:
+```
+[80136.941050] xhci_hcd 0000:00:14.0: PM: pci_pm_freeze(): hcd_pci_suspend+0x0/0x20 returns -16
+[80136.941062] xhci_hcd 0000:00:14.0: PM: dpm_run_callback(): pci_pm_freeze+0x0/0xc0 returns -16
+[80136.941073] xhci_hcd 0000:00:14.0: PM: failed to freeze async: error -16
+```
+Put it in `/usr/lib/systemd/system-sleep/xhci.sh`:
+```
+#!/bin/sh
+
+if [ "${1}" == "pre" ]; then
+    # Do the thing you want before suspend here:
+    echo "Disable broken xhci module before suspending at $(date)..." >> /tmp/systemd_suspend_log
+    grep XHC.*enable /proc/acpi/wakeup && echo XHC > /proc/acpi/wakeup
+elif [ "${1}" == "post" ]; then
+    # Do the thing you want after resume here:
+    echo "Enable broken xhci module at wakeup from $(date)" >> /tmp/systemd_suspend_log
+    grep XHC.*disable /proc/acpi/wakeup && echo XHC > /proc/acpi/wakeup
+fi
+```
+
+Source: https://gist.github.com/ioggstream/8f380d398aef989ac455b93b92d42048
+
 ## Grub resolution fix
 
 *This can help if you have very tiny grub font on your 4k monitor*
