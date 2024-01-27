@@ -247,7 +247,7 @@ sudo pacman -S xorg xorg-apps xorg-xinit xdotool xclip
 4. Install useful packages:
 ```
 sudo pacman -S iw wpa_supplicant bind dialog intel-ucode git reflector rsync bash-completion w3m
-sudo pacman -S base-devel lshw zip unzip htop wget xsel tree fuse2 keychain axel arandr openbsd-netcat
+sudo pacman -S base-devel lshw zip unzip htop wget xsel tree fuse2 keychain axel arandr openbsd-netcat powertop
 sudo pacman -S sof-firmware pulseaudio alsa-utils alsa-plugins pavucontrol
 ```
 
