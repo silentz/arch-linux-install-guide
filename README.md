@@ -613,3 +613,5 @@ P.S. *your screen output name, like eDP-1 in my case, can be found in `xrandr -q
 * If system goes to sleep after 3-5 minutes, this might be screensaver. To stop this, disable option `Settings -> Screensaver -> Activate Screensaver when computer is idle`
 * Sometimes there is Wireguard VPN perimiter, but no DNS server in your company. If so, use `resolvectl revert wg0` (change `wg0` to your wireguard interface name)
 to prevent sending DNS requests through interface. This command will disable "DefaultRoute" feature of `wg0` interface in systemd-resolved.
+* If you face video freezes (or hangs) while not touching keyboard or mouse for some time (usually 1-10 minutes), this might be an issue with picom. Try disabling it to
+see if this helps. If so, try to change rendering backend of picom from `xrender` to `glx` and check if it helps (worked for me).
