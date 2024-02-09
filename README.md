@@ -461,7 +461,8 @@ sudo pacman -S virtualbox
 
 # Architecture
 sudo pacman -S plantuml
-npm i -g c4builder
+yay -S gaphor
+
 
 # Hugo
 sudo pacman -S hugo dart-sass
