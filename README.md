@@ -420,7 +420,7 @@ go to `~/.wine/dosdevices`, remove `z:` symbolic link and make it point to your 
 # General
 sudo pacman -S neovim tree-sitter tree-sitter-cli stow sqlite3 tldr \
                jq tmux openvpn wireguard-tools zip unzip virtualbox \
-               nmap masscan pgcli redis plantuml ripgrep gitui lazygit \
+               nmap masscan pgcli redis ripgrep gitui lazygit \
                gpick apache rclone websocat ansible sshpass
 
 sudo setcap 'cap_net_raw+epi' /usr/bin/masscan
@@ -458,6 +458,10 @@ sudo pacman -S rust
 sudo pacman -S linux-headers
 sudo pacman -S virtualbox-host-dkms
 sudo pacman -S virtualbox
+
+# Architecture
+sudo pacman -S plantuml
+npm i -g c4builder
 
 # Hugo
 sudo pacman -S hugo dart-sass
