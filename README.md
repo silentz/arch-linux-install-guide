@@ -463,6 +463,8 @@ sudo pacman -S virtualbox
 sudo pacman -S plantuml
 yay -S gaphor
 
+# Network emulation
+yay -S gns3-server gns3-gui
 
 # Hugo
 sudo pacman -S hugo dart-sass
