@@ -248,7 +248,7 @@ sudo pacman -S xorg xorg-apps xorg-xinit xdotool xclip
 ```
 sudo pacman -S bind dialog intel-ucode git reflector bash-completion w3m
 sudo pacman -S base-devel lshw zip unzip htop xsel tree fuse2 keychain arandr powertop inxi
-sudo pacman -S wget iw wpa_supplicant openbsd-netcat axel tcpdump mtr net-tools rsync conntrack-tools
+sudo pacman -S wget iw wpa_supplicant openbsd-netcat axel tcpdump mtr net-tools rsync conntrack-tools ethtool
 sudo pacman -S sof-firmware pulseaudio alsa-utils alsa-plugins pavucontrol
 ```
 
