@@ -1,6 +1,6 @@
 # Arch Linux with Xfce4/i3 Installation Guide
 
-<sub>*Updated: February 2024*</sub>
+<sub>*Updated: March 2024*</sub>
 <br>
 <sub>*Author: <a href="https://github.com/silentz">Maxim Pershin</a>*</sub>
 
@@ -421,7 +421,7 @@ go to `~/.wine/dosdevices`, remove `z:` symbolic link and make it point to your 
 sudo pacman -S neovim tree-sitter tree-sitter-cli stow sqlite3 tldr \
                jq tmux openvpn wireguard-tools zip unzip virtualbox \
                nmap masscan pgcli redis ripgrep gitui lazygit \
-               gpick apache rclone websocat ansible sshpass
+               gpick apache rclone websocat ansible sshpass meld
 
 sudo setcap 'cap_net_raw+epi' /usr/bin/masscan
 
