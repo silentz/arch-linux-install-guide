@@ -1,6 +1,6 @@
 # Arch Linux with Xfce4/i3 Installation Guide
 
-<sub>*Updated: March 2024*</sub>
+<sub>*Updated: June 2024*</sub>
 <br>
 <sub>*Author: <a href="https://github.com/silentz">Maxim Pershin</a>*</sub>
 
@@ -487,11 +487,11 @@ yay -S etcd
 # Slack
 yay -S slack-desktop
 
-# Solidity
-yay -S solidity
-
 # Legacy python versions
 yay -S python36 python37 python38 python39 python310
+
+# PCB design
+yay -S logisim-evolution qucs-s
 ```
 
 ### Requires manual download
