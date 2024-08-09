@@ -1,6 +1,6 @@
 # Arch Linux with Xfce4/i3 Installation Guide
 
-<sub>*Updated: June 2024*</sub>
+<sub>*Updated: August 2024*</sub>
 <br>
 <sub>*Author: <a href="https://github.com/silentz">Maxim Pershin</a>*</sub>
 
@@ -323,6 +323,13 @@ go to `/usr/share/applications/system-config-printer.desktop` and set
 14. Install NetworkManager additionals:
 ```
 sudo pacman -S nm-connection-editor networkmanager-openvpn
+```
+
+15. Install vulkan drivers (choose one):
+```
+pacman -S vulkan-intel
+pacman -S nvidia-utils
+pacman -S amdvlk
 ```
 
 **Important** if there is no option for nm-connection-editor in xfce4-settings-manager,
