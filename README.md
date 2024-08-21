@@ -58,19 +58,19 @@ a pull request. Your contributions can help enhance the clarity of the guide for
 
 2. Find corresponding block device for USB-stick in `/dev` folder. Usually it is `/dev/sdb`.
 
-<dl><dd><dl><dd>
+<dl><dd>
 <b>IMPORTANT NOTE</b>: you need block device without a number on the end.
 If you have for example <i>/dev/sdb</i>, <i>/dev/sdb1</i> and <i>/dev/sdb2</i> you need <i>/dev/sdb</i> !
-</dd></dl></dd></dl>
+</dd></dl>
 
 3. Burn previously downloaded Arch Linux ISO-image on a USB-stick (in my case it is `/dev/sdb`):
 
-<dl><dd><dl><dd>
+<dl><dd>
 <pre>
 sudo dd conv=fsync oflag=direct status=progress \
      if=./archlinux-YYYY.MM.DD-x86_64.iso of=/dev/sdb
 </pre>
-</dd></dl></dd></dl>
+</dd></dl>
 
 ### Step 03: Boot into Arch Linux medium
 
@@ -81,17 +81,17 @@ sudo dd conv=fsync oflag=direct status=progress \
 
 3. Boot from USB-stick and wait until boot process is finished.
 
-<dl><dd><dl><dd>
+<dl><dd>
 <b>IMPORTANT NOTE</b>: not every device can run a system from USB-stick out of the box.
 Many BIOS'es by default come with activated <i>Secure boot</i> option.You might need to
 deactivate it in your BIOS.
-</dd></dl></dd></dl>
+</dd></dl>
 
 ### Step 04: Syncronize packages
 
 1. [Optional] Connect to WiFi using `iwctl` and check connection is established:
 
-<dl><dd><dl><dd>
+<dl><dd>
 <pre>
 $ <b>iwctl</b>
 [iwd]# <b>station wlan0 get-networks</b>
@@ -99,21 +99,21 @@ $ <b>iwctl</b>
 [iwd]# <b>exit</b>
 $ <b>ping 1.1.1.1</b>
 </pre>
-</dd></dl></dd></dl>
+</dd></dl>
 
 2. Syncronize pacman packaes:
 
-<dl><dd><dl><dd>
+<dl><dd>
 <pre>
 $ <b>pacman -Syy</b>
 </pre>
-</dd></dl></dd></dl>
+</dd></dl>
 
 ### Step 05: Disk partitioning
 
 1. Partition main storage device using `fdisk` utility. You can find storage device name using `lsblk` command.
 
-<dl><dd><dl><dd>
+<dl><dd>
 <pre>
 $ <b>fdisk /dev/nvme0n1</b>
                 <i>[repeat this command until existing partitions are deleted]</i>
@@ -154,7 +154,7 @@ Partion typr or alias (type L to list all): <b>swap</b>
 Command (m for help): <b>w</b>
 
 </pre>
-</dd></dl></dd></dl>
+</dd></dl>
 
 7. Create filesystems on created disk partitions:
 
