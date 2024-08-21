@@ -628,7 +628,7 @@ Java: `jd-gui`, `jadx`
 C#: `Avalonia ILSpy`
 
 <h1 align="center">
-    Section 04: F.A.Qs and bug fixes for known <br>
+    Section 04: F.A.Q.s and bug fixes for known
     Arch Linux issues &#129714;
 </h1>
 
