@@ -118,7 +118,7 @@ $ <b>pacman -Syy</b>
 $ <b>fdisk /dev/nvme0n1</b>
 </pre>
 <pre>
-Command (m for help): <b>d</b>                        <i>// repeat this command until<i>
+Command (m for help): <b>d</b>                        <i>// repeat this command until</i>
 ...                                            <i>// existing partitions are deleted</i>
 Command (m for help): <b>d</b>
 </pre>
