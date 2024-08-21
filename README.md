@@ -199,7 +199,7 @@ $ <b>arch-chroot /mnt</b>
 
 <dl><dd>
 <pre>
-$ <b>vim /etc/locale.gen</b>   <i># uncomment your locales, i.e. `en_US.UTF-8` or `en_GB.UTF-8`
+$ <b>vim /etc/locale.gen</b>   <i># uncomment your locales, i.e. `en_US.UTF-8` or `en_GB.UTF-8`</i>
 $ <b>locale-gen</b>
 $ <b>echo "LANG=en_US.UTF-8" > /etc/locale.conf</b>                <i># choose your locale</i>
 $ <b>ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime</b>   <i># choose your timezone</i>
