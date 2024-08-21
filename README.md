@@ -1,21 +1,29 @@
-# Arch Linux with Xfce4/i3 Installation Guide
-
-<sub>*Updated: August 2024*</sub>
-<br>
-<sub>*Author: <a href="https://github.com/silentz">Maxim Pershin</a>*</sub>
-
 <img src="./logo.png" />
+
+<div align="center">
+
+[![Author](https://img.shields.io/badge/Author-Maxim_Pershin-ff6f00)](https://github.com/silentz)
+[![License](https://img.shields.io/badge/License-Apache--2.0-blue)](#license)
+![Last Updated](https://img.shields.io/badge/Last_Updated-August_2024-02b532)
+
+</div>
+
+<h1 align="center">Arch Linux with i3 Tiling Window Manager Installation Guide</h1>
+
+<div align="center">
+    <i>How to install Arch Linux with i3 and not spend ages on debugging</i>
+</div>
 
 ### Getting Started
 
-Welcome to the Arch Linux Installation Guide with Xfce4 Desktop Environment!
+Welcome to the Arch Linux with i3 Tiling Window Manager Installation Guide!
 
 This guide provides you with a step-by-step walkthrough of installing
-Arch Linux along with the Xfce4 desktop environment. It has been carefully created
+Arch Linux along with the i3 tiling window manager. It has been carefully created
 based on my own experience of installation Arch Linux on multiple devices over the years.
 This guide aims to make your installation process as smooth as possible.
 
-To begin your Arch Linux installation, please follow the step-by-step instructions provided below.
+To begin your Arch Linux installation journey, please follow the step-by-step instructions provided below.
 
 ### Support and Feedback
 
@@ -34,11 +42,11 @@ a pull request. Your contributions can help enhance the clarity of the guide for
 1. Go to Arch Linux downloads page https://archlinux.org/download/
 
 2. Find **HTTP Direct Downloads** section and choose any download mirror.
-Select a mirror that is geographically closer to your location.
+   Select a mirror that is geographically closer to your location.
 
 3. On the mirror page find `archlinux-2023.06.01-x86_64.iso` or `archlinux-x86_64.iso`
-or any other file with `.iso` suffix. Other files (like *.txt*, *.tar.gz* and even *.iso.sig*)
-are not needed for installation process.
+   or any other file with `.iso` suffix. Other files (like _.txt_, _.tar.gz_ and even _.iso.sig_)
+   are not needed for installation process.
 
 ## Preparing installation medium
 
@@ -47,9 +55,10 @@ are not needed for installation process.
 2. Find corresponding block device for USB-stick in `/dev` folder. Usually it is `/dev/sdb`.
 
 **IMPORTANT NOTE**: you need block device without a number on the end.
-If you have for example */dev/sdb*, */dev/sdb1* and */dev/sdb2* you need */dev/sdb* !
+If you have for example _/dev/sdb_, _/dev/sdb1_ and _/dev/sdb2_ you need _/dev/sdb_ !
 
 3. Burn previously downloaded Arch Linux ISO-image on a USB-stick (in my case it is `/dev/sdb`):
+
 ```
 sudo dd if=./archlinux-2023.06.01-x86_64.iso of=/dev/sdb conv=fsync oflag=direct status=progress
 ```
@@ -58,17 +67,18 @@ sudo dd if=./archlinux-2023.06.01-x86_64.iso of=/dev/sdb conv=fsync oflag=direct
 
 1. Insert the installation medium into the computer on which you are installing Arch Linux.
 
-2. Power on your PC and press *boot menu key*. For *Lenovo ThinkPad X1 Carbon* series laptop,
-this key is `F12`.
+2. Power on your PC and press _boot menu key_. For _Lenovo ThinkPad X1 Carbon_ series laptop,
+   this key is `F12`.
 
 3. Boot from USB-stick and wait until boot process is finished.
 
 **IMPORTANT NOTE**: not every device can run a system from USB-stick out of the box.
-Many BIOS'es by default come with activated *Secure boot* option.You might need to
+Many BIOS'es by default come with activated _Secure boot_ option.You might need to
 deactivate it in your BIOS.
 
-4. *(Step is optional if you are using wired connection)*
-Connect to WiFi using `iwctl` and check connection is established:
+4. _(Step is optional if you are using wired connection)_
+   Connect to WiFi using `iwctl` and check connection is established:
+
 ```
 iwctl
 [iwd]# station wlan0 get-networks
@@ -78,11 +88,13 @@ ping 1.1.1.1
 ```
 
 5. Syncronize pacman packaes:
+
 ```
 pacman -Syy
 ```
 
 6. Partition main device using `fdisk` utility (you can find the name using `lsblk` command).
+
 ```
 fdisk /dev/nvme0n1
 
@@ -131,6 +143,7 @@ Command (m for help): w
 ```
 
 7. Create filesystems on created disk partitions:
+
 ```
 mkfs.fat -F 32 /dev/nvme0n1p1 # on EFI System
 mkfs -t ext4 /dev/nvme0n1p2   # on Linux filesystem partition
@@ -138,6 +151,7 @@ mkswap /dev/nvme0n1p3         # on Linux swap
 ```
 
 8. Correctly mount all filesystems to the `/mnt`:
+
 ```
 mount /dev/nvme0n1p2 /mnt
 mkdir -p /mnt/boot/efi
@@ -146,17 +160,20 @@ swapon /dev/nvme0n1p3
 ```
 
 9. Install essential packages into new filesystem and generate fstab:
+
 ```
 pacstrap -i /mnt base linux linux-firmware sudo vim
 genfstab -U -p /mnt > /mnt/etc/fstab
 ```
 
 10. Chroot into filesystem:
+
 ```
 arch-chroot /mnt
 ```
 
 11. Setup system locale:
+
 ```
 vim /etc/locale.gen
 # uncomment `en_US.UTF-8` and `en_GB.UTF-8` inside /etc/locale.gen
@@ -164,17 +181,20 @@ locale-gen
 ```
 
 12. Configure timezone, set your own:
+
 ```
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 ```
 
 13. Setting up hardware clock:
+
 ```
 hwclock --systohc
 ```
 
 14. Setup hostname and `/etc/hosts`, use your own hostname:
+
 ```
 echo carbon > /etc/hostname
 vim /etc/hosts
@@ -185,17 +205,20 @@ vim /etc/hosts
 ```
 
 15. Add new user:
+
 ```
 useradd -m -G wheel,storage,power,audio,video,docker -s /bin/bash max
 ```
 
 16. Setup root and user passwords:
+
 ```
 passwd
 passwd max
 ```
 
 17. Add wheel group to sudoers to allow sudo from user:
+
 ```
 visudo
 
@@ -204,6 +227,7 @@ visudo
 ```
 
 18. Install and configure grub:
+
 ```
 pacman -S grub efibootmgr
 grub-install /dev/nvme0n1
@@ -211,6 +235,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 19. Install NetworkManager:
+
 ```
 pacman -S dhcpcd networkmanager resolvconf
 systemctl enable sshd
@@ -220,6 +245,7 @@ systemctl enable systemd-resolved
 ```
 
 20. Exit chroot, unmount all disks and reboot:
+
 ```
 exit
 umount /mnt/boot/efi
@@ -230,21 +256,25 @@ reboot
 ## Configuring installed Arch Linux
 
 1. Activate time syncronization using NTP:
+
 ```
 timedatectl set-ntp true
 ```
 
 2. Connect to WiFi using `nmcli`:
+
 ```
 nmcli device wifi connect <SSID> password <password>
 ```
 
 3. Install Xorg:
+
 ```
 sudo pacman -S xorg xorg-apps xorg-xinit xdotool xclip
 ```
 
 4. Install useful packages:
+
 ```
 sudo pacman -S bind dialog intel-ucode git reflector bash-completion w3m
 sudo pacman -S base-devel lshw zip unzip htop xsel tree fuse2 keychain arandr powertop inxi
@@ -253,11 +283,13 @@ sudo pacman -S sof-firmware pulseaudio alsa-utils alsa-plugins pavucontrol
 ```
 
 5. Install SSD TRIM:
+
 ```
 sudo systemctl enable fstrim.timer
 ```
 
 6. Install Xfce
+
 ```
 sudo pacman -S dbus xfce4 xfce4-screenshooter \
   thunar-archive-plugin thunar-media-tags-plugin \
@@ -265,7 +297,9 @@ sudo pacman -S dbus xfce4 xfce4-screenshooter \
   xfce4-netload-plugin xfce4-notifyd xfce4-pulseaudio-plugin xfce4-screensaver \
   xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin network-manager-applet
 ```
+
 or install i3
+
 ```
 sudo pacman -S i3-wm i3status i3lock lxappearance
 sudo pacman -S polybar rofi ranger thunar alacritty dunst feh \
@@ -274,18 +308,21 @@ sudo pacman -S polybar rofi ranger thunar alacritty dunst feh \
 ```
 
 7. Install desktop manager:
+
 ```
 sudo pacman -S ly
 sudo systemctl enable ly
 ```
 
 8. Setup bluetooth:
+
 ```
 sudo pacman -S bluez bluez-utils blueman
 sudo systemctl enable bluetooth
 ```
 
 9. Impreove battary usage:
+
 ```
 sudo pacman -S tlp tlp-rdw acpi acpi_call
 sudo systemctl enable tlp
@@ -294,23 +331,27 @@ sudo systemctl mask systemd-rfkill.socket
 ```
 
 10. Install essential fonts:
+
 ```
 sudo pacman -S noto-fonts noto-fonts-emoji ttf-ubuntu-font-family ttf-dejavu ttf-freefont
 sudo pacman -S ttf-liberation ttf-droid ttf-roboto terminus-font
 ```
 
 11. Install themes and icons:
+
 ```
 sudo pacman -S arc-gtk-theme
 sudo pacman -S papirus-icon-theme
 ```
 
 12. Setup the fastest pacman mirror, choose nearest countries:
+
 ```
 sudo reflector --country Germany,Austria,Switzerland --fastest 10 --threads `nproc` --save /etc/pacman.d/mirrorlist
 ```
 
 13. Intall printing settings:
+
 ```
 sudo pacman -S cups cups-filters cups-pdf system-config-printer --needed
 sudo systemctl enable cups.service
@@ -321,11 +362,13 @@ go to `/usr/share/applications/system-config-printer.desktop` and set
 `Categories=System;Settings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;`
 
 14. Install NetworkManager additionals:
+
 ```
 sudo pacman -S nm-connection-editor networkmanager-openvpn
 ```
 
 15. Install vulkan drivers (choose one):
+
 ```
 pacman -S vulkan-intel
 pacman -S nvidia-utils
@@ -337,6 +380,7 @@ go to `/usr/share/applications/nm-connection-editor.desktop` and set
 `Categories=System;Settings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;`
 
 15. Reboot again:
+
 ```
 reboot
 ```
@@ -346,6 +390,7 @@ reboot
 1. Open you `/etc/fstab` and find UUID for your swap partition.
 
 2. Open grub configuration file:
+
 ```
 sudo vim /etc/default/grub
 ```
@@ -353,14 +398,16 @@ sudo vim /etc/default/grub
 3. Find option `GRUB_CMDLINE_LINUX_DEFAULT="..."`
 
 4. Insert `resume=UUID=<uuid of swap partition from /etc/fstab>`
-(example: `GRUB_CMDLINE_LINUX_DEFAULT='... resume=UUID=17f82588-0b79-419a-954c-4a9a1ee90b70'`)
+   (example: `GRUB_CMDLINE_LINUX_DEFAULT='... resume=UUID=17f82588-0b79-419a-954c-4a9a1ee90b70'`)
 
-4. Regenerate grub config:
+5. Regenerate grub config:
+
 ```
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 5. Open mkinitcpio configuration file:
+
 ```
 sudo vim /etc/mkinitcpio.conf
 ```
@@ -370,20 +417,23 @@ sudo vim /etc/mkinitcpio.conf
 7. After `udev` insert hook `resume` (like this: `... base udev resume ...`)
 
 8. Regenerate initramfs:
+
 ```
 sudo mkinitcpio -p linux
 ```
 
 9. You can now use:
+
 ```
 sudo systemctl hibernate
 ```
 
 ## Additional: installing client apps
 
-*These all are my personal apps, so you can use your own*
+_These all are my personal apps, so you can use your own_
 
 ### General
+
 ```
 sudo pacman -S chromium telegram-desktop discord libreoffice fontforge gparted obs-studio \
                tilix vlc remmina wireshark-qt neofetch evince gimp spotify-launcher \
@@ -391,6 +441,7 @@ sudo pacman -S chromium telegram-desktop discord libreoffice fontforge gparted o
 ```
 
 ### Yubikey
+
 ```
 sudo pacman -S yubikey-personalization-gui yubikey-manager
 ```
@@ -398,22 +449,26 @@ sudo pacman -S yubikey-personalization-gui yubikey-manager
 ### Wine
 
 1. Go to `/etc/pacman.conf` and uncomment (or add) following lines:
+
 ```
 [multilib]
 Include = /etc/pacman.d/mirrorlist
 ```
 
 2. Update pacman package databases:
+
 ```
 sudo pacman -Syu
 ```
 
 3. Install wine using pacman:
+
 ```
 sudo pacman -S wine wine-mono wine-gecko winetricks zenity
 ```
 
 4. Configure smooth font:
+
 ```
 winetricks settings fontsmooth=rgb
 ```
@@ -423,6 +478,7 @@ winetricks settings fontsmooth=rgb
 go to `~/.wine/dosdevices`, remove `z:` symbolic link and make it point to your `$HOME`.
 
 ### DevTools
+
 ```
 # General
 sudo pacman -S neovim tree-sitter tree-sitter-cli stow sqlite3 tldr \
@@ -509,39 +565,43 @@ yay -S logisim-evolution qucs-s
 ### Install texlive (LaTeX)
 
 1. Donwload texlive installer
+
 ```
 wget http://mirrors.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 ```
 
 2. Upack archive
+
 ```
 mkdir ./texlive
 tar -xvf install-tl-unx.tar.gz -C texlive --strip-components=1
 ```
 
 3. Enter `texlive` dir
+
 ```
 cd ./texlive
 ```
 
 4. Run install (and select nearest CTAN mirror):
+
 ```
 sudo ./install-tl -select-repository
 ```
 
 ## Setup Android DevTools
 
-* Download zip-archive from here: https://developer.android.com/studio
-(*Command line tools only* section).
-* Run `unzip commandlinetools-linux-..._latest.zip`
-* Run `mkdir -p ~/Android/cmdline-tools/latest`
-* Run `mv ./cmdline-tools/* ~/Android/cmdline-tools/latest/`
-* Run `rmdir cmdline-tools` (downloaded one, not in `~/Android/...`).
-* Set `ANDROID_HOME` environment variable to `$HOME/Andoird`.
-* Run `sdkmanager "platform-tools" "platforms;android-29"`
-* Run `sdkmanager "build-tools;29.0.3"`
-* Run `sdkmanager --licenses`
-* Run `sdkmanager --update`
+-   Download zip-archive from here: https://developer.android.com/studio
+    (_Command line tools only_ section).
+-   Run `unzip commandlinetools-linux-..._latest.zip`
+-   Run `mkdir -p ~/Android/cmdline-tools/latest`
+-   Run `mv ./cmdline-tools/* ~/Android/cmdline-tools/latest/`
+-   Run `rmdir cmdline-tools` (downloaded one, not in `~/Android/...`).
+-   Set `ANDROID_HOME` environment variable to `$HOME/Andoird`.
+-   Run `sdkmanager "platform-tools" "platforms;android-29"`
+-   Run `sdkmanager "build-tools;29.0.3"`
+-   Run `sdkmanager --licenses`
+-   Run `sdkmanager --update`
 
 ## Tools for reverse engineering CTF's
 
@@ -561,12 +621,15 @@ C#: `Avalonia ILSpy`
 In some Linux kernels there are some broken USB 3.0 device drivers, that _sometimes_ wake up
 the system right after you launch hibernation process. If you see errors like this in your
 `dmesg` command output after an unsuccessful hibernation:
+
 ```
 [80136.941050] xhci_hcd 0000:00:14.0: PM: pci_pm_freeze(): hcd_pci_suspend+0x0/0x20 returns -16
 [80136.941062] xhci_hcd 0000:00:14.0: PM: dpm_run_callback(): pci_pm_freeze+0x0/0xc0 returns -16
 [80136.941073] xhci_hcd 0000:00:14.0: PM: failed to freeze async: error -16
 ```
+
 Put it in `/usr/lib/systemd/system-sleep/xhci` (file must be executable):
+
 ```
 #!/bin/sh
 
@@ -590,11 +653,12 @@ Original solution: https://gist.github.com/ioggstream/8f380d398aef989ac455b93b92
 
 ## Grub resolution fix
 
-*This can help if you have very tiny grub font on your 4k monitor*
+_This can help if you have very tiny grub font on your 4k monitor_
 
 1. Open `/etc/default/grub` with text editor.
 
 2. Add these lines (setting multiple resolutions as fallback):
+
 ```
 GRUB_TERMINAL_OUTPUT="gfxterm"
 GRUB_GFXPAYLOAD_LINUX=keep
@@ -602,30 +666,33 @@ GRUB_GFXMODE=1920x1080x32,1024x768x32,auto
 ```
 
 3 Regenerate `grub.cfg`:
+
 ```
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ## Lightdm resolution fix
 
-*This can help if you have very tiny lightdm font on your 4k monitor*
+_This can help if you have very tiny lightdm font on your 4k monitor_
 
 1. Open `/etc/lightdm/lightdm.conf` with text editor.
 
 2. Add following lines to the file:
+
 ```
 display-setup-script=xrandr --output eDP-1 --mode 1920x1080
 ```
+
 **Important: place this line in [Seat:\*] section of lightdm.conf file!!!**
 
-P.S. *your screen output name, like eDP-1 in my case, can be found in `xrandr -q`*
+P.S. _your screen output name, like eDP-1 in my case, can be found in `xrandr -q`_
 
 ## Other small fixes:
 
-* Activate file-roller dark mode: `gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'`
-* Slack remove annoying menu bar: `Window -> Always show menu bar -> disable`
-* If system goes to sleep after 3-5 minutes, this might be screensaver. To stop this, disable option `Settings -> Screensaver -> Activate Screensaver when computer is idle`
-* Sometimes there is Wireguard VPN perimiter, but no DNS server in your company. If so, use `resolvectl revert wg0` (change `wg0` to your wireguard interface name)
-to prevent sending DNS requests through interface. This command will disable "DefaultRoute" feature of `wg0` interface in systemd-resolved.
-* If you face video freezes (or hangs) while not touching keyboard or mouse for some time (usually 1-10 minutes), this might be an issue with picom. Try disabling it to
-see if this helps. If so, try to change rendering backend of picom from `xrender` to `glx` and check if it helps (worked for me).
+-   Activate file-roller dark mode: `gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'`
+-   Slack remove annoying menu bar: `Window -> Always show menu bar -> disable`
+-   If system goes to sleep after 3-5 minutes, this might be screensaver. To stop this, disable option `Settings -> Screensaver -> Activate Screensaver when computer is idle`
+-   Sometimes there is Wireguard VPN perimiter, but no DNS server in your company. If so, use `resolvectl revert wg0` (change `wg0` to your wireguard interface name)
+    to prevent sending DNS requests through interface. This command will disable "DefaultRoute" feature of `wg0` interface in systemd-resolved.
+-   If you face video freezes (or hangs) while not touching keyboard or mouse for some time (usually 1-10 minutes), this might be an issue with picom. Try disabling it to
+    see if this helps. If so, try to change rendering backend of picom from `xrender` to `glx` and check if it helps (worked for me).
