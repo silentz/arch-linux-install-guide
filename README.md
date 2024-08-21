@@ -185,119 +185,91 @@ $ <b>genfstab -U -p /mnt > /mnt/etc/fstab</b>
 </pre>
 </dd></dl>
 
-10. Chroot into filesystem:
+### Step 06: Basic configuration of new system
 
-```
+1. Chroot into freshly created filesystem:
 
-arch-chroot /mnt
+<dl><dd>
+<pre>
+$ <b>arch-chroot /mnt</b>
+</pre>
+</dd></dl>
 
-```
+2. Setup system locale and timezone, sync hardware clock with system clock:
 
-11. Setup system locale:
+<dl><dd>
+<pre>
+$ <b>vim /etc/locale.gen</b>   <i># uncomment your locales, i.e. `en_US.UTF-8` or `en_GB.UTF-8`
+$ <b>locale-gen</b>
+$ <b>echo "LANG=en_US.UTF-8" > /etc/locale.conf</b>                <i># choose your locale</i>
+$ <b>ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime</b>   <i># choose your timezone</i>
+$ <b>hwclock --systohc</b>
+</pre>
+</dd></dl>
 
-```
+3. Setup system hostname:
 
-vim /etc/locale.gen
+<dl><dd>
+<pre>
+$ <b>echo <i>yourhostname</i> > /etc/hostname</b>
+$ <b>vim /etc/hosts</b>
+    <i>127.0.0.1 localhost</i>
+    <i>::1       localhost</i>
+    <i>127.0.1.1 yourhostname</i>
+</pre>
+</dd></dl>
 
-# uncomment `en_US.UTF-8` and `en_GB.UTF-8` inside /etc/locale.gen
+4. Add new users and setup passwords:
 
-locale-gen
+<dl><dd>
+<pre>
+$ <b>useradd -m -G wheel,storage,power,audio,video,docker -s /bin/bash yourusername</i></b>
+$ <b>passwd root</b>
+$ <b>passwd <i>yourusername</i></b>
+</pre>
+</dd></dl>
 
-```
+5. Add wheel group to sudoers file to allow users to run sudo:
 
-12. Configure timezone, set your own:
+<dl><dd>
+<pre>
+$ <b>visudo</b>
+    <i>[uncomment following line in file]</i>
+    <i>%wheel ALL=(ALL) ALL</i>
+</pre>
+</dd></dl>
 
-```
+6. Install and configure GRUB:
 
-echo "LANG=en_US.UTF-8" > /etc/locale.conf
-ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+<dl><dd>
+<pre>
+$ <b>pacman -S grub efibootmgr</b>
+$ <b>grub-install /dev/nvme0n1</b>
+$ <b>grub-mkconfig -o /boot/grub/grub.cfg</b>
+</pre>
+</dd></dl>
 
-```
+7. Setup networking stack:
 
-13. Setting up hardware clock:
+<dl><dd>
+<pre>
+$ <b>pacman -S dhcpcd networkmanager resolvconf</b>
+$ <b>systemctl enable dhcpcd</b>
+$ <b>systemctl enable NetworkManager</b>
+$ <b>systemctl enable systemd-resolved</b>
+</pre>
+</dd></dl>
 
-```
+8. Exit chroot, unmount all disks and reboot:
 
-hwclock --systohc
-
-```
-
-14. Setup hostname and `/etc/hosts`, use your own hostname:
-
-```
-
-echo carbon > /etc/hostname
-vim /etc/hosts
-
-# 127.0.0.1 localhost
-
-# ::1 localhost
-
-# 127.0.1.1 carbon
-
-```
-
-15. Add new user:
-
-```
-
-useradd -m -G wheel,storage,power,audio,video,docker -s /bin/bash max
-
-```
-
-16. Setup root and user passwords:
-
-```
-
-passwd
-passwd max
-
-```
-
-17. Add wheel group to sudoers to allow sudo from user:
-
-```
-
-visudo
-
-# uncomment this line in file:
-
-# %wheel ALL=(ALL) ALL
-
-```
-
-18. Install and configure grub:
-
-```
-
-pacman -S grub efibootmgr
-grub-install /dev/nvme0n1
-grub-mkconfig -o /boot/grub/grub.cfg
-
-```
-
-19. Install NetworkManager:
-
-```
-
-pacman -S dhcpcd networkmanager resolvconf
-systemctl enable sshd
-systemctl enable dhcpcd
-systemctl enable NetworkManager
-systemctl enable systemd-resolved
-
-```
-
-20. Exit chroot, unmount all disks and reboot:
-
-```
-
-exit
-umount /mnt/boot/efi
-umount /mnt
-reboot
-
-```
+<dl><dd>
+<pre>
+$ <b>exit</b>
+$ <b>umount /mnt/boot/efi</b>
+$ <b>umount /mnt</b>
+$ <b>reboot</b>
+</pre>
+</dd></dl>
 
 <h1 align="center">
     Section 02: Configuring userspace after initial system setup &#127919;
@@ -851,6 +823,26 @@ P.S. _your screen output name, like eDP-1 in my case, can be found in `xrandr -q
     to prevent sending DNS requests through interface. This command will disable "DefaultRoute" feature of `wg0` interface in systemd-resolved.
 -   If you face video freezes (or hangs) while not touching keyboard or mouse for some time (usually 1-10 minutes), this might be an issue with picom. Try disabling it to
     see if this helps. If so, try to change rendering backend of picom from `xrender` to `glx` and check if it helps (worked for me).
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
 
 ```
 
