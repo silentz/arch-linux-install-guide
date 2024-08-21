@@ -37,7 +37,11 @@ address your concerns effectively.
 **Pull Requests:** If you have improvements or additions to the guide, feel free to submit
 a pull request. Your contributions can help enhance the clarity of the guide for everyone.
 
-## Downloading Arch Linux image
+<h1 align="center">
+    Section 01: Step-by-step guide for installing Arch Linux on your hardware &#128640;
+</h1>
+
+### Downloading Arch Linux image
 
 1. Go to Arch Linux downloads page https://archlinux.org/download/
 
@@ -48,7 +52,7 @@ a pull request. Your contributions can help enhance the clarity of the guide for
    or any other file with `.iso` suffix. Other files (like _.txt_, _.tar.gz_ and even _.iso.sig_)
    are not needed for installation process.
 
-## Preparing installation medium
+### Preparing installation medium
 
 1. Insert a USB-stick into your PC with at least 2Gb of space availavle on it.
 
@@ -63,7 +67,7 @@ If you have for example _/dev/sdb_, _/dev/sdb1_ and _/dev/sdb2_ you need _/dev/s
 sudo dd if=./archlinux-2023.06.01-x86_64.iso of=/dev/sdb conv=fsync oflag=direct status=progress
 ```
 
-## Installation
+### Installing the system
 
 1. Insert the installation medium into the computer on which you are installing Arch Linux.
 
@@ -253,7 +257,9 @@ umount /mnt
 reboot
 ```
 
-## Configuring installed Arch Linux
+<h1 align="center">
+    Section 02: Configuring userspace after initial system setup &#127919;
+</h1>
 
 1. Activate time syncronization using NTP:
 
@@ -428,9 +434,14 @@ sudo mkinitcpio -p linux
 sudo systemctl hibernate
 ```
 
-## Additional: installing client apps
-
-_These all are my personal apps, so you can use your own_
+<h1 align="center">
+    Section 03: Installing third-party apps and <br>
+    setting up dev environment &#129489;&#8205;&#128187;
+</h1>
+<div align="center">
+    <i>These is my personal list of apps and utilities which I use on regular basis, <br>
+    so feel free to fork this repo and add something for yourself</i>
+</div>
 
 ### General
 
@@ -616,7 +627,12 @@ Java: `jd-gui`, `jadx`
 
 C#: `Avalonia ILSpy`
 
-## Fix broken hibernation
+<h1 align="center">
+    Section 04: F.A.Qs and bug fixes for known <br>
+    Arch Linux issues &#129714;
+</h1>
+
+### Fix broken hibernation
 
 In some Linux kernels there are some broken USB 3.0 device drivers, that _sometimes_ wake up
 the system right after you launch hibernation process. If you see errors like this in your
@@ -651,7 +667,7 @@ esac
 
 Original solution: https://gist.github.com/ioggstream/8f380d398aef989ac455b93b92d42048
 
-## Grub resolution fix
+### Grub resolution fix
 
 _This can help if you have very tiny grub font on your 4k monitor_
 
@@ -671,7 +687,7 @@ GRUB_GFXMODE=1920x1080x32,1024x768x32,auto
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-## Lightdm resolution fix
+### Lightdm resolution fix
 
 _This can help if you have very tiny lightdm font on your 4k monitor_
 
@@ -687,7 +703,7 @@ display-setup-script=xrandr --output eDP-1 --mode 1920x1080
 
 P.S. _your screen output name, like eDP-1 in my case, can be found in `xrandr -q`_
 
-## Other small fixes:
+### Other small fixes:
 
 -   Activate file-roller dark mode: `gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'`
 -   Slack remove annoying menu bar: `Window -> Always show menu bar -> disable`
