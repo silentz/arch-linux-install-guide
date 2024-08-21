@@ -116,32 +116,31 @@ $ <b>pacman -Syy</b>
 <dl><dd><dl><dd>
 <pre>
 $ <b>fdisk /dev/nvme0n1</b>
-</pre>
-<pre>
-Command (m for help): <b>d</b>                        <i>// repeat this command until</i>
-...                                            <i>// existing partitions are deleted</i>
+                <i>[repeat this command until existing partitions are deleted]</i>
 Command (m for help): <b>d</b>
-</pre>
-<pre>
-Command (m for help): <b>n</b>                        <i>// create partition 1: efi</i>
+Command (m for help): <b>d</b>
+Command (m for help): <b>d</b>
+<span />
+                <i>[create partition 1: efi]</i>
+Command (m for help): <b>n</b>
 Partition number (1-128, default 1): <b>Enter &crarr;</b>
 First sector (..., default 2048): <b>Enter &crarr;</b>
 Last sector ...: <b>+256M</b>
-</pre>
-<pre>
-Command (m for help): <b>n</b>                        <i>// create partition 2: main</i>
+<span />
+                <i>[create partition 2: main]</i>
+Command (m for help): <b>n</b>
 Partition number (2-128, default 2): <b>Enter &crarr;</b>
 First sector (..., default ...): <b>Enter &crarr;</b>
-Last sector ...: <b>-32G</b>                          <i>// double size of your RAM</i>
-</pre>
-<pre>
-Command (m for help): <b>n</b>                        <i>// create partition 3: swap</i>
+Last sector ...: <b>-32G</b> <i>// double size of your RAM</i>
+<span />
+                <i>[create partition 3: swap]</i>
+Command (m for help): <b>n</b>
 Partition number (3-128, default 3): <b>Enter &crarr;</b>
 First sector (..., default ...): <b>Enter &crarr;</b>
 Last sector ...: <b>Enter &crarr;</b>
-</pre>
-<pre>
-Command (m for help): <b>t</b>                        <i>// change partition types</i>
+<span />
+                <i>[change partition types]</i>
+Command (m for help): <b>t</b>
 Partition number (1-3, default 1): <b>1</b>
 Partion typr or alias (type L to list all): <b>uefi</b>
 Command (m for help): <b>t</b>
@@ -150,9 +149,10 @@ Partion typr or alias (type L to list all): <b>linux</b>
 Command (m for help): <b>t</b>
 Partition number (1-3, default 3): <b>3</b>
 Partion typr or alias (type L to list all): <b>swap</b>
-</pre>
-<pre>
-Command (m for help): <b>w</b>                        <i>// write partitioning to disk</i>
+<span />
+                <i>[write partitioning to disk]</i>
+Command (m for help): <b>w</b>
+
 </pre>
 </dd></dl></dd></dl>
 
