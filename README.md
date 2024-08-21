@@ -109,7 +109,7 @@ $ <b>pacman -Syy</b>
 </pre>
 </dd></dl></dd></dl>
 
-### Step 05: Partition storage
+### Step 05: Disk partitioning
 
 1. Partition main storage device using `fdisk` utility. You can find storage device name using `lsblk` command.
 
