@@ -38,36 +38,41 @@ address your concerns effectively.
 a pull request. Your contributions can help enhance the clarity of the guide for everyone.
 
 <h1 align="center">
-    Section 01: Step-by-step guide for installing Arch Linux on your hardware &#128640;
+    Section 01: Step-by-step guide of installing Arch Linux on your hardware &#128640;
 </h1>
 
-### Downloading Arch Linux image
+### Step 01: Downloading Arch Linux image
 
 1. Go to Arch Linux downloads page https://archlinux.org/download/
 
 2. Find **HTTP Direct Downloads** section and choose any download mirror.
    Select a mirror that is geographically closer to your location.
 
-3. On the mirror page find `archlinux-2023.06.01-x86_64.iso` or `archlinux-x86_64.iso`
+3. On the mirror page find archive named like `archlinux-YYYY.MM.DD-x86_64.iso` or `archlinux-x86_64.iso`
    or any other file with `.iso` suffix. Other files (like _.txt_, _.tar.gz_ and even _.iso.sig_)
    are not needed for installation process.
 
-### Preparing installation medium
+### Step 02: Preparing installation medium
 
 1. Insert a USB-stick into your PC with at least 2Gb of space availavle on it.
 
 2. Find corresponding block device for USB-stick in `/dev` folder. Usually it is `/dev/sdb`.
 
-**IMPORTANT NOTE**: you need block device without a number on the end.
-If you have for example _/dev/sdb_, _/dev/sdb1_ and _/dev/sdb2_ you need _/dev/sdb_ !
+<dl><dd><dl><dd>
+<b>IMPORTANT NOTE</b>: you need block device without a number on the end.
+If you have for example <i>/dev/sdb</i>, <i>/dev/sdb1</i> and <i>/dev/sdb2</i> you need <i>/dev/sdb</i> !
+</dd></dl></dd></dl>
 
 3. Burn previously downloaded Arch Linux ISO-image on a USB-stick (in my case it is `/dev/sdb`):
 
-```
-sudo dd if=./archlinux-2023.06.01-x86_64.iso of=/dev/sdb conv=fsync oflag=direct status=progress
-```
+<dl><dd><dl><dd>
+<pre>
+sudo dd conv=fsync oflag=direct status=progress \
+     if=./archlinux-YYYY.MM.DD-x86_64.iso of=/dev/sdb
+</pre>
+</dd></dl></dd></dl>
 
-### Installing the system
+### Step 03: Boot into Arch Linux medium
 
 1. Insert the installation medium into the computer on which you are installing Arch Linux.
 
@@ -76,26 +81,33 @@ sudo dd if=./archlinux-2023.06.01-x86_64.iso of=/dev/sdb conv=fsync oflag=direct
 
 3. Boot from USB-stick and wait until boot process is finished.
 
-**IMPORTANT NOTE**: not every device can run a system from USB-stick out of the box.
-Many BIOS'es by default come with activated _Secure boot_ option.You might need to
+<dl><dd><dl><dd>
+<b>IMPORTANT NOTE</b>: not every device can run a system from USB-stick out of the box.
+Many BIOS'es by default come with activated <i>Secure boot</i> option.You might need to
 deactivate it in your BIOS.
+</dd></dl></dd></dl>
 
-4. _(Step is optional if you are using wired connection)_
-   Connect to WiFi using `iwctl` and check connection is established:
+### Step 04: Syncronize packages
 
-```
-iwctl
-[iwd]# station wlan0 get-networks
-[iwd]# station wlan0 connect <Name of WiFi access point>
-[iwd]# exit
-ping 1.1.1.1
-```
+1. [Optional] Connect to WiFi using `iwctl` and check connection is established:
 
-5. Syncronize pacman packaes:
+<dl><dd><dl><dd>
+<pre>
+$ <b>iwctl</b>
+[iwd]# <b>station wlan0 get-networks</b>
+[iwd]# <b>station wlan0 connect &lt;Name of WiFi access point&gt;</b>
+[iwd]# <b>exit</b>
+$ <b>ping 1.1.1.1</b>
+</pre>
+</dd></dl></dd></dl>
 
-```
-pacman -Syy
-```
+2. Syncronize pacman packaes:
+
+<dl><dd><dl><dd>
+<pre>
+$ <b>pacman -Syy</b>
+</pre>
+</dd></dl></dd></dl>
 
 6. Partition main device using `fdisk` utility (you can find the name using `lsblk` command).
 
