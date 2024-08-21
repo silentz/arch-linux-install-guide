@@ -67,8 +67,8 @@ If you have for example <i>/dev/sdb</i>, <i>/dev/sdb1</i> and <i>/dev/sdb2</i> y
 
 <dl><dd>
 <pre>
-sudo dd conv=fsync oflag=direct status=progress \
-     if=./archlinux-YYYY.MM.DD-x86_64.iso of=/dev/sdb
+$ <b>sudo dd conv=fsync oflag=direct status=progress \
+          if=./archlinux-YYYY.MM.DD-x86_64.iso of=/dev/sdb</b>
 </pre>
 </dd></dl>
 
@@ -152,39 +152,38 @@ Partion typr or alias (type L to list all): <b>swap</b>
 <span />
                 <i>[write partitioning to disk]</i>
 Command (m for help): <b>w</b>
-
 </pre>
 </dd></dl>
 
-7. Create filesystems on created disk partitions:
+2. Create filesystems on created disk partitions:
 
-```
+<dl><dd>
+<pre>
+$ <b>mkfs.fat -F 32 /dev/nvme0n1p1</b> <i># on EFI System partition</i>
+$ <b>mkfs -t ext4 /dev/nvme0n1p2</b>   <i># on Linux filesystem partition</i>
+$ <b>mkswap /dev/nvme0n1p3</b>         <i># on Linux swap partition</i>
+</pre>
+</dd></dl>
 
-mkfs.fat -F 32 /dev/nvme0n1p1 # on EFI System
-mkfs -t ext4 /dev/nvme0n1p2 # on Linux filesystem partition
-mkswap /dev/nvme0n1p3 # on Linux swap
+3. Correctly mount all filesystems to the `/mnt`:
 
-```
+<dl><dd>
+<pre>
+$ <b>mount /dev/nvme0n1p2 /mnt</b>
+$ <b>mkdir -p /mnt/boot/efi</b>
+$ <b>mount /dev/nvme0n1p1 /mnt/boot/efi</b>
+$ <b>swapon /dev/nvme0n1p3</b>
+</pre>
+</dd></dl>
 
-8. Correctly mount all filesystems to the `/mnt`:
+4. Install essential packages into new filesystem and generate fstab:
 
-```
-
-mount /dev/nvme0n1p2 /mnt
-mkdir -p /mnt/boot/efi
-mount /dev/nvme0n1p1 /mnt/boot/efi
-swapon /dev/nvme0n1p3
-
-```
-
-9. Install essential packages into new filesystem and generate fstab:
-
-```
-
-pacstrap -i /mnt base linux linux-firmware sudo vim
-genfstab -U -p /mnt > /mnt/etc/fstab
-
-```
+<dl><dd>
+<pre>
+$ <b>pacstrap -i /mnt base linux linux-firmware sudo vim</b>
+$ <b>genfstab -U -p /mnt > /mnt/etc/fstab</b>
+</pre>
+</dd></dl>
 
 10. Chroot into filesystem:
 
@@ -852,6 +851,14 @@ P.S. _your screen output name, like eDP-1 in my case, can be found in `xrandr -q
     to prevent sending DNS requests through interface. This command will disable "DefaultRoute" feature of `wg0` interface in systemd-resolved.
 -   If you face video freezes (or hangs) while not touching keyboard or mouse for some time (usually 1-10 minutes), this might be an issue with picom. Try disabling it to
     see if this helps. If so, try to change rendering backend of picom from `xrender` to `glx` and check if it helps (worked for me).
+
+```
+
+```
+
+```
+
+```
 
 ```
 
