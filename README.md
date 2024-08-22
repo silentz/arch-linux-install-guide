@@ -529,15 +529,31 @@ $ <b>sudo systemctl hibernate</b>
     so feel free to fork this repo and add something yours</i>
 </div>
 
-### General
+### Step 01: General-purpose apps
 
-```
-
-sudo pacman -S chromium telegram-desktop discord libreoffice fontforge gparted obs-studio \
- tilix vlc remmina wireshark-qt neofetch evince gimp spotify-launcher \
- shotwell file-roller shotcut inkscape evolution mousepad redshift klavaro
-
-```
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S chromium</b>          <i># web-browser</i>
+$ <b>sudo pacman -S mousepad</b>          <i># simple graphical text editor</i>
+$ <b>sudo pacman -S file-roller</b>       <i># archive manager</i>
+$ <b>sudo pacman -S evince</b>            <i># pdf viewer</i>
+$ <b>sudo pacman -S libreoffice</b>       <i># office packages</i>
+$ <b>sudo pacman -S gimp</b>              <i># image editor</i>
+$ <b>sudo pacman -S inkscape</b>          <i># vector graphics editor</i>
+$ <b>sudo pacman -S fontforge</b>         <i># fonts editor</i>
+$ <b>sudo pacman -S gparted</b>           <i># grphical disk management tool</i>
+$ <b>sudo pacman -S vlc</b>               <i># video player</i>
+$ <b>sudo pacman -S remmina</b>           <i># remote desktop client</i>
+$ <b>sudo pacman -S shotcut</b>           <i># video editing tool</i>
+$ <b>sudo pacman -S evolution</b>         <i># email client</i>
+$ <b>sudo pacman -S redshift</b>          <i># adjusts the color temperature of your screen</i>
+$ <b>sudo pacman -S neofetch</b>          <i># command-line system information</i>
+$ <b>sudo pacman -S obs-studio</b>        <i># screencasting and streaming app</i>
+$ <b>sudo pacman -S wireshark-qt</b>      <i># network protocol analyzer</i>
+$ <b>sudo pacman -S spotify-launcher</b>  <i># spotify client</i>
+$ <b>sudo pacman -S telegram-desktop</b>  <i># my preffered messenger</i>
+</pre>
+</dd></dl>
 
 ### Yubikey
 
@@ -645,11 +661,6 @@ sudo pacman -S virtualbox
 # Architecture
 
 sudo pacman -S plantuml
-yay -S gaphor
-
-# Network emulation
-
-yay -S gns3-server gns3-gui
 
 # Hugo
 
