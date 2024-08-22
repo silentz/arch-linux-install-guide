@@ -469,56 +469,56 @@ $ <b>reboot</b>
 
 ### Step 02: Enable hibernation support
 
-1. Open you `/etc/fstab` and find UUID for your swap partition.
+1. Open your `/etc/fstab` and find UUID for your swap partition
 
-2. Open grub configuration file:
+2. Open GRUB configuration file and add resume UUID to `GRUB_CMDLINE_LINUX_DEFAULT`:
 
-```
+<dl><dd>
+<pre>
+$ <b>sudo vim /etc/default/grub</b>
+  <i>Example: </i>
+  <i>...</i>
+  <i>GRUB_CMDLINE_LINUX_DEFAULT="quiet splash <b>resume=UUID=&lt;UUID of your swap partition&gt;</b>"</i>
+  <i>GRUB_CMDLINE_LINUX_DEFAULT="quiet splash <b>resume=UUID=97d9e9f5-899f-4e9e-910e-623a5f665271</b>"</i>
+  <i>...</i>
+</pre>
+</dd></dl>
 
-sudo vim /etc/default/grub
+3. Generate GRUB config:
 
-```
+<dl><dd>
+<pre>
+$ <b>sudo grub-mkconfig -o /boot/grub/grub.cfg</b>
+</pre>
+</dd></dl>
 
-3. Find option `GRUB_CMDLINE_LINUX_DEFAULT="..."`
+4. Open mkinitcpio configuration file and add `resume` hook:
 
-4. Insert `resume=UUID=<uuid of swap partition from /etc/fstab>`
-   (example: `GRUB_CMDLINE_LINUX_DEFAULT='... resume=UUID=17f82588-0b79-419a-954c-4a9a1ee90b70'`)
+<dl><dd>
+<pre>
+$ <b>sudo vim /etc/mkinitcpio.conf</b>
+  <i>Example: </i>
+  <i>...</i>
+  <i>HOOKS="base udev <b>resume</b> autodetect modconf block filesystems keyboard fsck"</i>
+  <i>...</i>
+</pre>
+</dd></dl>
 
-5. Regenerate grub config:
+5. Generate initramfs:
 
-```
+<dl><dd>
+<pre>
+$ <b>sudo mkinitcpio -p linux</b>
+</pre>
+</dd></dl>
 
-sudo grub-mkconfig -o /boot/grub/grub.cfg
+6. From now onwards, you can hibernate your system using:
 
-```
-
-5. Open mkinitcpio configuration file:
-
-```
-
-sudo vim /etc/mkinitcpio.conf
-
-```
-
-6. Find option `HOOKS="base udev autodetect modconf block filesystems keyboard fsck"`
-
-7. After `udev` insert hook `resume` (like this: `... base udev resume ...`)
-
-8. Regenerate initramfs:
-
-```
-
-sudo mkinitcpio -p linux
-
-```
-
-9. You can now use:
-
-```
-
-sudo systemctl hibernate
-
-```
+<dl><dd>
+<pre>
+$ <b>sudo systemctl hibernate</b>
+</pre>
+</dd></dl>
 
 <h1 align="center">
     Section 03: Installing third-party apps and <br>
@@ -851,3 +851,7 @@ P.S. _your screen output name, like eDP-1 in my case, can be found in `xrandr -q
     to prevent sending DNS requests through interface. This command will disable "DefaultRoute" feature of `wg0` interface in systemd-resolved.
 -   If you face video freezes (or hangs) while not touching keyboard or mouse for some time (usually 1-10 minutes), this might be an issue with picom. Try disabling it to
     see if this helps. If so, try to change rendering backend of picom from `xrender` to `glx` and check if it helps (worked for me).
+
+```
+
+```
