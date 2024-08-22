@@ -762,40 +762,33 @@ $ <b>winetricks settings fontsmooth=rgb</b>
 go to <code>~/.wine/dosdevices</code>, remove <code>z:</code> symbolic link and make it point to your <code>$HOME</code>
 </dd></dl>
 
-### Install texlive (LaTeX)
+### Step 05: Install texlive (LaTeX distribution)
 
-1. Donwload texlive installer
+1. Donwload texlive installer:
 
-```
+<dl><dd>
+<pre>
+$ <b>wget http://mirrors.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz</b>
+</pre>
+</dd></dl>
 
-wget http://mirrors.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+2. Upack texlive installer archive:
 
-```
+<dl><dd>
+<pre>
+$ <b>mkdir ./texlive</b>
+$ <b>tar -xvf install-tl-unx.tar.gz -C texlive --strip-components=1</b>
+</pre>
+</dd></dl>
 
-2. Upack archive
+3. Run texlive install and select nearest CTAN mirror:
 
-```
-
-mkdir ./texlive
-tar -xvf install-tl-unx.tar.gz -C texlive --strip-components=1
-
-```
-
-3. Enter `texlive` dir
-
-```
-
-cd ./texlive
-
-```
-
-4. Run install (and select nearest CTAN mirror):
-
-```
-
-sudo ./install-tl -select-repository
-
-```
+<dl><dd>
+<pre>
+$ <b>cd ./texlive</b>
+$ <b>sudo ./install-tl -select-repository</b>
+</pre>
+</dd></dl>
 
 ## Setup Android DevTools
 
