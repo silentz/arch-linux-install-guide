@@ -277,58 +277,69 @@ $ <b>reboot</b>
 
 1. Activate time syncronization using NTP:
 
-```
+<dl><dd>
+<pre>
+$ <b>timedatectl set-ntp true</b>
+</pre>
+</dd></dl>
 
-timedatectl set-ntp true
+2. [Optional] Connect to WiFi using `nmcli`:
 
-```
+<dl><dd>
+<pre>
+$ <b>nmcli device wifi connect &lt;Name of WiFi access point&gt; password &lt;password&gt;</b>
+</pre>
+</dd></dl>
 
-2. Connect to WiFi using `nmcli`:
+3. Install X.Org and its utilities:
 
-```
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S xorg xorg-apps xorg-xinit xdotool xclip xsel</b>
+</pre>
+</dd></dl>
 
-nmcli device wifi connect <SSID> password <password>
+4. Install a bunch of useful utilities:
 
-```
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S dbus intel-ucode fuse2 lshw powertop inxi</b>
+$ <b>sudo pacman -S base-devel git zip unzip htop tree w3m</b>
+$ <b>sudo pacman -S dialog reflector bash-completion arandr</b>
+$ <b>sudo pacman -S iw wpa_supplicant</b>
+$ <b>sudo pacman -S tcpdump mtr net-tools conntrack-tools ethtool</b>
+$ <b>sudo pacman -S wget rsync socat openbsd-netcat axel</b>
+$ <b>sudo pacman -S sof-firmware pulseaudio alsa-utils alsa-plugins pavucontrol</b>
+</pre>
+</dd></dl>
 
-3. Install Xorg:
+5. [Optional] Run service that will discard unused blocks on mounted filesystems. This is useful for
+   solid-state drives (SSDs) and thinly-provisioned storage. More information on fstrim
+   [can be found here](https://man7.org/linux/man-pages/man8/fstrim.8.html).
 
-```
-
-sudo pacman -S xorg xorg-apps xorg-xinit xdotool xclip
-
-```
-
-4. Install useful packages:
-
-```
-
-sudo pacman -S bind dialog intel-ucode git reflector bash-completion w3m
-sudo pacman -S base-devel lshw zip unzip htop xsel tree fuse2 keychain arandr powertop inxi
-sudo pacman -S wget iw wpa_supplicant openbsd-netcat axel tcpdump mtr net-tools rsync conntrack-tools ethtool
-sudo pacman -S sof-firmware pulseaudio alsa-utils alsa-plugins pavucontrol
-
-```
-
-5. Install SSD TRIM:
-
-```
-
-sudo systemctl enable fstrim.timer
-
-```
+<dl><dd>
+<pre>
+$ <b>sudo systemctl enable fstrim.timer</b>
+</pre>
+</dd></dl>
 
 6. Install Xfce
 
 ```
 
-sudo pacman -S dbus xfce4 xfce4-screenshooter \
+sudo pacman -S xfce4 xfce4-screenshooter \
  thunar-archive-plugin thunar-media-tags-plugin \
  xfce4-xkb-plugin xfce4-battery-plugin xfce4-datetime-plugin xfce4-mount-plugin \
  xfce4-netload-plugin xfce4-notifyd xfce4-pulseaudio-plugin xfce4-screensaver \
  xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin network-manager-applet
 
 ```
+
+<dl><dd>
+<pre>
+$ <b></b>
+</pre>
+</dd></dl>
 
 or install i3
 
@@ -341,25 +352,31 @@ sudo pacman -S polybar rofi ranger thunar alacritty dunst feh \
 
 ```
 
-7. Install desktop manager:
+<dl><dd>
+<pre>
+$ <b></b>
+</pre>
+</dd></dl>
 
-```
+7. Install login session manager, I prefer `ly` for it's minimalism:
 
-sudo pacman -S ly
-sudo systemctl enable ly
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S ly</b>
+$ <b>sudo systemctl enable ly</b>
+</pre>
+</dd></dl>
 
-```
+8. Enable bluetooth support on your PC:
 
-8. Setup bluetooth:
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S bluez bluez-utils blueman</b>
+$ <b>sudo systemctl enable bluetooth</b>
+</pre>
+</dd></dl>
 
-```
-
-sudo pacman -S bluez bluez-utils blueman
-sudo systemctl enable bluetooth
-
-```
-
-9. Impreove battary usage:
+9. Improve battary usage:
 
 ```
 
@@ -370,6 +387,12 @@ sudo systemctl mask systemd-rfkill.socket
 
 ```
 
+<dl><dd>
+<pre>
+$ <b></b>
+</pre>
+</dd></dl>
+
 10. Install essential fonts:
 
 ```
@@ -378,6 +401,12 @@ sudo pacman -S noto-fonts noto-fonts-emoji ttf-ubuntu-font-family ttf-dejavu ttf
 sudo pacman -S ttf-liberation ttf-droid ttf-roboto terminus-font
 
 ```
+
+<dl><dd>
+<pre>
+$ <b></b>
+</pre>
+</dd></dl>
 
 11. Install themes and icons:
 
@@ -388,6 +417,12 @@ sudo pacman -S papirus-icon-theme
 
 ```
 
+<dl><dd>
+<pre>
+$ <b></b>
+</pre>
+</dd></dl>
+
 12. Setup the fastest pacman mirror, choose nearest countries:
 
 ```
@@ -395,6 +430,12 @@ sudo pacman -S papirus-icon-theme
 sudo reflector --country Germany,Austria,Switzerland --fastest 10 --threads `nproc` --save /etc/pacman.d/mirrorlist
 
 ```
+
+<dl><dd>
+<pre>
+$ <b></b>
+</pre>
+</dd></dl>
 
 13. Intall printing settings:
 
@@ -404,6 +445,12 @@ sudo pacman -S cups cups-filters cups-pdf system-config-printer --needed
 sudo systemctl enable cups.service
 
 ```
+
+<dl><dd>
+<pre>
+$ <b></b>
+</pre>
+</dd></dl>
 
 **Important** if there is no option for system-config-printer in xfce4-settings-manager,
 go to `/usr/share/applications/system-config-printer.desktop` and set
@@ -417,6 +464,16 @@ sudo pacman -S nm-connection-editor networkmanager-openvpn
 
 ```
 
+<dl><dd>
+<pre>
+$ <b></b>
+</pre>
+</dd></dl>
+
+**Important** if there is no option for nm-connection-editor in xfce4-settings-manager,
+go to `/usr/share/applications/nm-connection-editor.desktop` and set
+`Categories=System;Settings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;`
+
 15. Install vulkan drivers (choose one):
 
 ```
@@ -427,17 +484,19 @@ pacman -S amdvlk
 
 ```
 
-**Important** if there is no option for nm-connection-editor in xfce4-settings-manager,
-go to `/usr/share/applications/nm-connection-editor.desktop` and set
-`Categories=System;Settings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;`
+<dl><dd>
+<pre>
+$ <b></b>
+</pre>
+</dd></dl>
 
 15. Reboot again:
 
-```
-
-reboot
-
-```
+<dl><dd>
+<pre>
+$ <b>reboot</b>
+</pre>
+</dd></dl>
 
 ## Hibernation support
 
