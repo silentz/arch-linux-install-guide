@@ -525,8 +525,8 @@ $ <b>sudo systemctl hibernate</b>
     setting up dev environment &#129489;&#8205;&#128187;
 </h1>
 <div align="center">
-    <i>These is my personal list of apps and utilities which I use on regular basis, <br>
-    so feel free to fork this repo and add something for yourself</i>
+    <i>These is my personal list of apps and utilities which I use on regular basis,
+    so feel free to fork this repo and add something yours</i>
 </div>
 
 ### General
