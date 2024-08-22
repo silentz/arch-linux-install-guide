@@ -599,14 +599,27 @@ $ <b>sudo pacman -S sshpass</b>         <i># noninteractive ssh password provide
 the ability to run <code>masscan</code> as non-root user.
 </dd></dl>
 
-# Devops
+2. Infrastructure as a Code and DevOps tools:
 
-$ <b>sudo pacman -S ansible</b> <i># infrastructure as a code automation</i>
-
-sudo pacman -S docker docker-compose kubectl helm aws-cli-v2 terraform etcdctl
-sudo systemctl enable docker
-sudo usermod -a -G docker max
-newgrp docker
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S ansible</b>          <i># infrastructure as a code tool (bare metal)</i>
+$ <b>sudo pacman -S docker</b>           <i># cli tool for container management</i>
+$ <b>sudo pacman -S docker</b>           <i># cli tool for container management</i>
+$ <b>sudo pacman -S docker-compose</b>   <i># run multi-container applications with docker</i>
+$ <b>sudo pacman -S kubectl</b>          <i># cli tool for managing kubernetes clusters</i>
+$ <b>sudo pacman -S etcdctl</b>          <i># cli tool for interacting with the etcd server</i>
+$ <b>sudo pacman -S helm</b>             <i># package manager for kubernetes</i>
+$ <b>sudo pacman -S aws-cli-v2</b>       <i># cli tool to manage AWS services</i>
+$ <b>sudo pacman -S terraform</b>        <i># infrastructure as a code tool (clouds)</i>
+<div></div>
+<i># configure docker</i>
+<div></div>
+$ <b>sudo systemctl enable docker</b>            <i># enable docker daemon on system start</i>
+# <b>sudo usermod -a -G docker yourusername</b>  <i># to be able to run docker as non-root</i>
+$ <b>newgrp docker</b>                           <i># login to docker group without restart</i>
+</pre>
+</dd></dl>
 
 # Python
 
