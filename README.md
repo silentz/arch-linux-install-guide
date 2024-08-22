@@ -621,7 +621,41 @@ $ <b>newgrp docker</b>                           <i># login to docker group with
 </pre>
 </dd></dl>
 
-3. Install python tools, python itself should be installed by default:
+3. Install Golang and its tools:
+
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S go</b>
+$ <b>go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest</b>
+</pre>
+</dd></dl>
+
+4. Install Java and its tools:
+
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S jdk20-openjdk</b>
+TODO
+</pre>
+</dd></de>
+
+5. Install C, C++ and tools for low-level development:
+
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S gcc</b>
+$ <b>sudo pacman -S clang</b>
+$ <b>sudo pacman -S gdb</b>
+$ <b>sudo pacman -S cmake</b>
+$ <b>sudo pacman -S ninja</b>
+$ <b>sudo pacman -S cuda</b>
+$ <b>sudo pacman -S nasm</b>
+$ <b>sudo pacman -S cdrtools</b>
+$ <b>sudo pacman -S qemu-full</b>
+</pre>
+</dd></dl>
+
+6. Install Python tools, Python itself should be installed by default:
 
 <dl><dd>
 <pre>
@@ -630,45 +664,58 @@ $ <b>sudo pacman -S python-poetry</b>   <i># python package manager (better one)
 </pre>
 </dd></dl>
 
-# C, C++ and Low Level Tools
+7. Install Lua:
 
-sudo pacman -S gcc gdb cmake ninja clang cuda
-sudo pacman -S nasm cdrtools qemu-full
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S lua</b>
+</pre>
+</dd></dl>
 
-# Lua
+8. Install JavaScript and its tools:
 
-sudo pacman -S lua
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S nodejs</b>
+$ <b>sudo pacman -S npm</b>
+$ <b>sudo pacman -S yarn</b>
+</pre>
+</dd></dl>
 
-# Golang
+9. Install Rust and its tools:
 
-sudo pacman -S go
-go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S rust</b>
+</pre>
+</dd></dl>
 
-# Javascript
+10. Install Virtualbox:
 
-sudo pacman -S nodejs npm yarn
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S linux-headers</b>
+$ <b>sudo pacman -S virtualbox-host-dkms</b>
+$ <b>sudo pacman -S virtualbox</b>
+</pre>
+</dd></dl>
 
-# Java
+11. Architecture diagraming tools:
 
-sudo pacman -S jdk20-openjdk
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S plantuml</b>
+</pre>
+</dd></dl>
 
-# Rust
+12. Install hugo (static website generator):
 
-sudo pacman -S rust
-
-# Virtualbox
-
-sudo pacman -S linux-headers
-sudo pacman -S virtualbox-host-dkms
-sudo pacman -S virtualbox
-
-# Architecture
-
-sudo pacman -S plantuml
-
-# Hugo
-
-sudo pacman -S hugo dart-sass
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S hugo</b>
+$ <b>sudo pacman -S dart-sass</b>
+</pre>
+</dd></dl>
 
 ### Yubikey
 
