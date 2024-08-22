@@ -313,17 +313,7 @@ $ <b>sudo pacman -S sof-firmware pulseaudio alsa-utils alsa-plugins pavucontrol<
 </pre>
 </dd></dl>
 
-5. [Optional] Run service that will discard unused blocks on mounted filesystems. This is useful for
-   solid-state drives (SSDs) and thinly-provisioned storage. More information on fstrim
-   [can be found here](https://man7.org/linux/man-pages/man8/fstrim.8.html).
-
-<dl><dd>
-<pre>
-$ <b>sudo systemctl enable fstrim.timer</b>
-</pre>
-</dd></dl>
-
-6. Install Xfce4, i3, or both:
+5. Install Xfce4, i3, or both:
 
 <dl><dd>
 <pre>
@@ -359,7 +349,7 @@ $ <b>sudo pacman -S polybar</b> \     <i># nice statusbar for i3-based UIs</i>
 </pre>
 </dd></dl>
 
-7. Install login session manager, I prefer `ly` for it's minimalism:
+6. Install login session manager, I prefer `ly` for it's minimalism:
 
 <dl><dd>
 <pre>
@@ -368,7 +358,16 @@ $ <b>sudo systemctl enable ly</b>
 </pre>
 </dd></dl>
 
-8. Enable bluetooth support on your PC:
+7. Install essential system fonts:
+
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S ttf-dejavu ttf-freefont ttf-liberation ttf-droid terminus-font</b>
+$ <b>sudo pacman -S noto-fonts noto-fonts-emoji ttf-ubuntu-font-family ttf-roboto</b>
+</pre>
+</dd></dl>
+
+8. [Optional] Enable bluetooth support on your PC:
 
 <dl><dd>
 <pre>
@@ -377,79 +376,12 @@ $ <b>sudo systemctl enable bluetooth</b>
 </pre>
 </dd></dl>
 
-9. Improve battary usage:
-
-```
-
-sudo pacman -S tlp tlp-rdw acpi acpi_call
-sudo systemctl enable tlp
-sudo systemctl mask systemd-rfkill.service
-sudo systemctl mask systemd-rfkill.socket
-
-```
+9. [Optional] Enable printing support on your PC:
 
 <dl><dd>
 <pre>
-$ <b></b>
-</pre>
-</dd></dl>
-
-10. Install essential fonts:
-
-```
-
-sudo pacman -S noto-fonts noto-fonts-emoji ttf-ubuntu-font-family ttf-dejavu ttf-freefont
-sudo pacman -S ttf-liberation ttf-droid ttf-roboto terminus-font
-
-```
-
-<dl><dd>
-<pre>
-$ <b></b>
-</pre>
-</dd></dl>
-
-11. Install themes and icons:
-
-```
-
-sudo pacman -S arc-gtk-theme
-sudo pacman -S papirus-icon-theme
-
-```
-
-<dl><dd>
-<pre>
-$ <b></b>
-</pre>
-</dd></dl>
-
-12. Setup the fastest pacman mirror, choose nearest countries:
-
-```
-
-sudo reflector --country Germany,Austria,Switzerland --fastest 10 --threads `nproc` --save /etc/pacman.d/mirrorlist
-
-```
-
-<dl><dd>
-<pre>
-$ <b></b>
-</pre>
-</dd></dl>
-
-13. Intall printing settings:
-
-```
-
-sudo pacman -S cups cups-filters cups-pdf system-config-printer --needed
-sudo systemctl enable cups.service
-
-```
-
-<dl><dd>
-<pre>
-$ <b></b>
+$ <b>sudo pacman -S cups cups-filters cups-pdf system-config-printer</b>
+$ <b>sudo systemctl enable cups.service</b>
 </pre>
 </dd></dl>
 
@@ -457,41 +389,73 @@ $ <b></b>
 go to `/usr/share/applications/system-config-printer.desktop` and set
 `Categories=System;Settings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;`
 
-14. Install NetworkManager additionals:
-
-```
-
-sudo pacman -S nm-connection-editor networkmanager-openvpn
-
-```
+10. [Optional] Improve battary usage with TLP - utility that basically does kernel settings
+    tweaking that improve power consumption. More information about TLP
+    [can be found here](https://linrunner.de/tlp/). More information about TLP-RDW (radio device wizard)
+    [can be found here](https://linrunner.de/tlp/settings/rdw.html).
 
 <dl><dd>
 <pre>
-$ <b></b>
+$ <b>sudo pacman -S tlp tlp-rdw acpi acpi_call</b>
+$ <b>sudo systemctl enable tlp</b>
+<div></div>
+<i># execute following commands only if using TLP-RDW:</i>
+<div></div>
+$ <b>systemctl enable NetworkManager-dispatcher.service</b>
+$ <b>sudo systemctl mask systemd-rfkill.service</b>
+$ <b>sudo systemctl mask systemd-rfkill.socket</b>
 </pre>
 </dd></dl>
 
-**Important** if there is no option for nm-connection-editor in xfce4-settings-manager,
-go to `/usr/share/applications/nm-connection-editor.desktop` and set
-`Categories=System;Settings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;`
-
-15. Install vulkan drivers (choose one):
-
-```
-
-pacman -S vulkan-intel
-pacman -S nvidia-utils
-pacman -S amdvlk
-
-```
+11. [Optional] Run service that will discard unused blocks on mounted filesystems. This is useful for
+    solid-state drives (SSDs) and thinly-provisioned storage. More information on fstrim
+    [can be found here](https://man7.org/linux/man-pages/man8/fstrim.8.html).
 
 <dl><dd>
 <pre>
-$ <b></b>
+$ <b>sudo systemctl enable fstrim.timer</b>
 </pre>
 </dd></dl>
 
-15. Reboot again:
+12. [Optional] Install GTK themes and icons:
+
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S arc-gtk-theme adapta-gtk-theme materia-gtk-theme</b>
+$ <b>sudo pacman -S papirus-icon-theme</b>
+</pre>
+</dd></dl>
+
+13. [Optional] Choose fastest pacman mirrors (use your own country list):
+
+<dl><dd>
+<pre>
+$ <b>sudo reflector --country Germany,Austria,Switzerland \
+                 --fastest 10 \
+                 --threads $(nproc) \
+                 --save /etc/pacman.d/mirrorlist</b>
+</pre>
+</dd></dl>
+
+14. [Optional] Install NetworkManager addons:
+
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S nm-connection-editor networkmanager-openvpn</b>
+</pre>
+</dd></dl>
+
+15. [Optional] Install vulkan drivers:
+
+<dl><dd>
+<pre>
+$ <b>pacman -S vulkan-intel</b>   <i># only for systems with Intel graphics</i>
+$ <b>pacman -S nvidia-utils</b>   <i># only for systems with Nvidia graphics</i>
+$ <b>pacman -S amdvlk</b>         <i># only for systems with AMD graphics</i>
+</pre>
+</dd></dl>
+
+16. Reboot to finalize installation:
 
 <dl><dd>
 <pre>
