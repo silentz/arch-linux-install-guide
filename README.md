@@ -16,10 +16,10 @@
 
 ### Getting Started
 
-Welcome to the Arch Linux with i3 Tiling Window Manager Installation Guide!
+Welcome to the Arch Linux with Xfce4 and i3 Window Manager Installation Guide!
 
 This guide provides you with a step-by-step walkthrough of installing
-Arch Linux along with the i3 tiling window manager. It has been carefully created
+Arch Linux along with the Xfce4 and i3 window manager. It has been carefully created
 based on my own experience of installation Arch Linux on multiple devices over the years.
 This guide aims to make your installation process as smooth as possible.
 
