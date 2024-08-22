@@ -275,6 +275,8 @@ $ <b>reboot</b>
     Section 02: Configuring userspace after initial system setup &#127919;
 </h1>
 
+### Step 01: Basic configuration of userspace
+
 1. Activate time syncronization using NTP:
 
 <dl><dd>
@@ -465,7 +467,7 @@ $ <b>reboot</b>
 </pre>
 </dd></dl>
 
-## Hibernation support
+### Step 02: Enable hibernation support
 
 1. Open you `/etc/fstab` and find UUID for your swap partition.
 
