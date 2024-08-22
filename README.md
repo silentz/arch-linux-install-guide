@@ -764,28 +764,6 @@ winetricks settings fontsmooth=rgb
 `wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.`,
 go to `~/.wine/dosdevices`, remove `z:` symbolic link and make it point to your `$HOME`.
 
-### Install AUR packages
-
-```
-
-# Etcd
-
-yay -S etcd
-
-# Slack
-
-yay -S slack-desktop
-
-# Legacy python versions
-
-yay -S python36 python37 python38 python39 python310
-
-# PCB design
-
-yay -S logisim-evolution qucs-s
-
-```
-
 ### Requires manual download
 
 1. Dart / Flutter (https://docs.flutter.dev/get-started/install/linux)
