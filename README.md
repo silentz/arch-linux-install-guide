@@ -639,7 +639,9 @@ TODO
 </pre>
 </dd></de>
 
-5. Install C, C++ and tools for low-level development:
+5. Install Dart and Flutter following instructions from https://docs.flutter.dev/get-started/install/linux
+
+6. Install C, C++ and tools for low-level development:
 
 <dl><dd>
 <pre>
@@ -655,7 +657,7 @@ $ <b>sudo pacman -S qemu-full</b>
 </pre>
 </dd></dl>
 
-6. Install Python tools, Python itself should be installed by default:
+7. Install Python tools, Python itself should be installed by default:
 
 <dl><dd>
 <pre>
@@ -664,7 +666,7 @@ $ <b>sudo pacman -S python-poetry</b>   <i># python package manager (better one)
 </pre>
 </dd></dl>
 
-7. Install Lua:
+8. Install Lua:
 
 <dl><dd>
 <pre>
@@ -672,7 +674,7 @@ $ <b>sudo pacman -S lua</b>
 </pre>
 </dd></dl>
 
-8. Install JavaScript and its tools:
+9. Install JavaScript and its tools:
 
 <dl><dd>
 <pre>
@@ -682,7 +684,7 @@ $ <b>sudo pacman -S yarn</b>
 </pre>
 </dd></dl>
 
-9. Install Rust and its tools:
+10. Install Rust and its tools:
 
 <dl><dd>
 <pre>
@@ -690,7 +692,7 @@ $ <b>sudo pacman -S rust</b>
 </pre>
 </dd></dl>
 
-10. Install Virtualbox:
+11. Install Virtualbox:
 
 <dl><dd>
 <pre>
@@ -700,7 +702,7 @@ $ <b>sudo pacman -S virtualbox</b>
 </pre>
 </dd></dl>
 
-11. Architecture diagraming tools:
+12. Architecture diagraming tools:
 
 <dl><dd>
 <pre>
@@ -708,7 +710,7 @@ $ <b>sudo pacman -S plantuml</b>
 </pre>
 </dd></dl>
 
-12. Install hugo (static website generator):
+13. Install hugo (static website generator):
 
 <dl><dd>
 <pre>
