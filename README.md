@@ -8,7 +8,7 @@
 
 </div>
 
-<h1 align="center">Arch Linux with i3 Tiling Window Manager Installation Guide</h1>
+<h1 align="center">Arch Linux with Xfce4 and i3 Window Manager Installation Guide</h1>
 
 <div align="center">
     <i>How to install Arch Linux with i3 and not spend ages on debugging</i>
