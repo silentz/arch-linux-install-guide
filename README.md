@@ -846,7 +846,7 @@ $ <b>sudo pacman -S yubikey-personalization-gui</b>
     Arch Linux issues &#129714;
 </h1>
 
-### Playbook 01: Fix broken hibernation
+### Playbook 01: Fix XHCI hibernation error
 
 In some Linux kernels there are some broken USB 3.0 device drivers, that _sometimes_ wake up
 the system right after you launch hibernation process. If you see errors like this in your
@@ -912,28 +912,39 @@ $ <b>sudo grub-mkconfig -o /boot/grub/grub.cfg</b>
 _This can help if you use lightdm and have very tiny font on your 4k monitor_
 
 <dl><dd>
-<p>Open <code>/etc/lightdm/lightdm.conf</code> file and add following line:</p>
+<p>Open <code>/etc/lightdm/lightdm.conf</code> file and add following line under <code>[Seat:\*]</code> section:</p>
 <pre>
 <i>display-setup-script=xrandr --output eDP-1 --mode 1920x1080</i>
 </pre>
-</dd></dl>
-
-<dl><dd>
-<b>IMPORTANT NOTE</b>: place this line in <code>[Seat:\*]</code> section of <code>lightdm.conf</code> file!
-<br><br>
 P.S. <i>your screen output name, like eDP-1 in my case, can be found in <code>xrandr -q</code></i>
 </dd></dl>
 
-### Other small fixes:
+### Playbook 04: Activate dark mode in GTK apps
 
--   Activate file-roller dark mode: `gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'`
--   Slack remove annoying menu bar: `Window -> Always show menu bar -> disable`
--   If system goes to sleep after 3-5 minutes, this might be screensaver. To stop this, disable option `Settings -> Screensaver -> Activate Screensaver when computer is idle`
--   Sometimes there is Wireguard VPN perimiter, but no DNS server in your company. If so, use `resolvectl revert wg0` (change `wg0` to your wireguard interface name)
-    to prevent sending DNS requests through interface. This command will disable "DefaultRoute" feature of `wg0` interface in systemd-resolved.
--   If you face video freezes (or hangs) while not touching keyboard or mouse for some time (usually 1-10 minutes), this might be an issue with picom. Try disabling it to
-    see if this helps. If so, try to change rendering backend of picom from `xrender` to `glx` and check if it helps (worked for me).
+<dl><dd>
+<pre>
+$ <b>gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'</b>
+</pre>
+</dd></dl>
 
-```
+### Playbook 05: System goes to sleep too fast with Xfce
 
-```
+-   If system goes to sleep after 3-5 minutes, this might be screensaver.
+    To stop this, disable option `Settings -> Screensaver -> Activate Screensaver when computer is idle`.
+
+### Playbook 06: All requests, expept those to internal addresses, fail after launching Wireguard VPN
+
+-   This happens when your Wireguard server can only handle requests only to configured IP addresses and DNS names.
+    Use `resolvectl revert wg0` (change `wg0` to your wireguard interface name).
+    This will prevent system from using Wireguard interface for all routes.
+
+### Playbook 07: Screen freezed (or hangs) after 2-10 minutes of inactivity when using Picom
+
+-   If you screen freezes (or hangs) while not touching keyboard or mouse for some time (usually 2-10 minutes),
+    this might be an issue with picom. Try first stopping picom at all to see if this helps.
+    If yes, try to change rendering backend of picom from `xrender` to `glx` and check if it helps.
+    Worked for me.
+
+### Playbook 08: Remove annoying menubar from Slack
+
+-   `Window -> Always show menu bar -> disable`
