@@ -717,57 +717,50 @@ $ <b>sudo pacman -S dart-sass</b>
 </pre>
 </dd></dl>
 
-### Yubikey
-
-```
-
-sudo pacman -S yubikey-personalization-gui yubikey-manager
-
-```
-
-### Wine
+### Step 04: Install Wine (Windows application runner)
 
 1. Go to `/etc/pacman.conf` and uncomment (or add) following lines:
 
-```
+<dl><dd>
+<pre>
+  <i>[multilib]</i>
+  <i>Include = /etc/pacman.d/mirrorlist</i>
+</pre>
+</dd></dl>
 
-[multilib]
-Include = /etc/pacman.d/mirrorlist
+2. Update package database:
 
-```
+<dl><dd>
+<pre>
+$ <b>sudo pacman -Syu</b>
+</pre>
+</dd></dl>
 
-2. Update pacman package databases:
+3. Install Wine and its utilities:
 
-```
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S wine</b>
+$ <b>sudo pacman -S wine-mono</b>
+$ <b>sudo pacman -S wine-gecko</b>
+$ <b>sudo pacman -S winetricks</b>
+$ <b>sudo pacman -S zenity</b>
+</pre>
+</dd></dl>
 
-sudo pacman -Syu
+4. Configure smooth font in Wine applications:
 
-```
+<dl><dd>
+<pre>
+$ <b>winetricks settings fontsmooth=rgb</b>
+</pre>
+</dd></dl>
 
-3. Install wine using pacman:
-
-```
-
-sudo pacman -S wine wine-mono wine-gecko winetricks zenity
-
-```
-
-4. Configure smooth font:
-
-```
-
-winetricks settings fontsmooth=rgb
-
-```
-
-**Important**: if you are stuck with error
-`wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.`,
-go to `~/.wine/dosdevices`, remove `z:` symbolic link and make it point to your `$HOME`.
-
-### Requires manual download
-
-1. Dart / Flutter (https://docs.flutter.dev/get-started/install/linux)
-2. Joplin (https://joplinapp.org/help/#installation)
+<dl><dd>
+<b>IMPORTANT NOTE</b>: if you are facing error
+<code>wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available</code>,
+go to <code>~/.wine/dosdevices</code>, remove <code>z:</code> symbolic link and make it point to your <code>$HOME</code>
+</dd></dl>
 
 ### Install texlive (LaTeX)
 
@@ -817,6 +810,19 @@ sudo ./install-tl -select-repository
 -   Run `sdkmanager "build-tools;29.0.3"`
 -   Run `sdkmanager --licenses`
 -   Run `sdkmanager --update`
+
+### Yubikey
+
+```
+
+sudo pacman -S yubikey-personalization-gui yubikey-manager
+
+```
+
+### Requires manual download
+
+1. Dart / Flutter (https://docs.flutter.dev/get-started/install/linux)
+2. Joplin (https://joplinapp.org/help/#installation)
 
 ## Tools for reverse engineering CTF's
 
