@@ -385,9 +385,11 @@ $ <b>sudo systemctl enable cups.service</b>
 </pre>
 </dd></dl>
 
-**Important** if there is no option for system-config-printer in xfce4-settings-manager,
-go to `/usr/share/applications/system-config-printer.desktop` and set
-`Categories=System;Settings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;`
+<dl><dd>
+<b>IMPORTANT NOTE</b>: if there is no option for system-config-printer in xfce4-settings-manager,
+go to <code>/usr/share/applications/system-config-printer.desktop</code> and set
+<code>Categories=System;Settings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;</code>
+</dd></dl>
 
 10. [Optional] Improve battary usage with TLP - utility that basically does kernel settings
     tweaking that improve power consumption. More information about TLP
