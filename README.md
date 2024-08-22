@@ -621,9 +621,14 @@ $ <b>newgrp docker</b>                           <i># login to docker group with
 </pre>
 </dd></dl>
 
-# Python
+3. Install python tools, python itself should be installed by default:
 
-sudo pacman -S python-pip python-poetry
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S python-pip</b>      <i># python package manager</i>
+$ <b>sudo pacman -S python-poetry</b>   <i># python package manager (better one)</i>
+</pre>
+</dd></dl>
 
 # C, C++ and Low Level Tools
 
@@ -896,7 +901,3 @@ P.S. _your screen output name, like eDP-1 in my case, can be found in `xrandr -q
     to prevent sending DNS requests through interface. This command will disable "DefaultRoute" feature of `wg0` interface in systemd-resolved.
 -   If you face video freezes (or hangs) while not touching keyboard or mouse for some time (usually 1-10 minutes), this might be an issue with picom. Try disabling it to
     see if this helps. If so, try to change rendering backend of picom from `xrender` to `glx` and check if it helps (worked for me).
-
-```
-
-```
