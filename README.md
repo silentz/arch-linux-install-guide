@@ -323,38 +323,39 @@ $ <b>sudo systemctl enable fstrim.timer</b>
 </pre>
 </dd></dl>
 
-6. Install Xfce
-
-```
-
-sudo pacman -S xfce4 xfce4-screenshooter \
- thunar-archive-plugin thunar-media-tags-plugin \
- xfce4-xkb-plugin xfce4-battery-plugin xfce4-datetime-plugin xfce4-mount-plugin \
- xfce4-netload-plugin xfce4-notifyd xfce4-pulseaudio-plugin xfce4-screensaver \
- xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin network-manager-applet
-
-```
+6. Install Xfce4, i3, or both:
 
 <dl><dd>
 <pre>
-$ <b></b>
-</pre>
-</dd></dl>
-
-or install i3
-
-```
-
-sudo pacman -S i3-wm i3status i3lock lxappearance
-sudo pacman -S polybar rofi ranger thunar alacritty dunst feh \
- xss-lock picom light pango flameshot gsimplecal \
- thunar-archive-plugin thunar-media-tags-plugin
-
-```
-
-<dl><dd>
-<pre>
-$ <b></b>
+<i># Instructions for installing Xfce4</i>
+<div></div>
+$ <b>sudo pacman -S xfce4</b>
+$ <b>sudo pacman -S xfce4-notifyd xfce4-screensaver xfce4-screenshooter</b>
+$ <b>sudo pacman -S thunar-archive-plugin thunar-media-tags-plugin</b>
+$ <b>sudo pacman -S network-manager-applet</b>
+$ <b>sudo pacman -S xfce4-xkb-plugin         xfce4-battery-plugin \
+                 xfce4-datetime-plugin    xfce4-mount-plugin   \
+                 xfce4-netload-plugin     xfce4-wavelan-plugin \
+                 xfce4-pulseaudio-plugin  xfce4-weather-plugin \
+                 xfce4-whiskermenu-plugin</b>
+<div></div>
+<i># Instructions for installing i3</i>
+<div></div>
+$ <b>sudo pacman -S i3-wm i3status i3lock pango</b>
+$ <b>sudo pacman -S lxappearance</b>
+<div></div>
+<i># You will most probably need these apps for i3</i>
+<div></div>
+$ <b>sudo pacman -S polybar</b> \     <i># nice statusbar for i3-based UIs</i>
+                 <b>rofi</b> \        <i># like dmenu, but more customizable</i>
+                 <b>ranger</b> \      <i># console file manager</i>
+                 <b>alacritty</b> \   <i># terminal emulator</i>
+                 <b>dunst</b> \       <i># notification manager</i>
+                 <b>feh</b> \         <i># fast and light image viewer</i>
+                 <b>xss-lock</b> \    <i># screen lock controller</i>
+                 <b>light</b> \       <i># utility to control screen brightness</i>
+                 <b>flameshot</b> \   <i># screenshot app</i>
+                 <b>gsimplecal</b>    <i># small calendar widget</i>
 </pre>
 </dd></dl>
 
