@@ -846,86 +846,83 @@ $ <b>sudo pacman -S yubikey-personalization-gui</b>
     Arch Linux issues &#129714;
 </h1>
 
-### Fix broken hibernation
+### Playbook 01: Fix broken hibernation
 
 In some Linux kernels there are some broken USB 3.0 device drivers, that _sometimes_ wake up
 the system right after you launch hibernation process. If you see errors like this in your
 `dmesg` command output after an unsuccessful hibernation:
 
-```
+<dl><dd>
+<pre>
+xhci_hcd 0000:00:14.0: PM: pci_pm_freeze(): hcd_pci_suspend+0x0/0x20 returns -16
+xhci_hcd 0000:00:14.0: PM: dpm_run_callback(): pci_pm_freeze+0x0/0xc0 returns -16
+xhci_hcd 0000:00:14.0: PM: failed to freeze async: error -16
+</pre>
+</dd></dl>
 
-[80136.941050] xhci_hcd 0000:00:14.0: PM: pci_pm_freeze(): hcd_pci_suspend+0x0/0x20 returns -16
-[80136.941062] xhci_hcd 0000:00:14.0: PM: dpm_run_callback(): pci_pm_freeze+0x0/0xc0 returns -16
-[80136.941073] xhci_hcd 0000:00:14.0: PM: failed to freeze async: error -16
+To fix the issue put following lines in `/usr/lib/systemd/system-sleep/xhci` and make this file executable:
 
-```
-
-Put it in `/usr/lib/systemd/system-sleep/xhci` (file must be executable):
-
-```
-
+<dl><dd>
+<pre>
 #!/bin/sh
-
+<div></div>
 run_pre_hook() {
-echo "Disable broken xhci module before suspending at $(date)..." >> /tmp/systemd_suspend_log
-grep XHC.\*enable /proc/acpi/wakeup && echo XHC > /proc/acpi/wakeup
+    echo "Disable xhci module before suspend at $(date)..." >> /tmp/systemd_suspend_log
+    grep XHC.\*enable /proc/acpi/wakeup && echo XHC > /proc/acpi/wakeup
 }
-
+<div></div>
 run_post_hook() {
-echo "Enable broken xhci module at wakeup from $(date)" >> /tmp/systemd_suspend_log
-grep XHC.\*disable /proc/acpi/wakeup && echo XHC > /proc/acpi/wakeup
+    echo "Enable xhci module after wakeup from $(date)" >> /tmp/systemd_suspend_log
+    grep XHC.\*disable /proc/acpi/wakeup && echo XHC > /proc/acpi/wakeup
 }
-
+<div></div>
 case $1 in
-pre) run_pre_hook ;;
-post) run_post_hook ;;
+    pre) run_pre_hook ;;
+    post) run_post_hook ;;
 esac
-
-```
+</pre>
+</dd></dl>
 
 Original solution: https://gist.github.com/ioggstream/8f380d398aef989ac455b93b92d42048
 
-### Grub resolution fix
+### Playbook 02: Fix GRUB screen resolution
 
 _This can help if you have very tiny grub font on your 4k monitor_
 
-1. Open `/etc/default/grub` with text editor.
+1. Open `/etc/default/grub` with text editor and add following lines:
 
-2. Add these lines (setting multiple resolutions as fallback):
+<dl><dd>
+<pre>
+<i>GRUB_TERMINAL_OUTPUT="gfxterm"</i>
+<i>GRUB_GFXPAYLOAD_LINUX=keep</i>
+<i>GRUB_GFXMODE=1920x1080x32,1024x768x32,auto</i>
+</pre>
+</dd></dl>
 
-```
+2. Generate `grub.cfg`:
 
-GRUB_TERMINAL_OUTPUT="gfxterm"
-GRUB_GFXPAYLOAD_LINUX=keep
-GRUB_GFXMODE=1920x1080x32,1024x768x32,auto
+<dl><dd>
+<pre>
+$ <b>sudo grub-mkconfig -o /boot/grub/grub.cfg</b>
+</pre>
+</dd></dl>
 
-```
+### Playbook 03: Fix Lightdm screen resolution
 
-3 Regenerate `grub.cfg`:
+_This can help if you use lightdm and have very tiny font on your 4k monitor_
 
-```
+<dl><dd>
+<p>Open <code>/etc/lightdm/lightdm.conf</code> file and add following line:</p>
+<pre>
+<i>display-setup-script=xrandr --output eDP-1 --mode 1920x1080</i>
+</pre>
+</dd></dl>
 
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-
-```
-
-### Lightdm resolution fix
-
-_This can help if you have very tiny lightdm font on your 4k monitor_
-
-1. Open `/etc/lightdm/lightdm.conf` with text editor.
-
-2. Add following lines to the file:
-
-```
-
-display-setup-script=xrandr --output eDP-1 --mode 1920x1080
-
-```
-
-**Important: place this line in [Seat:\*] section of lightdm.conf file!!!**
-
-P.S. _your screen output name, like eDP-1 in my case, can be found in `xrandr -q`_
+<dl><dd>
+<b>IMPORTANT NOTE</b>: place this line in <code>[Seat:\*]</code> section of <code>lightdm.conf</code> file!
+<br><br>
+P.S. <i>your screen output name, like eDP-1 in my case, can be found in <code>xrandr -q</code></i>
+</dd></dl>
 
 ### Other small fixes:
 
@@ -936,3 +933,7 @@ P.S. _your screen output name, like eDP-1 in my case, can be found in `xrandr -q
     to prevent sending DNS requests through interface. This command will disable "DefaultRoute" feature of `wg0` interface in systemd-resolved.
 -   If you face video freezes (or hangs) while not touching keyboard or mouse for some time (usually 1-10 minutes), this might be an issue with picom. Try disabling it to
     see if this helps. If so, try to change rendering backend of picom from `xrender` to `glx` and check if it helps (worked for me).
+
+```
+
+```
