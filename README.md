@@ -828,7 +828,7 @@ $ <b>sudo pacman -S yubikey-personalization-gui</b>
 </pre>
 </dd></dl>
 
-### My list of reverse engineering tools
+### Bonus: My list of reverse engineering tools
 
 1. Binary reverse engineering:
    `gdb`, `strace`, `ltrace`, `ldd`, `objdump` `radare2`, `frida`,
