@@ -555,6 +555,16 @@ $ <b>sudo pacman -S telegram-desktop</b>  <i># my preffered messenger</i>
 </pre>
 </dd></dl>
 
+### Step 02: Install package manager for AUR (Arch User Repository)
+
+<dl><dd>
+<pre>
+$ <b>git clone https://aur.archlinux.org/yay.git</b>
+$ <b>cd yay</b>
+$ <b>makepkg -si</b>
+</pre>
+</dd></dl>
+
 ### Yubikey
 
 ```
@@ -665,16 +675,6 @@ sudo pacman -S plantuml
 # Hugo
 
 sudo pacman -S hugo dart-sass
-
-```
-
-### Install AUR package manager
-
-```
-
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
 
 ```
 
