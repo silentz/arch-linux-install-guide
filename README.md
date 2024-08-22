@@ -539,6 +539,7 @@ $ <b>sudo pacman -S file-roller</b>       <i># archive manager</i>
 $ <b>sudo pacman -S evince</b>            <i># pdf viewer</i>
 $ <b>sudo pacman -S libreoffice</b>       <i># office packages</i>
 $ <b>sudo pacman -S gimp</b>              <i># image editor</i>
+$ <b>sudo pacman -S gpick</b>             <i># color picker</i>
 $ <b>sudo pacman -S inkscape</b>          <i># vector graphics editor</i>
 $ <b>sudo pacman -S fontforge</b>         <i># fonts editor</i>
 $ <b>sudo pacman -S gparted</b>           <i># grphical disk management tool</i>
@@ -552,6 +553,9 @@ $ <b>sudo pacman -S obs-studio</b>        <i># screencasting and streaming app</
 $ <b>sudo pacman -S wireshark-qt</b>      <i># network protocol analyzer</i>
 $ <b>sudo pacman -S spotify-launcher</b>  <i># spotify client</i>
 $ <b>sudo pacman -S telegram-desktop</b>  <i># my preffered messenger</i>
+$ <b>sudo pacman -S rclone</b>            <i># manage or migrate files on cloud storage</i>
+$ <b>sudo pacman -S openvpn</b>           <i># openvpn client</i>
+$ <b>sudo pacman -S wireguard-tools</b>   <i># wireguard client</i>
 </pre>
 </dd></dl>
 
@@ -565,67 +569,39 @@ $ <b>makepkg -si</b>
 </pre>
 </dd></dl>
 
-### Yubikey
+### Step 03: Software development tools
 
-```
+1. General purpose development tools:
 
-sudo pacman -S yubikey-personalization-gui yubikey-manager
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S neovim</b>          <i># powerful console text editor</i>
+$ <b>sudo pacman -S tree-sitter</b>     <i># parsing system for programming tools</i>
+$ <b>sudo pacman -S tree-sitter-cli</b> <i># cli tool tree-sitter parsers</i>
+$ <b>sudo pacman -S stow</b>            <i># configuration manager</i>
+$ <b>sudo pacman -S sqlite3</b>         <i># console sqlite client</i>
+$ <b>sudo pacman -S tldr</b>            <i># collection of simplified man pages</i>
+$ <b>sudo pacman -S jq</b>              <i># cli json processor</i>
+$ <b>sudo pacman -S tmux</b>            <i># terminal session multiplexer</i>
+$ <b>sudo pacman -S nmap</b>            <i># network scanner with advanced features</i>
+$ <b>sudo pacman -S masscan</b>         <i># high performance network scanner</i>
+$ <b>sudo pacman -S pgcli</b>           <i># console client for PostgreSQL</i>
+$ <b>sudo pacman -S redis</b>           <i># console client for Redis</i>
+$ <b>sudo pacman -S apache</b>          <i># http server + some useful utilities (htpasswd)</i>
+$ <b>sudo pacman -S meld</b>            <i># git visual diff and merge tool</i>
+$ <b>sudo pacman -S websocat</b>        <i># command line client for websockets</i>
+$ <b>sudo pacman -S sshpass</b>         <i># noninteractive ssh password provider</i>
+</pre>
+</dd></dl>
 
-```
-
-### Wine
-
-1. Go to `/etc/pacman.conf` and uncomment (or add) following lines:
-
-```
-
-[multilib]
-Include = /etc/pacman.d/mirrorlist
-
-```
-
-2. Update pacman package databases:
-
-```
-
-sudo pacman -Syu
-
-```
-
-3. Install wine using pacman:
-
-```
-
-sudo pacman -S wine wine-mono wine-gecko winetricks zenity
-
-```
-
-4. Configure smooth font:
-
-```
-
-winetricks settings fontsmooth=rgb
-
-```
-
-**Important**: if you are stuck with error
-`wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.`,
-go to `~/.wine/dosdevices`, remove `z:` symbolic link and make it point to your `$HOME`.
-
-### DevTools
-
-```
-
-# General
-
-sudo pacman -S neovim tree-sitter tree-sitter-cli stow sqlite3 tldr \
- jq tmux openvpn wireguard-tools zip unzip virtualbox \
- nmap masscan pgcli redis ripgrep gitui lazygit \
- gpick apache rclone websocat ansible sshpass meld
-
-sudo setcap 'cap_net_raw+epi' /usr/bin/masscan
+<dl><dd>
+<b>IMPORTANT NOTE</b>: execute <code>sudo setcap 'cap_net_raw+epi' /usr/bin/masscan</code> to enable
+the ability to run <code>masscan</code> as non-root user.
+</dd></dl>
 
 # Devops
+
+$ <b>sudo pacman -S ansible</b> <i># infrastructure as a code automation</i>
 
 sudo pacman -S docker docker-compose kubectl helm aws-cli-v2 terraform etcdctl
 sudo systemctl enable docker
@@ -676,7 +652,52 @@ sudo pacman -S plantuml
 
 sudo pacman -S hugo dart-sass
 
+### Yubikey
+
 ```
+
+sudo pacman -S yubikey-personalization-gui yubikey-manager
+
+```
+
+### Wine
+
+1. Go to `/etc/pacman.conf` and uncomment (or add) following lines:
+
+```
+
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+
+```
+
+2. Update pacman package databases:
+
+```
+
+sudo pacman -Syu
+
+```
+
+3. Install wine using pacman:
+
+```
+
+sudo pacman -S wine wine-mono wine-gecko winetricks zenity
+
+```
+
+4. Configure smooth font:
+
+```
+
+winetricks settings fontsmooth=rgb
+
+```
+
+**Important**: if you are stuck with error
+`wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.`,
+go to `~/.wine/dosdevices`, remove `z:` symbolic link and make it point to your `$HOME`.
 
 ### Install AUR packages
 
