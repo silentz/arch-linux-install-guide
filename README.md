@@ -790,45 +790,54 @@ $ <b>sudo ./install-tl -select-repository</b>
 </pre>
 </dd></dl>
 
-## Setup Android DevTools
+### Step 06: Setup Android development tools
 
--   Download zip-archive from here: https://developer.android.com/studio
-    (_Command line tools only_ section).
--   Run `unzip commandlinetools-linux-..._latest.zip`
--   Run `mkdir -p ~/Android/cmdline-tools/latest`
--   Run `mv ./cmdline-tools/* ~/Android/cmdline-tools/latest/`
--   Run `rmdir cmdline-tools` (downloaded one, not in `~/Android/...`).
--   Set `ANDROID_HOME` environment variable to `$HOME/Andoird`.
--   Run `sdkmanager "platform-tools" "platforms;android-29"`
--   Run `sdkmanager "build-tools;29.0.3"`
--   Run `sdkmanager --licenses`
--   Run `sdkmanager --update`
+1. Download zip-archive from here: https://developer.android.com/studio from _Command line tools only_ section.
 
-### Yubikey
+2. Unpack archive and copy cmdline-tools to `$ANDROID_HOME` (in my case `~/Android`):
 
-```
+<dl><dd>
+<pre>
+$ <b>unzip commandlinetools-linux-..._latest.zip</b>    <i># archive you got from website</i>
+$ <b>mkdir -p ~/Android/cmdline-tools/latest</b>
+$ <b>mv ./cmdline-tools/* ~/Android/cmdline-tools/latest/</b>
+</pre>
+</dd></dl>
 
-sudo pacman -S yubikey-personalization-gui yubikey-manager
+3. Set `ANDROID_HOME` environment variable to `~/Andoird` in `.bashrc`
 
-```
+4. Install platform tools, build tools and accept all licenses:
 
-### Requires manual download
+<dl><dd>
+<pre>
+$ <b>sdkmanager "platform-tools" "platforms;android-29"</b>
+$ <b>sdkmanager "build-tools;29.0.3"</b>
+$ <b>sdkmanager --licenses</b>
+$ <b>sdkmanager --update</b>
+</pre>
+</dd></dl>
 
-1. Dart / Flutter (https://docs.flutter.dev/get-started/install/linux)
-2. Joplin (https://joplinapp.org/help/#installation)
+### Step 07: Install Yubikey tools
 
-## Tools for reverse engineering CTF's
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S yubikey-manager</b>
+$ <b>sudo pacman -S yubikey-personalization-gui</b>
+</pre>
+</dd></dl>
 
-Binaries:
-`gdb`, `strace`, `ltrace`, `ldd`, `objdump` `radare2`, `frida`,
-`Ghidra`, `IDA Pro`, `cutter` + `rz-ghidra` + `cutterref`, `angr-management`
-`API Monitor`, `PEiD`, `UpxUnpacker`
+### My list of reverse engineering tools
 
-Python: `pycdc`
+1. Binary reverse engineering:
+   `gdb`, `strace`, `ltrace`, `ldd`, `objdump` `radare2`, `frida`,
+   `Ghidra`, `IDA Pro`, `cutter` + `rz-ghidra` + `cutterref`, `angr-management`
+   `API Monitor`, `PEiD`, `UpxUnpacker`
 
-Java: `jd-gui`, `jadx`
+2. Python: `pycdc`
 
-C#: `Avalonia ILSpy`
+3. Java: `jd-gui`, `jadx`
+
+4. C#: `Avalonia ILSpy`
 
 <h1 align="center">
     Section 04: F.A.Q.s and bug fixes for known
