@@ -305,7 +305,7 @@ $ <b>sudo pacman -S xorg xorg-apps xorg-xinit xdotool xclip xsel</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S dbus intel-ucode fuse2 lshw powertop inxi</b>
+$ <b>sudo pacman -S dbus intel-ucode fuse2 lshw powertop inxi acpi</b>
 $ <b>sudo pacman -S base-devel git zip unzip htop tree w3m</b>
 $ <b>sudo pacman -S dialog reflector bash-completion arandr</b>
 $ <b>sudo pacman -S iw wpa_supplicant</b>
@@ -400,7 +400,7 @@ go to <code>/usr/share/applications/system-config-printer.desktop</code> and set
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S tlp tlp-rdw acpi acpi_call</b>
+$ <b>sudo pacman -S tlp tlp-rdw</b>
 $ <b>sudo systemctl enable tlp</b>
 <div></div>
 <i># execute following commands only if using TLP-RDW:</i>
