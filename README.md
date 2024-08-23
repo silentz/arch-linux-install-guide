@@ -676,7 +676,7 @@ $ <b>sudo pacman -S python-poetry</b>   <i># python package manager (better one)
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S lua</b>
+$ <b>sudo pacman -S lua</b>       <i># Collection of Lua tools</i>
 </pre>
 </dd></dl>
 
@@ -684,9 +684,9 @@ $ <b>sudo pacman -S lua</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S nodejs</b>
-$ <b>sudo pacman -S npm</b>
-$ <b>sudo pacman -S yarn</b>
+$ <b>sudo pacman -S nodejs</b>    <i># JavaScript runtime</i>
+$ <b>sudo pacman -S npm</b>       <i># JavaScript package manager</i>
+$ <b>sudo pacman -S yarn</b>      <i># JavaScript package manager</i>
 </pre>
 </dd></dl>
 
@@ -694,7 +694,7 @@ $ <b>sudo pacman -S yarn</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S rust</b>
+$ <b>sudo pacman -S rust</b>     <i># Rust compiler and tools for project management</i>
 </pre>
 </dd></dl>
 
@@ -702,9 +702,9 @@ $ <b>sudo pacman -S rust</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S linux-headers</b>
-$ <b>sudo pacman -S virtualbox-host-dkms</b>
-$ <b>sudo pacman -S virtualbox</b>
+$ <b>sudo pacman -S linux-headers</b>          <i># Headers for building Linux kernel modules</i>
+$ <b>sudo pacman -S virtualbox-host-dkms</b>   <i># VirtualBox Host kernel modules sources</i>
+$ <b>sudo pacman -S virtualbox</b>             <i># Hypervisor for x86 virtualization</i>
 </pre>
 </dd></dl>
 
@@ -712,7 +712,7 @@ $ <b>sudo pacman -S virtualbox</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S plantuml</b>
+$ <b>sudo pacman -S plantuml</b>    <i># Tool for creating UML diagrams</i>
 </pre>
 </dd></dl>
 
@@ -720,8 +720,8 @@ $ <b>sudo pacman -S plantuml</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S hugo</b>
-$ <b>sudo pacman -S dart-sass</b>
+$ <b>sudo pacman -S hugo</b>        <i># fast and flexible static site generator in go</i>
+$ <b>sudo pacman -S dart-sass</b>   <i># implementation of sass (required for hugo)</i>
 </pre>
 </dd></dl>
 
