@@ -651,15 +651,15 @@ $ <b>sudo pacman -S gradle</b>          <i># Java project management tool</i>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S gcc</b>
-$ <b>sudo pacman -S clang</b>
-$ <b>sudo pacman -S gdb</b>
-$ <b>sudo pacman -S cmake</b>
-$ <b>sudo pacman -S ninja</b>
-$ <b>sudo pacman -S cuda</b>
-$ <b>sudo pacman -S nasm</b>
-$ <b>sudo pacman -S cdrtools</b>
-$ <b>sudo pacman -S qemu-full</b>
+$ <b>sudo pacman -S gcc</b>         <i># GNU Compiler Collection, C and C++ frontends</i>
+$ <b>sudo pacman -S gdb</b>         <i># GNU Debugger</i>
+$ <b>sudo pacman -S clang</b>       <i># C/C++ frontend compiler for LLVM</i>
+$ <b>sudo pacman -S cmake</b>       <i># C/C++ project management tool</i>
+$ <b>sudo pacman -S ninja</b>       <i># Build system with a focus on speed</i>
+$ <b>sudo pacman -S cuda</b>        <i># NVIDIA GPU programming toolkit</i>
+$ <b>sudo pacman -S nasm</b>        <i># Asssembler for the x86 CPU architecture</i>
+$ <b>sudo pacman -S cdrtools</b>    <i># CD/DVD/BluRay command line recording software</i>
+$ <b>sudo pacman -S qemu-full</b>   <i># Open source machine emulator and virtualizer</i>
 </pre>
 </dd></dl>
 
