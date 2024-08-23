@@ -405,7 +405,7 @@ $ <b>sudo systemctl enable tlp</b>
 <div></div>
 <i># execute following commands only if using TLP-RDW:</i>
 <div></div>
-$ <b>systemctl enable NetworkManager-dispatcher.service</b>
+$ <b>sudo systemctl enable NetworkManager-dispatcher.service</b>
 $ <b>sudo systemctl mask systemd-rfkill.service</b>
 $ <b>sudo systemctl mask systemd-rfkill.socket</b>
 </pre>
