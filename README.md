@@ -307,7 +307,7 @@ $ <b>sudo pacman -S xorg xorg-apps xorg-xinit xdotool xclip xsel</b>
 <pre>
 $ <b>sudo pacman -S dbus intel-ucode fuse2 lshw powertop inxi acpi</b>
 $ <b>sudo pacman -S base-devel git zip unzip htop tree w3m</b>
-$ <b>sudo pacman -S dialog reflector bash-completion arandr</b>
+$ <b>sudo pacman -S dialog reflector bash-completion</b>
 $ <b>sudo pacman -S iw wpa_supplicant</b>
 $ <b>sudo pacman -S tcpdump mtr net-tools conntrack-tools ethtool</b>
 $ <b>sudo pacman -S wget rsync socat openbsd-netcat axel</b>
@@ -556,6 +556,7 @@ $ <b>sudo pacman -S telegram-desktop</b>  <i># my preffered messenger</i>
 $ <b>sudo pacman -S rclone</b>            <i># manage or migrate files on cloud storage</i>
 $ <b>sudo pacman -S openvpn</b>           <i># openvpn client</i>
 $ <b>sudo pacman -S wireguard-tools</b>   <i># wireguard client</i>
+$ <b>sudo pacman -S arandr</b>            <i># gui for xrandr</i>
 </pre>
 </dd></dl>
 
@@ -634,8 +635,13 @@ $ <b>go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S jdk20-openjdk</b>
-TODO
+$ <b>sudo pacman -S jdk8-openjdk</b>    <i># OpenJDK Java  8 development kit</i>
+$ <b>sudo pacman -S jdk11-openjdk</b>   <i># OpenJDK Java 11 development kit</i>
+$ <b>sudo pacman -S jdk17-openjdk</b>   <i># OpenJDK Java 17 development kit</i>
+$ <b>sudo pacman -S jdk21-openjdk</b>   <i># OpenJDK Java 21 development kit</i>
+$ <b>sudo pacman -S jdk-openjdk</b>     <i># OpenJDK Java 22 development kit</i>
+$ <b>sudo pacman -S maven</b>           <i># Java project management tool</i>
+$ <b>sudo pacman -S gradle</b>          <i># Java project management tool</i>
 </pre>
 </dd></de>
 
