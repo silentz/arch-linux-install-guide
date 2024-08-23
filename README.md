@@ -731,8 +731,8 @@ $ <b>sudo pacman -S dart-sass</b>   <i># implementation of sass (required for hu
 
 <dl><dd>
 <pre>
-  <i>[multilib]</i>
-  <i>Include = /etc/pacman.d/mirrorlist</i>
+<i>[multilib]</i>
+<i>Include = /etc/pacman.d/mirrorlist</i>
 </pre>
 </dd></dl>
 
@@ -848,8 +848,8 @@ $ <b>sudo pacman -S yubikey-personalization-gui</b>
 4. C#: `Avalonia ILSpy`
 
 <h1 align="center">
-    Section 04: F.A.Q.s and bug fixes for known
-    Arch Linux issues &#129714;
+    Section 04: F.A.Q.s, bug fixes and other useful tips and playbooks
+    for Arch Linux &#129714;
 </h1>
 
 ### Playbook 01: Fix XHCI hibernation error
