@@ -748,11 +748,11 @@ $ <b>sudo pacman -Syu</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S wine</b>
-$ <b>sudo pacman -S wine-mono</b>
-$ <b>sudo pacman -S wine-gecko</b>
-$ <b>sudo pacman -S winetricks</b>
-$ <b>sudo pacman -S zenity</b>
+$ <b>sudo pacman -S wine</b>         <i># Compatibility layer for running Windows programs</i>
+$ <b>sudo pacman -S wine-mono</b>    <i># Wine's replacement for Microsoft's .NET Framework</i>
+$ <b>sudo pacman -S wine-gecko</b>   <i># Wine's replacement for Microsoft's Internet Explorer</i>
+$ <b>sudo pacman -S winetricks</b>   <i># Installer for various runtime libraries in Wine</i>
+$ <b>sudo pacman -S zenity</b>       <i># Display dialog boxes from shell scripts (wine dependency)</i>
 </pre>
 </dd></dl>
 
