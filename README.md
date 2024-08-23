@@ -644,6 +644,11 @@ $ <b>sudo pacman -S gradle</b>          <i># Java project management tool</i>
 </pre>
 </dd></de>
 
+<dl><dd>
+<b>IMPORTANT NOTE</b>: JVM version can be switched using <code>archlinux-java</code>. List all available
+JVM versions using <code>archlinux-java status</code> and set one using <code>archlinux-java set VERSION</code>.
+</dd></dl>
+
 5. Install Dart and Flutter following instructions from https://docs.flutter.dev/get-started/install/linux
 
 6. Install C, C++ and tools for low-level development:
