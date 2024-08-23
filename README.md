@@ -365,7 +365,7 @@ $ <b>sudo systemctl enable ly</b>
 <dl><dd>
 <pre>
 $ <b>sudo pacman -S ttf-dejavu ttf-freefont ttf-liberation ttf-droid terminus-font</b>
-$ <b>sudo pacman -S noto-fonts noto-fonts-emoji ttf-ubuntu-font-family ttf-roboto</b>
+$ <b>sudo pacman -S noto-fonts noto-fonts-emoji ttf-ubuntu-font-family ttf-roboto ttf-roboto-mono</b>
 </pre>
 </dd></dl>
 
@@ -610,9 +610,7 @@ $ <b>sudo pacman -S podman</b>           <i># cli tool for container management<
 $ <b>sudo pacman -S docker</b>           <i># cli tool for container management</i>
 $ <b>sudo pacman -S docker-compose</b>   <i># run multi-container applications with docker</i>
 $ <b>sudo pacman -S kubectl</b>          <i># cli tool for managing kubernetes clusters</i>
-$ <b>sudo pacman -S etcdctl</b>          <i># cli tool for interacting with the etcd server</i>
 $ <b>sudo pacman -S helm</b>             <i># package manager for kubernetes</i>
-$ <b>sudo pacman -S aws-cli-v2</b>       <i># cli tool to manage AWS services</i>
 $ <b>sudo pacman -S terraform</b>        <i># infrastructure as a code tool (clouds)</i>
 <div></div>
 <i># configure docker</i>
