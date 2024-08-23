@@ -306,7 +306,7 @@ $ <b>sudo pacman -S xorg xorg-apps xorg-xinit xdotool xclip xsel</b>
 <dl><dd>
 <pre>
 $ <b>sudo pacman -S dbus intel-ucode fuse2 lshw powertop inxi acpi</b>
-$ <b>sudo pacman -S base-devel git zip unzip htop tree w3m</b>
+$ <b>sudo pacman -S base-devel git zip unzip htop tree</b>
 $ <b>sudo pacman -S dialog reflector bash-completion</b>
 $ <b>sudo pacman -S iw wpa_supplicant</b>
 $ <b>sudo pacman -S tcpdump mtr net-tools conntrack-tools ethtool</b>
@@ -663,10 +663,11 @@ $ <b>sudo pacman -S qemu-full</b>   <i># Open source machine emulator and virtua
 </pre>
 </dd></dl>
 
-7. Install Python tools, Python itself should be installed by default:
+7. Install Python and its tools:
 
 <dl><dd>
 <pre>
+$ <b>sudo pacman -S python</b>      <i># python package manager</i>
 $ <b>sudo pacman -S python-pip</b>      <i># python package manager</i>
 $ <b>sudo pacman -S python-poetry</b>   <i># python package manager (better one)</i>
 </pre>
