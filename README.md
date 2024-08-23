@@ -223,7 +223,7 @@ $ <b>vim /etc/hosts</b>
 
 <dl><dd>
 <pre>
-$ <b>useradd -m -G wheel,storage,power,audio,video,docker -s /bin/bash yourusername</i></b>
+$ <b>useradd -m -G wheel,storage,power,audio,video -s /bin/bash yourusername</i></b>
 $ <b>passwd root</b>
 $ <b>passwd <i>yourusername</i></b>
 </pre>
