@@ -576,7 +576,8 @@ $ <b>makepkg -si</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S neovim</b>          <i># powerful console text editor</i>
+$ <b>sudo pacman -S neovim</b>          <i># powerful console editor</i>
+$ <b>sudo pacman -S zed</b>             <i># ultimate graphical editor</i>
 $ <b>sudo pacman -S tree-sitter</b>     <i># parsing system for programming tools</i>
 $ <b>sudo pacman -S tree-sitter-cli</b> <i># cli tool tree-sitter parsers</i>
 $ <b>sudo pacman -S stow</b>            <i># configuration manager</i>
