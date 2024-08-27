@@ -345,7 +345,6 @@ $ <b>sudo pacman -S alacritty</b>    <i># terminal emulator</i>
 $ <b>sudo pacman -S dunst</b>        <i># notification manager</i>
 $ <b>sudo pacman -S feh</b>          <i># fast and light image viewer</i>
 $ <b>sudo pacman -S xss-lock</b>     <i># screen lock controller</i>
-$ <b>sudo pacman -S light</b>        <i># utility to control screen brightness</i>
 $ <b>sudo pacman -S flameshot</b>    <i># screenshot app</i>
 $ <b>sudo pacman -S gsimplecal</b>   <i># small calendar widget</i>
 </pre>
