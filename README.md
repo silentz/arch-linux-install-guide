@@ -961,7 +961,7 @@ $ <b>gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'</b>
 
 ### Playbook 09: Encrypt external disk
 
-1. Select disk partition to be encrypted (in this example `/dev/sdb1`) and initialize LUKS:
+1. [Only once] Select disk partition to be encrypted (in this example `/dev/sdb1`) and initialize LUKS:
 
 <dl><dd>
 <pre>
@@ -977,7 +977,7 @@ $ <b>sudo cryptsetup open /dev/sdb1 <i>cryptdev</i></b>
 </pre>
 </dd></dl>
 
-3. Initialize filesystem on decrypted partition, in this example `ext4`:
+3. [Only once] Initialize filesystem on decrypted partition, in this example `ext4`:
 
 <dl><dd>
 <pre>
@@ -985,7 +985,7 @@ $ <b>sudo mkfs.ext4 /dev/mapper/cryptdev</b>
 </pre>
 </dd></dl>
 
-4. [Use mode] Mount created filesystem, to `/mnt` folder in this example, and use it as you want:
+4. Mount created filesystem, to `/mnt` folder in this example, and use it as you want:
 
 <dl><dd>
 <pre>
@@ -993,7 +993,7 @@ $ <b>sudo mount /dev/mapper/<i>cryptdev</i> /mnt</b>
 </pre>
 </dd></dl>
 
-5. [Use mode] Unmount filesystem and close LUKS device after using it:
+5. Unmount filesystem and close LUKS device after using it:
 
 <dl><dd>
 <pre>
