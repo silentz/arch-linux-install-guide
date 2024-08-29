@@ -989,7 +989,7 @@ $ <b>sudo mkfs.ext4 /dev/mapper/cryptdev</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo mount /dev/mapper/cryptdev /mnt</b>
+$ <b>sudo mount /dev/mapper/<i>cryptdev</i> /mnt</b>
 </pre>
 </dd></dl>
 
@@ -998,6 +998,6 @@ $ <b>sudo mount /dev/mapper/cryptdev /mnt</b>
 <dl><dd>
 <pre>
 $ <b>sudo umount /mnt</b>
-$ <b>sudo cryptsetup close /dev/mapper/cryptdev</b>
+$ <b>sudo cryptsetup close <i>cryptdev</i></b>
 </pre>
 </dd></dl>
