@@ -958,3 +958,46 @@ $ <b>gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'</b>
 ### Playbook 08: Remove annoying menubar from Slack
 
 -   `Window -> Always show menu bar -> disable`
+
+### Playbook 09: Encrypt external disk
+
+1. Select disk partition to be encrypted (in this example `/dev/sdb1`) and initialize LUKS:
+
+<dl><dd>
+<pre>
+$ <b>sudo cryptsetup luksFormat /dev/sdb1</b>
+</pre>
+</dd></dl>
+
+2. Open and decrypt LUKS partition, this will create decrypted device at `/dev/mapper/cryptdev`:
+
+<dl><dd>
+<pre>
+$ <b>sudo cryptsetup open /dev/sdb1 <i>cryptdev</i></b>
+</pre>
+</dd></dl>
+
+3. Initialize filesystem on decrypted partition, in this example `ext4`:
+
+<dl><dd>
+<pre>
+$ <b>sudo mkfs.ext4 /dev/mapper/cryptdev</b>
+</pre>
+</dd></dl>
+
+4. [Use mode] Mount created filesystem, to `/mnt` folder in this example, and use it as you want:
+
+<dl><dd>
+<pre>
+$ <b>sudo mount /dev/mapper/cryptdev /mnt</b>
+</pre>
+</dd></dl>
+
+5. [Use mode] Unmount filesystem and close LUKS device after using it:
+
+<dl><dd>
+<pre>
+$ <b>sudo umount /mnt</b>
+$ <b>sudo cryptsetup close /dev/mapper/cryptdev</b>
+</pre>
+</dd></dl>
