@@ -305,37 +305,37 @@ $ <b>sudo pacman -S xorg xorg-apps xorg-xinit xdotool xclip xsel</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S dbus</b>              # Message bus used by many applications
-$ <b>sudo pacman -S intel-ucode</b>       # Microcode update files for Intel CPUs
-$ <b>sudo pacman -S fuse2</b>             # Interface for programs to export a filesystem to the Linux kernel
-$ <b>sudo pacman -S lshw</b>              # Provides detailed information on the hardware of the machine
-$ <b>sudo pacman -S powertop</b>          # A tool to diagnose issues with power consumption and power management
-$ <b>sudo pacman -S inxi</b>              # Full featured CLI system information tool
-$ <b>sudo pacman -S acpi</b>              # Client for battery, power, and thermal readings
+$ <b>sudo pacman -S dbus</b>              <i># Message bus used by many applications</i>
+$ <b>sudo pacman -S intel-ucode</b>       <i># Microcode update files for Intel CPUs</i>
+$ <b>sudo pacman -S fuse2</b>             <i># Interface for programs to export a filesystem to the Linux kernel</i>
+$ <b>sudo pacman -S lshw</b>              <i># Provides detailed information on the hardware of the machine</i>
+$ <b>sudo pacman -S powertop</b>          <i># A tool to diagnose issues with power consumption and power management</i>
+$ <b>sudo pacman -S inxi</b>              <i># Full featured CLI system information tool</i>
+$ <b>sudo pacman -S acpi</b>              <i># Client for battery, power, and thermal readings</i>
 <div><div/>
-$ <b>sudo pacman -S base-devel</b>        # Basic tools to build Arch Linux packages
-$ <b>sudo pacman -S git</b>               # Distributed version control system
-$ <b>sudo pacman -S zip</b>               # Compressor/archiver for creating and modifying zipfiles
-$ <b>sudo pacman -S unzip</b>             # For extracting and viewing files in .zip archives
-$ <b>sudo pacman -S htop</b>              # Interactive CLI process viewer
-$ <b>sudo pacman -S tree</b>              # A directory listing program
+$ <b>sudo pacman -S base-devel</b>        <i># Basic tools to build Arch Linux packages</i>
+$ <b>sudo pacman -S git</b>               <i># Distributed version control system</i>
+$ <b>sudo pacman -S zip</b>               <i># Compressor/archiver for creating and modifying zipfiles</i>
+$ <b>sudo pacman -S unzip</b>             <i># For extracting and viewing files in .zip archives</i>
+$ <b>sudo pacman -S htop</b>              <i># Interactive CLI process viewer</i>
+$ <b>sudo pacman -S tree</b>              <i># A directory listing program</i>
 <div><div/>
-$ <b>sudo pacman -S dialog</b>            # A tool to display dialog boxes from shell scripts
-$ <b>sudo pacman -S reflector</b>         # Script to retrieve and filter the latest Pacman mirror list
-$ <b>sudo pacman -S bash-completion</b>   # Programmable completion for the bash shell
+$ <b>sudo pacman -S dialog</b>            <i># A tool to display dialog boxes from shell scripts</i>
+$ <b>sudo pacman -S reflector</b>         <i># Script to retrieve and filter the latest Pacman mirror list</i>
+$ <b>sudo pacman -S bash-completion</b>   <i># Programmable completion for the bash shell</i>
 <div><div/>
-$ <b>sudo pacman -S iw</b>                # CLI configuration utility for wireless devices
-$ <b>sudo pacman -S wpa_supplicant</b>    # A utility providing key negotiation for WPA wireless networks
-$ <b>sudo pacman -S tcpdump</b>           # Powerful command-line packet analyzer
-$ <b>sudo pacman -S mtr</b>               # Combines the functionality of traceroute and ping into one tool
-$ <b>sudo pacman -S net-tools</b>         # Configuration tools for Linux networking
-$ <b>sudo pacman -S conntrack-tools</b>   # Userspace tools to interact with the Netfilter tracking system
-$ <b>sudo pacman -S ethtool</b>           # Utility for controlling network drivers and hardware
-$ <b>sudo pacman -S wget</b>              # Network utility to retrieve files from the Web
-$ <b>sudo pacman -S rsync</b>             # File copying tool for remote and local files
-$ <b>sudo pacman -S socat</b>             # Multipurpose socket relay
-$ <b>sudo pacman -S openbsd-netcat</b>    # Netcat program. OpenBSD variant.
-$ <b>sudo pacman -S axel</b>              # Light command line download accelerator
+$ <b>sudo pacman -S iw</b>                <i># CLI configuration utility for wireless devices</i>
+$ <b>sudo pacman -S wpa_supplicant</b>    <i># A utility providing key negotiation for WPA wireless networks</i>
+$ <b>sudo pacman -S tcpdump</b>           <i># Powerful command-line packet analyzer</i>
+$ <b>sudo pacman -S mtr</b>               <i># Combines the functionality of traceroute and ping into one tool</i>
+$ <b>sudo pacman -S net-tools</b>         <i># Configuration tools for Linux networking</i>
+$ <b>sudo pacman -S conntrack-tools</b>   <i># Userspace tools to interact with the Netfilter tracking system</i>
+$ <b>sudo pacman -S ethtool</b>           <i># Utility for controlling network drivers and hardware</i>
+$ <b>sudo pacman -S wget</b>              <i># Network utility to retrieve files from the Web</i>
+$ <b>sudo pacman -S rsync</b>             <i># File copying tool for remote and local files</i>
+$ <b>sudo pacman -S socat</b>             <i># Multipurpose socket relay</i>
+$ <b>sudo pacman -S openbsd-netcat</b>    <i># Netcat program. OpenBSD variant.</i>
+$ <b>sudo pacman -S axel</b>              <i># Light command line download accelerator</i>
 </pre>
 </dd></dl>
 
