@@ -773,6 +773,15 @@ $ <b>sudo pacman -S gnucash</b>   <i># Personal and small-business financial-acc
 </pre>
 </dd></dl>
 
+15. 3D-Printing software:
+
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S freecad</b>       <i># Feature based parametric 3D CAD modeler</i>
+$ <b>sudo pacman -S prusa-slicer</b>  <i># G-code generator for 3D printers</i>
+</pre>
+</dd></dl>
+
 ### Step 04: Install Wine (Windows application runner)
 
 1. Go to `/etc/pacman.conf` and uncomment (or add) following lines:
