@@ -305,13 +305,45 @@ $ <b>sudo pacman -S xorg xorg-apps xorg-xinit xdotool xclip xsel</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S dbus intel-ucode fuse2 lshw powertop inxi acpi</b>
-$ <b>sudo pacman -S base-devel git zip unzip htop tree</b>
-$ <b>sudo pacman -S dialog reflector bash-completion</b>
-$ <b>sudo pacman -S iw wpa_supplicant</b>
-$ <b>sudo pacman -S tcpdump mtr net-tools conntrack-tools ethtool</b>
-$ <b>sudo pacman -S wget rsync socat openbsd-netcat axel</b>
-$ <b>sudo pacman -S sof-firmware pulseaudio alsa-utils alsa-plugins pavucontrol</b>
+$ <b>sudo pacman -S dbus</b>           #
+$ <b>sudo pacman -S intel-ucode</b>    #
+$ <b>sudo pacman -S fuse2</b>          #
+$ <b>sudo pacman -S lshw</b>           #
+$ <b>sudo pacman -S powertop</b>       #
+$ <b>sudo pacman -S inxi</b>           #
+$ <b>sudo pacman -S acpi</b>           #
+<div><div/>
+$ <b>sudo pacman -S base-devel</b>     #
+$ <b>sudo pacman -S git</b>            #
+$ <b>sudo pacman -S zip</b>            #
+$ <b>sudo pacman -S unzip</b>          #
+$ <b>sudo pacman -S htop</b>           #
+$ <b>sudo pacman -S tree</b>           #
+<div><div/>
+$ <b>sudo pacman -S dialog</b>             #
+$ <b>sudo pacman -S reflector</b>          #
+$ <b>sudo pacman -S bash-completion</b>    #
+<div><div/>
+$ <b>sudo pacman -S iw</b>                #
+$ <b>sudo pacman -S wpa_supplicant</b>    #
+<div><div/>
+$ <b>sudo pacman -S tcpdump</b>            #
+$ <b>sudo pacman -S mtr</b>                #
+$ <b>sudo pacman -S net-tools</b>          #
+$ <b>sudo pacman -S conntrack-tools</b>    #
+$ <b>sudo pacman -S ethtool</b>            #
+<div><div/>
+$ <b>sudo pacman -S wget</b>              #
+$ <b>sudo pacman -S rsync</b>             #
+$ <b>sudo pacman -S socat</b>             #
+$ <b>sudo pacman -S openbsd-netcat</b>    #
+$ <b>sudo pacman -S axel</b>              #
+<div><div/>
+$ <b>sudo pacman -S sof-firmware</b>    #
+$ <b>sudo pacman -S pulseaudio</b>      #
+$ <b>sudo pacman -S alsa-utils</b>      #
+$ <b>sudo pacman -S alsa-plugins</b>    #
+$ <b>sudo pacman -S pavucontrol</b>     #
 </pre>
 </dd></dl>
 
