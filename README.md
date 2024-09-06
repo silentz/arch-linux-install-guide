@@ -765,6 +765,14 @@ $ <b>sudo pacman -S dart-sass</b>   <i># implementation of sass (required for hu
 </pre>
 </dd></dl>
 
+14. Accounting software:
+
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S gnucash</b>   <i># Personal and small-business financial-accounting application</i>
+</pre>
+</dd></dl>
+
 ### Step 04: Install Wine (Windows application runner)
 
 1. Go to `/etc/pacman.conf` and uncomment (or add) following lines:
