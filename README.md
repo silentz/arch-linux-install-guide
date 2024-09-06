@@ -697,6 +697,7 @@ $ <b>sudo pacman -S cmake</b>       <i># C/C++ project management tool</i>
 $ <b>sudo pacman -S ninja</b>       <i># Build system with a focus on speed</i>
 $ <b>sudo pacman -S cuda</b>        <i># NVIDIA GPU programming toolkit</i>
 $ <b>sudo pacman -S nasm</b>        <i># Asssembler for the x86 CPU architecture</i>
+$ <b>sudo pacman -S boost</b>       <i># C++ library with general purpose utils and data structures</i>
 $ <b>sudo pacman -S cdrtools</b>    <i># CD/DVD/BluRay command line recording software</i>
 $ <b>sudo pacman -S qemu-full</b>   <i># Open source machine emulator and virtualizer</i>
 </pre>
