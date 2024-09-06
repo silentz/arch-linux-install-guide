@@ -396,7 +396,6 @@ $ <b>sudo pacman -S noto-fonts noto-fonts-emoji ttf-ubuntu-font-family ttf-robot
 
 <dl><dd>
 <pre>
-<div><div/>
 $ <b>sudo pacman -S sof-firmware</b>    # Sound Open Firmware
 $ <b>sudo pacman -S pulseaudio</b>      # A featureful, general-purpose sound server
 $ <b>sudo pacman -S pavucontrol</b>     # PulseAudio Volume Control
