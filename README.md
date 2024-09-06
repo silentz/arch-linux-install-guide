@@ -305,43 +305,37 @@ $ <b>sudo pacman -S xorg xorg-apps xorg-xinit xdotool xclip xsel</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S dbus</b>              #
-$ <b>sudo pacman -S intel-ucode</b>       #
-$ <b>sudo pacman -S fuse2</b>             #
-$ <b>sudo pacman -S lshw</b>              #
-$ <b>sudo pacman -S powertop</b>          #
-$ <b>sudo pacman -S inxi</b>              #
-$ <b>sudo pacman -S acpi</b>              #
+$ <b>sudo pacman -S dbus</b>              # Message bus used by many applications
+$ <b>sudo pacman -S intel-ucode</b>       # Microcode update files for Intel CPUs
+$ <b>sudo pacman -S fuse2</b>             # Interface for programs to export a filesystem to the Linux kernel
+$ <b>sudo pacman -S lshw</b>              # Provides detailed information on the hardware of the machine
+$ <b>sudo pacman -S powertop</b>          # A tool to diagnose issues with power consumption and power management
+$ <b>sudo pacman -S inxi</b>              # Full featured CLI system information tool
+$ <b>sudo pacman -S acpi</b>              # Client for battery, power, and thermal readings
 <div><div/>
-$ <b>sudo pacman -S base-devel</b>        #
-$ <b>sudo pacman -S git</b>               #
-$ <b>sudo pacman -S zip</b>               #
-$ <b>sudo pacman -S unzip</b>             #
-$ <b>sudo pacman -S htop</b>              #
-$ <b>sudo pacman -S tree</b>              #
+$ <b>sudo pacman -S base-devel</b>        # Basic tools to build Arch Linux packages
+$ <b>sudo pacman -S git</b>               # Distributed version control system
+$ <b>sudo pacman -S zip</b>               # Compressor/archiver for creating and modifying zipfiles
+$ <b>sudo pacman -S unzip</b>             # For extracting and viewing files in .zip archives
+$ <b>sudo pacman -S htop</b>              # Interactive CLI process viewer
+$ <b>sudo pacman -S tree</b>              # A directory listing program
 <div><div/>
-$ <b>sudo pacman -S dialog</b>            #
-$ <b>sudo pacman -S reflector</b>         #
-$ <b>sudo pacman -S bash-completion</b>   #
+$ <b>sudo pacman -S dialog</b>            # A tool to display dialog boxes from shell scripts
+$ <b>sudo pacman -S reflector</b>         # Script to retrieve and filter the latest Pacman mirror list
+$ <b>sudo pacman -S bash-completion</b>   # Programmable completion for the bash shell
 <div><div/>
-$ <b>sudo pacman -S iw</b>                #
-$ <b>sudo pacman -S wpa_supplicant</b>    #
-$ <b>sudo pacman -S tcpdump</b>           #
-$ <b>sudo pacman -S mtr</b>               #
-$ <b>sudo pacman -S net-tools</b>         #
-$ <b>sudo pacman -S conntrack-tools</b>   #
-$ <b>sudo pacman -S ethtool</b>           #
-$ <b>sudo pacman -S wget</b>              #
-$ <b>sudo pacman -S rsync</b>             #
-$ <b>sudo pacman -S socat</b>             #
-$ <b>sudo pacman -S openbsd-netcat</b>    #
-$ <b>sudo pacman -S axel</b>              #
-<div><div/>
-$ <b>sudo pacman -S sof-firmware</b>      #
-$ <b>sudo pacman -S pulseaudio</b>        #
-$ <b>sudo pacman -S alsa-utils</b>        #
-$ <b>sudo pacman -S alsa-plugins</b>      #
-$ <b>sudo pacman -S pavucontrol</b>       #
+$ <b>sudo pacman -S iw</b>                # CLI configuration utility for wireless devices
+$ <b>sudo pacman -S wpa_supplicant</b>    # A utility providing key negotiation for WPA wireless networks
+$ <b>sudo pacman -S tcpdump</b>           # Powerful command-line packet analyzer
+$ <b>sudo pacman -S mtr</b>               # Combines the functionality of traceroute and ping into one tool
+$ <b>sudo pacman -S net-tools</b>         # Configuration tools for Linux networking
+$ <b>sudo pacman -S conntrack-tools</b>   # Userspace tools to interact with the Netfilter tracking system
+$ <b>sudo pacman -S ethtool</b>           # Utility for controlling network drivers and hardware
+$ <b>sudo pacman -S wget</b>              # Network utility to retrieve files from the Web
+$ <b>sudo pacman -S rsync</b>             # File copying tool for remote and local files
+$ <b>sudo pacman -S socat</b>             # Multipurpose socket relay
+$ <b>sudo pacman -S openbsd-netcat</b>    # Netcat program. OpenBSD variant.
+$ <b>sudo pacman -S axel</b>              # Light command line download accelerator
 </pre>
 </dd></dl>
 
@@ -398,7 +392,20 @@ $ <b>sudo pacman -S noto-fonts noto-fonts-emoji ttf-ubuntu-font-family ttf-robot
 </pre>
 </dd></dl>
 
-8. [Optional] Enable bluetooth support on your PC:
+8. [Optional] Enable sound support on your PC:
+
+<dl><dd>
+<pre>
+<div><div/>
+$ <b>sudo pacman -S sof-firmware</b>    # Sound Open Firmware
+$ <b>sudo pacman -S pulseaudio</b>      # A featureful, general-purpose sound server
+$ <b>sudo pacman -S pavucontrol</b>     # PulseAudio Volume Control
+$ <b>sudo pacman -S alsa-utils</b>      # Advanced Linux Sound Architecture - Utilities
+$ <b>sudo pacman -S alsa-plugins</b>    # Additional ALSA plugins
+</pre>
+</dd></dl>
+
+9. [Optional] Enable bluetooth support on your PC:
 
 <dl><dd>
 <pre>
@@ -407,7 +414,7 @@ $ <b>sudo systemctl enable bluetooth</b>
 </pre>
 </dd></dl>
 
-9. [Optional] Enable printing support on your PC:
+10. [Optional] Enable printing support on your PC:
 
 <dl><dd>
 <pre>
@@ -422,7 +429,7 @@ go to <code>/usr/share/applications/system-config-printer.desktop</code> and set
 <code>Categories=System;Settings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;</code>
 </dd></dl>
 
-10. [Optional] Improve battary usage with TLP - utility that basically does kernel settings
+11. [Optional] Improve battary usage with TLP - utility that basically does kernel settings
     tweaking that improve power consumption. More information about TLP
     [can be found here](https://linrunner.de/tlp/). More information about TLP-RDW (radio device wizard)
     [can be found here](https://linrunner.de/tlp/settings/rdw.html).
@@ -440,7 +447,7 @@ $ <b>sudo systemctl mask systemd-rfkill.socket</b>
 </pre>
 </dd></dl>
 
-11. [Optional] Run service that will discard unused blocks on mounted filesystems. This is useful for
+12. [Optional] Run service that will discard unused blocks on mounted filesystems. This is useful for
     solid-state drives (SSDs) and thinly-provisioned storage. More information on fstrim
     [can be found here](https://man7.org/linux/man-pages/man8/fstrim.8.html).
 
@@ -450,7 +457,7 @@ $ <b>sudo systemctl enable fstrim.timer</b>
 </pre>
 </dd></dl>
 
-12. [Optional] Install GTK themes and icons:
+13. [Optional] Install GTK themes and icons:
 
 <dl><dd>
 <pre>
@@ -459,7 +466,7 @@ $ <b>sudo pacman -S papirus-icon-theme</b>
 </pre>
 </dd></dl>
 
-13. [Optional] Choose fastest pacman mirrors (use your own country list):
+14. [Optional] Choose fastest pacman mirrors (use your own country list):
 
 <dl><dd>
 <pre>
@@ -470,7 +477,7 @@ $ <b>sudo reflector --country Germany,Austria,Switzerland \
 </pre>
 </dd></dl>
 
-14. [Optional] Install NetworkManager addons:
+15. [Optional] Install NetworkManager addons:
 
 <dl><dd>
 <pre>
@@ -478,7 +485,7 @@ $ <b>sudo pacman -S nm-connection-editor networkmanager-openvpn</b>
 </pre>
 </dd></dl>
 
-15. [Optional] Install vulkan drivers:
+16. [Optional] Install vulkan drivers:
 
 <dl><dd>
 <pre>
@@ -488,7 +495,7 @@ $ <b>pacman -S amdvlk</b>         <i># only for systems with AMD graphics</i>
 </pre>
 </dd></dl>
 
-16. Reboot to finalize installation:
+17. Reboot to finalize installation:
 
 <dl><dd>
 <pre>
