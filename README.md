@@ -662,6 +662,7 @@ $ <b>newgrp docker</b>                           <i># login to docker group with
 <pre>
 $ <b>sudo pacman -S go</b>
 $ <b>go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest</b>
+$ <b>go install github.com/hairyhenderson/gomplate/v4/cmd/gomplate@latest</b>
 </pre>
 </dd></dl>
 
