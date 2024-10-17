@@ -336,6 +336,7 @@ $ <b>sudo pacman -S rsync</b>             <i># File copying tool for remote and 
 $ <b>sudo pacman -S socat</b>             <i># Multipurpose socket relay</i>
 $ <b>sudo pacman -S openbsd-netcat</b>    <i># Netcat program. OpenBSD variant.</i>
 $ <b>sudo pacman -S axel</b>              <i># Light command line download accelerator</i>
+$ <b>sudo pacman -S bind</b>              <i># I use dig utility for DNS resolution from this package</i>
 </pre>
 </dd></dl>
 
