@@ -418,7 +418,7 @@ $ <b>sudo systemctl enable bluetooth</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S cups cups-filters cups-pdf system-config-printer</b>
+$ <b>sudo pacman -S cups cups-filters cups-pdf system-config-printer hplip</b>
 $ <b>sudo systemctl enable cups.service</b>
 </pre>
 </dd></dl>
