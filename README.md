@@ -574,6 +574,7 @@ $ <b>sudo pacman -S obsidian</b>          <i># note-taking app</i>
 $ <b>sudo pacman -S mousepad</b>          <i># simple graphical text editor</i>
 $ <b>sudo pacman -S file-roller</b>       <i># archive manager</i>
 $ <b>sudo pacman -S evince</b>            <i># pdf viewer</i>
+$ <b>sudo pacman -S xournalpp</b>         <i># pdf editor</i>
 $ <b>sudo pacman -S libreoffice</b>       <i># office packages</i>
 $ <b>sudo pacman -S gimp</b>              <i># image editor</i>
 $ <b>sudo pacman -S gpick</b>             <i># color picker</i>
