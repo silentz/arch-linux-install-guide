@@ -297,7 +297,7 @@ $ <b>nmcli device wifi connect &lt;Name of WiFi access point&gt; password &lt;pa
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S xorg xorg-apps xorg-xinit xdotool xclip xsel</b>
+$ <b>sudo pacman -S xorg xorg-apps xorg-xinit xorg-xlsfonts xdotool xclip xsel</b>
 </pre>
 </dd></dl>
 
