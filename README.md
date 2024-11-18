@@ -315,7 +315,6 @@ $ <b>sudo pacman -S acpi</b>              <i># Client for battery, power, and th
 <div><div/>
 $ <b>sudo pacman -S base-devel</b>        <i># Basic tools to build Arch Linux packages</i>
 $ <b>sudo pacman -S git</b>               <i># Distributed version control system</i>
-$ <b>sudo pacman -S git-filter-repo</b>   <i># Faster and safer git-filter-branch alternative</i>
 $ <b>sudo pacman -S zip</b>               <i># Compressor/archiver for creating and modifying zipfiles</i>
 $ <b>sudo pacman -S unzip</b>             <i># For extracting and viewing files in .zip archives</i>
 $ <b>sudo pacman -S htop</b>              <i># Interactive CLI process viewer</i>
@@ -632,6 +631,7 @@ $ <b>sudo pacman -S apache</b>          <i># http server + some useful utilities
 $ <b>sudo pacman -S meld</b>            <i># git visual diff and merge tool</i>
 $ <b>sudo pacman -S websocat</b>        <i># command line client for websockets</i>
 $ <b>sudo pacman -S sshpass</b>         <i># noninteractive ssh password provider</i>
+$ <b>sudo pacman -S git-filter-repo</b> <i># Faster and safer git-filter-branch alternative</i>
 </pre>
 </dd></dl>
 
