@@ -631,7 +631,7 @@ $ <b>sudo pacman -S apache</b>          <i># http server + some useful utilities
 $ <b>sudo pacman -S meld</b>            <i># git visual diff and merge tool</i>
 $ <b>sudo pacman -S websocat</b>        <i># command line client for websockets</i>
 $ <b>sudo pacman -S sshpass</b>         <i># noninteractive ssh password provider</i>
-$ <b>sudo pacman -S git-filter-repo</b> <i># Faster and safer git-filter-branch alternative</i>
+$ <b>sudo pacman -S git-filter-repo</b> <i># faster and safer git-filter-branch alternative</i>
 </pre>
 </dd></dl>
 
