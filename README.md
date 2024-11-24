@@ -59,7 +59,7 @@ a pull request. Your contributions can help enhance the clarity of the guide for
 2. Find corresponding block device for USB-stick in `/dev` folder. Usually it is `/dev/sdb`.
 
 <dl><dd>
-<b>&#57615; IMPORTANT NOTE</b>: you need block device without a number on the end.
+<b>&#128161; IMPORTANT NOTE</b>: you need block device without a number on the end.
 If you have for example <i>/dev/sdb</i>, <i>/dev/sdb1</i> and <i>/dev/sdb2</i> you need <i>/dev/sdb</i> !
 </dd></dl>
 
@@ -424,7 +424,7 @@ $ <b>sudo systemctl enable cups.service</b>
 </dd></dl>
 
 <dl><dd>
-<b>&#57615; IMPORTANT NOTE</b>: if there is no option for system-config-printer in xfce4-settings-manager,
+<b>&#128161; IMPORTANT NOTE</b>: if there is no option for system-config-printer in xfce4-settings-manager,
 go to <code>/usr/share/applications/system-config-printer.desktop</code> and set
 <code>Categories=System;Settings;X-XFCE-SettingsDialog;X-XFCE-HardwareSettings;</code>
 </dd></dl>
@@ -636,7 +636,7 @@ $ <b>sudo pacman -S git-filter-repo</b> <i># faster and safer git-filter-branch 
 </dd></dl>
 
 <dl><dd>
-<b>&#57615; IMPORTANT NOTE</b>: execute <code>sudo setcap 'cap_net_raw+epi' /usr/bin/masscan</code> to enable
+<b>&#128161; IMPORTANT NOTE</b>: execute <code>sudo setcap 'cap_net_raw+epi' /usr/bin/masscan</code> to enable
 the ability to run <code>masscan</code> as non-root user.
 </dd></dl>
 
@@ -685,7 +685,7 @@ $ <b>sudo pacman -S gradle</b>          <i># Java project management tool</i>
 </dd></de>
 
 <dl><dd>
-<b>&#57615; IMPORTANT NOTE</b>: JVM version can be switched using <code>archlinux-java</code>. List all available
+<b>&#128161; IMPORTANT NOTE</b>: JVM version can be switched using <code>archlinux-java</code>. List all available
 JVM versions using <code>archlinux-java status</code> and set one using <code>archlinux-java set VERSION</code>.
 </dd></dl>
 
@@ -828,7 +828,7 @@ $ <b>winetricks settings fontsmooth=rgb</b>
 </dd></dl>
 
 <dl><dd>
-<b>&#57615; IMPORTANT NOTE</b>: if you are facing error
+<b>&#128161; IMPORTANT NOTE</b>: if you are facing error
 <code>wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available</code>,
 go to <code>~/.wine/dosdevices</code>, remove <code>z:</code> symbolic link and make it point to your <code>$HOME</code>
 </dd></dl>
