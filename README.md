@@ -82,7 +82,7 @@ $ <b>sudo dd conv=fsync oflag=direct status=progress \
 3. Boot from USB-stick and wait until boot process is finished.
 
 <dl><dd>
-<b>&#57615; IMPORTANT NOTE</b>: not every device can run a system from USB-stick out of the box.
+<b>&#128161; IMPORTANT NOTE</b>: not every device can run a system from USB-stick out of the box.
 Many BIOS'es by default come with activated <i>Secure boot</i> option.You might need to
 deactivate it in your BIOS.
 </dd></dl>
