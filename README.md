@@ -4,7 +4,7 @@
 
 [![Author](https://img.shields.io/badge/Author-Maxim_Pershin-ff6f00)](https://github.com/silentz)
 [![License](https://img.shields.io/badge/License-Apache--2.0-blue)](./LICENSE.txt)
-![Last Updated](https://img.shields.io/badge/Last_Updated-November_2024-02b532)
+![Last Updated](https://img.shields.io/badge/Last_Updated-December_2024-02b532)
 
 </div>
 
@@ -1058,5 +1058,18 @@ $ <b>sudo mount /dev/mapper/<i>cryptdev</i> /mnt</b>
 <pre>
 $ <b>sudo umount /mnt</b>
 $ <b>sudo cryptsetup close <i>cryptdev</i></b>
+</pre>
+</dd></dl>
+
+6. [If needed] Change LUKS disk encryption passphrase:
+
+<dl><dd>
+<pre>
+# TLDR: LUKS generates a single master key (also known as the "encryption key"), which is used to encrypt
+# the data on the disk. Instead of storing the master key directly, LUKS uses key slots. Each slot contains the
+# master key encrypted with a unique password or other authentication information. To change the password, we
+# need to obtain LUKS slot number for the current key.
+$ <b>sudo cryptsetup luksDump /dev/sdb1</b>             # most probably it will be 0
+$ <b>sudo cryptsetup luksChangeKey /dev/sdb1 -S 0</b>   # use your own slot number in -S parameter
 </pre>
 </dd></dl>
