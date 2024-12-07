@@ -1063,10 +1063,12 @@ $ <b>sudo cryptsetup close <i>cryptdev</i></b>
 
 6. [If needed] Change LUKS disk encryption passphrase:
 
+<dl><dd>
 TLDR: LUKS generates a single master key (also known as the "encryption key"), which is used to encrypt
 the data on the disk. Instead of storing the master key directly, LUKS uses key slots. Each slot contains the
 master key encrypted with a unique password or other authentication information. To change the password, we
 need to obtain LUKS slot number for the current key.
+</dd></dl>
 
 <dl><dd>
 <pre>
