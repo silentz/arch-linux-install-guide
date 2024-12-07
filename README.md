@@ -571,6 +571,8 @@ $ <b>sudo systemctl hibernate</b>
 <pre>
 $ <b>sudo pacman -S chromium</b>          <i># web-browser</i>
 $ <b>sudo pacman -S obsidian</b>          <i># note-taking app</i>
+$ <b>sudo pacman -S bitwarden</b>         <i># password manager for all devices</i>
+$ <b>sudo pacman -S bitwarden-cli</b>     <i># command line bitwarden client</i>
 $ <b>sudo pacman -S mousepad</b>          <i># simple graphical text editor</i>
 $ <b>sudo pacman -S file-roller</b>       <i># archive manager</i>
 $ <b>sudo pacman -S evince</b>            <i># pdf viewer</i>
