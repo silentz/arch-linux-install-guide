@@ -648,6 +648,7 @@ the ability to run <code>masscan</code> as non-root user.
 <pre>
 $ <b>sudo pacman -S ansible</b>          <i># infrastructure as a code tool (bare metal)</i>
 $ <b>sudo pacman -S podman</b>           <i># cli tool for container management</i>
+$ <b>sudo pacman -S podman-compose</b>   <i># run multi-container applications with podman</i>
 $ <b>sudo pacman -S docker</b>           <i># cli tool for container management</i>
 $ <b>sudo pacman -S docker-compose</b>   <i># run multi-container applications with docker</i>
 $ <b>sudo pacman -S kubectl</b>          <i># cli tool for managing kubernetes clusters</i>
