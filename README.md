@@ -588,7 +588,6 @@ $ <b>sudo pacman -S remmina</b>           <i># remote desktop client</i>
 $ <b>sudo pacman -S shotcut</b>           <i># video editing tool</i>
 $ <b>sudo pacman -S evolution</b>         <i># email client</i>
 $ <b>sudo pacman -S redshift</b>          <i># adjusts the color temperature of your screen</i>
-$ <b>sudo pacman -S neofetch</b>          <i># command-line system information</i>
 $ <b>sudo pacman -S obs-studio</b>        <i># screencasting and streaming app</i>
 $ <b>sudo pacman -S wireshark-qt</b>      <i># network protocol analyzer</i>
 $ <b>sudo pacman -S spotify-launcher</b>  <i># spotify client</i>
