@@ -142,13 +142,13 @@ Last sector ...: <b>Enter &crarr;</b>
                 <i>[change partition types]</i>
 Command (m for help): <b>t</b>
 Partition number (1-3, default 1): <b>1</b>
-Partion typr or alias (type L to list all): <b>uefi</b>
+Partion type or alias (type L to list all): <b>uefi</b>
 Command (m for help): <b>t</b>
 Partition number (1-3, default 2): <b>2</b>
-Partion typr or alias (type L to list all): <b>linux</b>
+Partion type or alias (type L to list all): <b>linux</b>
 Command (m for help): <b>t</b>
 Partition number (1-3, default 3): <b>3</b>
-Partion typr or alias (type L to list all): <b>swap</b>
+Partion type or alias (type L to list all): <b>swap</b>
 <span />
                 <i>[write partitioning to disk]</i>
 Command (m for help): <b>w</b>
