@@ -372,7 +372,9 @@ $ <b>sudo pacman -S xss-lock</b>     <i># screen lock controller</i>
 $ <b>sudo pacman -S flameshot</b>    <i># screenshot app</i>
 $ <b>sudo pacman -S gsimplecal</b>   <i># small calendar widget</i>
 $ <b>sudo pacman -S yazi</b>         <i># console file manager</i>
-  # additionals to yazi:
+<div></div>
+<i># additionals to yazi:</i>
+<div></div>
 $ <b>sudo pacman -S ueberzugpp</b>   <i># viewing images in terminal</i>
 </pre>
 </dd></dl>
