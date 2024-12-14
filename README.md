@@ -101,7 +101,7 @@ $ <b>ping 1.1.1.1</b>
 </pre>
 </dd></dl>
 
-2. Syncronize pacman packaes:
+2. Synchronize pacman packaes:
 
 <dl><dd>
 <pre>
