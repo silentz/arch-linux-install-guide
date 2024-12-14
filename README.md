@@ -317,6 +317,7 @@ $ <b>sudo pacman -S base-devel</b>        <i># Basic tools to build Arch Linux p
 $ <b>sudo pacman -S git</b>               <i># Distributed version control system</i>
 $ <b>sudo pacman -S zip</b>               <i># Compressor/archiver for creating and modifying zipfiles</i>
 $ <b>sudo pacman -S unzip</b>             <i># For extracting and viewing files in .zip archives</i>
+$ <b>sudo pacman -S p7zip</b>             <i># For extracting and viewing files in .7z archives</i>
 $ <b>sudo pacman -S htop</b>              <i># Interactive CLI process viewer</i>
 $ <b>sudo pacman -S tree</b>              <i># A directory listing program</i>
 <div><div/>
