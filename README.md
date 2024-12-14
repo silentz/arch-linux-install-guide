@@ -365,13 +365,15 @@ $ <b>sudo pacman -S lxappearance</b>
 <div></div>
 $ <b>sudo pacman -S polybar</b>      <i># nice statusbar for i3-based UIs</i>
 $ <b>sudo pacman -S rofi</b>         <i># like dmenu, but more customizable</i>
-$ <b>sudo pacman -S yazi</b>         <i># console file manager</i>
 $ <b>sudo pacman -S alacritty</b>    <i># terminal emulator</i>
 $ <b>sudo pacman -S dunst</b>        <i># notification manager</i>
 $ <b>sudo pacman -S feh</b>          <i># fast and light image viewer</i>
 $ <b>sudo pacman -S xss-lock</b>     <i># screen lock controller</i>
 $ <b>sudo pacman -S flameshot</b>    <i># screenshot app</i>
 $ <b>sudo pacman -S gsimplecal</b>   <i># small calendar widget</i>
+$ <b>sudo pacman -S yazi</b>         <i># console file manager</i>
+  # additionals to yazi:
+$ <b>sudo pacman -S ueberzugpp</b>   <i># viewing images in terminal</i>
 </pre>
 </dd></dl>
 
