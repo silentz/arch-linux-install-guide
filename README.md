@@ -365,7 +365,7 @@ $ <b>sudo pacman -S lxappearance</b>
 <div></div>
 $ <b>sudo pacman -S polybar</b>      <i># nice statusbar for i3-based UIs</i>
 $ <b>sudo pacman -S rofi</b>         <i># like dmenu, but more customizable</i>
-$ <b>sudo pacman -S ranger</b>       <i># console file manager</i>
+$ <b>sudo pacman -S yazi</b>         <i># console file manager</i>
 $ <b>sudo pacman -S alacritty</b>    <i># terminal emulator</i>
 $ <b>sudo pacman -S dunst</b>        <i># notification manager</i>
 $ <b>sudo pacman -S feh</b>          <i># fast and light image viewer</i>
