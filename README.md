@@ -843,7 +843,7 @@ go to <code>~/.wine/dosdevices</code>, remove <code>z:</code> symbolic link and 
 
 ### Step 05: Install texlive (LaTeX distribution)
 
-1. Donwload texlive installer:
+1. Download texlive installer:
 
 <dl><dd>
 <pre>
@@ -851,7 +851,7 @@ $ <b>wget http://mirrors.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz</b
 </pre>
 </dd></dl>
 
-2. Upack texlive installer archive:
+2. Unpack texlive installer archive:
 
 <dl><dd>
 <pre>
