@@ -494,9 +494,9 @@ $ <b>sudo pacman -S nm-connection-editor networkmanager-openvpn</b>
 
 <dl><dd>
 <pre>
-$ <b>pacman -S vulkan-intel</b>   <i># only for systems with Intel graphics</i>
-$ <b>pacman -S nvidia-utils</b>   <i># only for systems with Nvidia graphics</i>
-$ <b>pacman -S amdvlk</b>         <i># only for systems with AMD graphics</i>
+$ <b>pacman -S mesa vulkan-intel</b>   <i># only for systems with Intel graphics</i>
+$ <b>pacman -S nvidia-utils</b>        <i># only for systems with Nvidia graphics</i>
+$ <b>pacman -S amdvlk</b>              <i># only for systems with AMD graphics</i>
 </pre>
 </dd></dl>
 
