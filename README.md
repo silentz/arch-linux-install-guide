@@ -1089,4 +1089,6 @@ $ <b>sudo cryptsetup luksChangeKey /dev/sdb1 -S 0</b>   # use your own slot numb
 
 1. Open `/etc/pulse/daemon.conf`.
 2. Set `exit-idle-time = -1`. Don't forget to uncomment this line if it's commented.
-3. Restart pulseaudio service: `pulseaudio -k && pulseaudio --start`
+3. Stop pulseaudio service: `pulseaudio -k`
+4. Clear pulseaudio cache: `rm -r ~/.config/pulse/*`
+5. Start pulseaudio once again: `pulseaudio --start`
