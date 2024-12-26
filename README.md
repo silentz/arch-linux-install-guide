@@ -1084,3 +1084,9 @@ $ <b>sudo cryptsetup luksDump /dev/sdb1</b>             # most probably it will 
 $ <b>sudo cryptsetup luksChangeKey /dev/sdb1 -S 0</b>   # use your own slot number in -S parameter
 </pre>
 </dd></dl>
+
+### Playbook 10: Fix external microphone artefacts happening after ~20 minutes of connection
+
+1. Open `/etc/pulse/daemon.conf`.
+2. Set `exit-idle-time = -1`. Don't forget to uncomment this line if it's commented.
+3. Restart pulseaudio service: `pulseaudio -k && pulseaudio --start`
