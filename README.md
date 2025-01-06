@@ -54,7 +54,7 @@ a pull request. Your contributions can help enhance the clarity of the guide for
 
 ### Step 02: Preparing installation medium
 
-1. Insert a USB-stick into your PC with at least 2Gb of space availavle on it.
+1. Insert a USB-stick into your PC with at least 2Gb of space available on it.
 
 2. Find corresponding block device for USB-stick in `/dev` folder. Usually it is `/dev/sdb`.
 
