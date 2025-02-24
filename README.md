@@ -54,7 +54,7 @@ a pull request. Your contributions can help enhance the clarity of the guide for
 
 ### Step 02: Preparing installation medium
 
-1. Insert a USB-stick into your PC with at least 2Gb of space availavle on it.
+1. Insert a USB-stick into your PC with at least 2Gb of space available on it.
 
 2. Find corresponding block device for USB-stick in `/dev` folder. Usually it is `/dev/sdb`.
 
@@ -67,7 +67,7 @@ If you have for example <i>/dev/sdb</i>, <i>/dev/sdb1</i> and <i>/dev/sdb2</i> y
 
 <dl><dd>
 <pre>
-$ <b>sudo dd conv=fsync oflag=direct status=progress \
+$ <b>sudo dd conv=fsync oflag=direct status=progress bs=4M \
           if=./archlinux-YYYY.MM.DD-x86_64.iso of=/dev/sdb</b>
 </pre>
 </dd></dl>
