@@ -4,7 +4,7 @@
 
 [![Author](https://img.shields.io/badge/Author-Maxim_Pershin-ff6f00)](https://github.com/silentz)
 [![License](https://img.shields.io/badge/License-Apache--2.0-blue)](./LICENSE.txt)
-![Last Updated](https://img.shields.io/badge/Last_Updated-December_2024-02b532)
+![Last Updated](https://img.shields.io/badge/Last_Updated-February_2025-02b532)
 
 </div>
 
@@ -1006,25 +1006,25 @@ $ <b>gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'</b>
 
 ### Playbook 05: System goes to sleep too fast with Xfce
 
--   If system goes to sleep after 3-5 minutes, this might be screensaver.
-    To stop this, disable option `Settings -> Screensaver -> Activate Screensaver when computer is idle`.
+- If system goes to sleep after 3-5 minutes, this might be screensaver.
+  To stop this, disable option `Settings -> Screensaver -> Activate Screensaver when computer is idle`.
 
 ### Playbook 06: All requests, expept those to internal addresses, fail after launching Wireguard VPN
 
--   This happens when your Wireguard server can only handle requests only to configured IP addresses and DNS names.
-    Use `resolvectl revert wg0` (change `wg0` to your wireguard interface name).
-    This will prevent system from using Wireguard interface for all routes.
+- This happens when your Wireguard server can only handle requests only to configured IP addresses and DNS names.
+  Use `resolvectl revert wg0` (change `wg0` to your wireguard interface name).
+  This will prevent system from using Wireguard interface for all routes.
 
 ### Playbook 07: Screen freezed (or hangs) after 2-10 minutes of inactivity when using Picom
 
--   If you screen freezes (or hangs) while not touching keyboard or mouse for some time (usually 2-10 minutes),
-    this might be an issue with picom. Try first stopping picom at all to see if this helps.
-    If yes, try to change rendering backend of picom from `xrender` to `glx` and check if it helps.
-    Worked for me.
+- If you screen freezes (or hangs) while not touching keyboard or mouse for some time (usually 2-10 minutes),
+  this might be an issue with picom. Try first stopping picom at all to see if this helps.
+  If yes, try to change rendering backend of picom from `xrender` to `glx` and check if it helps.
+  Worked for me.
 
 ### Playbook 08: Remove annoying menubar from Slack
 
--   `Window -> Always show menu bar -> disable`
+- `Window -> Always show menu bar -> disable`
 
 ### Playbook 09: Encrypt external disk
 
