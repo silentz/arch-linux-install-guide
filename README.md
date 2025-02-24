@@ -67,7 +67,7 @@ If you have for example <i>/dev/sdb</i>, <i>/dev/sdb1</i> and <i>/dev/sdb2</i> y
 
 <dl><dd>
 <pre>
-$ <b>sudo dd conv=fsync oflag=direct status=progress \
+$ <b>sudo dd conv=fsync oflag=direct status=progress bs=4M \
           if=./archlinux-YYYY.MM.DD-x86_64.iso of=/dev/sdb</b>
 </pre>
 </dd></dl>
