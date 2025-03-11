@@ -4,7 +4,7 @@
 
 [![Author](https://img.shields.io/badge/Author-Maxim_Pershin-ff6f00)](https://github.com/silentz)
 [![License](https://img.shields.io/badge/License-Apache--2.0-blue)](./LICENSE.txt)
-![Last Updated](https://img.shields.io/badge/Last_Updated-February_2025-02b532)
+![Last Updated](https://img.shields.io/badge/Last_Updated-March_2025-02b532)
 
 </div>
 
