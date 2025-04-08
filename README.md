@@ -640,7 +640,6 @@ $ <b>sudo pacman -S websocat</b>        <i># command line client for websockets<
 $ <b>sudo pacman -S sshpass</b>         <i># noninteractive ssh password provider</i>
 $ <b>sudo pacman -S git-filter-repo</b> <i># faster and safer git-filter-branch alternative</i>
 $ <b>sudo pacman -S httpie</b>          <i># human-friendly CLI HTTP client for the API era</i>
-$ <b>sudo pacman -S radare2</b>         <i># open-source tools to disasm, debug, analyze and manipulate binary files</i>
 </pre>
 </dd></dl>
 
@@ -795,6 +794,16 @@ $ <b>sudo pacman -S gnucash</b>   <i># Personal and small-business financial-acc
 <pre>
 $ <b>sudo pacman -S freecad</b>       <i># Feature based parametric 3D CAD modeler</i>
 $ <b>sudo pacman -S prusa-slicer</b>  <i># G-code generator for 3D printers</i>
+</pre>
+</dd></dl>
+
+16. Reverse engineering software
+
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S radare2</b>         <i># open-source tools to disasm, debug, analyze and manipulate binary files</i>
+$ <b>sudo pacman -S ghidra</b>          <i># software reverse engineering framework</i>
+$ <b>r2pm -U && r2pm -ci r2ghidra</b>   <i># integrate ghidra decompiler into radare2</i>
 </pre>
 </dd></dl>
 
