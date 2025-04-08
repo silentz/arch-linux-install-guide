@@ -4,7 +4,7 @@
 
 [![Author](https://img.shields.io/badge/Author-Maxim_Pershin-ff6f00)](https://github.com/silentz)
 [![License](https://img.shields.io/badge/License-Apache--2.0-blue)](./LICENSE.txt)
-![Last Updated](https://img.shields.io/badge/Last_Updated-March_2025-02b532)
+![Last Updated](https://img.shields.io/badge/Last_Updated-April_2025-02b532)
 
 </div>
 
@@ -639,6 +639,7 @@ $ <b>sudo pacman -S meld</b>            <i># git visual diff and merge tool</i>
 $ <b>sudo pacman -S websocat</b>        <i># command line client for websockets</i>
 $ <b>sudo pacman -S sshpass</b>         <i># noninteractive ssh password provider</i>
 $ <b>sudo pacman -S git-filter-repo</b> <i># faster and safer git-filter-branch alternative</i>
+$ <b>sudo pacman -S httpie</b>         <i># human-friendly CLI HTTP client for the API era</i>
 </pre>
 </dd></dl>
 
