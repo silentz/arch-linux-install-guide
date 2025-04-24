@@ -721,9 +721,10 @@ $ <b>sudo pacman -S qemu-full</b>   <i># Open source machine emulator and virtua
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S python</b>          <i># python itself</i>
-$ <b>sudo pacman -S python-pip</b>      <i># python package manager</i>
-$ <b>sudo pacman -S python-poetry</b>   <i># python package manager (better one)</i>
+$ <b>sudo pacman -S python</b>             <i># python itself</i>
+$ <b>sudo pacman -S python-pip</b>         <i># python package manager</i>
+$ <b>sudo pacman -S python-virtualenv</b>  <i># python virtualenv</i>
+$ <b>sudo pacman -S python-poetry</b>      <i># python package manager (better one)</i>
 </pre>
 </dd></dl>
 
