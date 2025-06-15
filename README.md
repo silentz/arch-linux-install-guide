@@ -4,7 +4,7 @@
 
 [![Author](https://img.shields.io/badge/Author-Maxim_Pershin-ff6f00)](https://github.com/silentz)
 [![License](https://img.shields.io/badge/License-Apache--2.0-blue)](./LICENSE.txt)
-![Last Updated](https://img.shields.io/badge/Last_Updated-April_2025-02b532)
+![Last Updated](https://img.shields.io/badge/Last_Updated-June_2025-02b532)
 
 </div>
 
@@ -714,6 +714,12 @@ $ <b>sudo pacman -S nasm</b>        <i># Asssembler for the x86 CPU architecture
 $ <b>sudo pacman -S boost</b>       <i># C++ library with general purpose utils and data structures</i>
 $ <b>sudo pacman -S cdrtools</b>    <i># CD/DVD/BluRay command line recording software</i>
 $ <b>sudo pacman -S qemu-full</b>   <i># Open source machine emulator and virtualizer</i>
+$ <b>sudo pacman -S flex</b>        <i># A tool for generating text-scanning programs</i>
+$ <b>sudo pacman -S bison</b>       <i># The GNU general-purpose parser generator</i>
+$ <b>sudo pacman -S gperf</b>       <i># Perfect hash function generator</i>
+$ <b>sudo pacman -S libusb</b>      <i># Library that provides generic access to USB devices</i>
+$ <b>sudo pacman -S ccache</b>      <i># Compiler cache that speeds up recompilation by caching previous compilations</i>
+$ <b>sudo pacman -S dfu-util</b>    <i># Tool intended to download and upload firmware using DFU protocol to devices connected over USB</i>
 </pre>
 </dd></dl>
 
