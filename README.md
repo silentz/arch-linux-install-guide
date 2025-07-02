@@ -816,6 +816,14 @@ $ <b>r2pm -U && r2pm -ci r2ghidra</b>   <i># integrate ghidra decompiler into ra
 </pre>
 </dd></dl>
 
+17. Games:
+
+<dl><dd>
+<pre>
+$ <b>sudo pacman -S 0ad</b>         <i># cross-platform, 3d and historically-based real-time strategy game</i>
+</pre>
+</dd></dl>
+
 ### Step 04: Install Wine (Windows application runner)
 
 1. Go to `/etc/pacman.conf` and uncomment (or add) following lines:
