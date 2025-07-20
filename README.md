@@ -810,6 +810,7 @@ $ <b>sudo pacman -S prusa-slicer</b>  <i># G-code generator for 3D printers</i>
 <pre>
 $ <b>sudo pacman -S zaproxy</b>         <i># integrated penetration testing tool for finding vulnerabilities in web applications</i>
 $ <b>sudo pacman -S gobuster</b>        <i># directory, file, dns and vhost busting tool written in go</i>
+$ <b>sudo pacman -S hydra</b>           <i># very fast network logon cracker which support many different services</i>
 $ <b>sudo pacman -S radare2</b>         <i># open-source tools to disasm, debug, analyze and manipulate binary files</i>
 $ <b>sudo pacman -S ghidra</b>          <i># software reverse engineering framework</i>
 $ <b>r2pm -U && r2pm -ci r2ghidra</b>   <i># integrate ghidra decompiler into radare2</i>
