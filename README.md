@@ -4,7 +4,7 @@
 
 [![Author](https://img.shields.io/badge/Author-Maxim_Pershin-ff6f00)](https://github.com/silentz)
 [![License](https://img.shields.io/badge/License-Apache--2.0-blue)](./LICENSE.txt)
-![Last Updated](https://img.shields.io/badge/Last_Updated-July_2025-02b532)
+![Last Updated](https://img.shields.io/badge/Last_Updated-August_2025-02b532)
 
 </div>
 
@@ -602,6 +602,7 @@ $ <b>sudo pacman -S rclone</b>            <i># manage or migrate files on cloud 
 $ <b>sudo pacman -S openvpn</b>           <i># openvpn client</i>
 $ <b>sudo pacman -S wireguard-tools</b>   <i># wireguard client</i>
 $ <b>sudo pacman -S arandr</b>            <i># gui for xrandr</i>
+$ <b>sudo pacman -S mpv</b>               <i># media player</i>
 </pre>
 </dd></dl>
 
