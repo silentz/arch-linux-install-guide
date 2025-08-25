@@ -403,10 +403,13 @@ $ <b>sudo pacman -S noto-fonts noto-fonts-emoji ttf-ubuntu-font-family ttf-robot
 <dl><dd>
 <pre>
 $ <b>sudo pacman -S sof-firmware</b>    # Sound Open Firmware
-$ <b>sudo pacman -S pulseaudio</b>      # A featureful, general-purpose sound server
-$ <b>sudo pacman -S pavucontrol</b>     # PulseAudio Volume Control
 $ <b>sudo pacman -S alsa-utils</b>      # Advanced Linux Sound Architecture - Utilities
 $ <b>sudo pacman -S alsa-plugins</b>    # Additional ALSA plugins
+$ <b>sudo pacman -S pipewire</b>        # Low-latency audio/video router and processor
+$ <b>sudo pacman -S pipewire-pulse</b>  # Pipewire PulseAudio replacement
+$ <b>sudo pacman -S pipewire-jack</b>   # Pipewire JACK replacement
+$ <b>sudo pacman -S pipewire-alsa</b>   # Pipewire ALSA configuration
+$ <b>sudo pacman -S helvum</b>          # GTK patchbay for PipeWire
 </pre>
 </dd></dl>
 
