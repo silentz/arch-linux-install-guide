@@ -409,7 +409,7 @@ $ <b>sudo pacman -S pipewire</b>        # Low-latency audio/video router and pro
 $ <b>sudo pacman -S pipewire-pulse</b>  # Pipewire PulseAudio replacement
 $ <b>sudo pacman -S pipewire-jack</b>   # Pipewire JACK replacement
 $ <b>sudo pacman -S pipewire-alsa</b>   # Pipewire ALSA configuration
-$ <b>sudo pacman -S helvum</b>          # GTK patchbay for PipeWire
+$ <b>sudo pacman -S qpwgraph</b>        # PipeWire Graph Qt GUI Interface
 </pre>
 </dd></dl>
 
