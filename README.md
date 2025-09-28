@@ -1125,3 +1125,19 @@ $ <b>sudo cryptsetup luksChangeKey /dev/sdb1 -S 0</b>   # use your own slot numb
 3. Stop pulseaudio service: `pulseaudio -k`
 4. Clear pulseaudio cache: `rm -r ~/.config/pulse/*`
 5. Start pulseaudio once again: `pulseaudio --start`
+
+### Playbook 11: Poetry deps Zed autodiscovery
+
+1. In `pyproject.toml`:
+
+```
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+```
+
+2. In shell:
+
+```
+poetry config virtualenvs.in-project true
+```
