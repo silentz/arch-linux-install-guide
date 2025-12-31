@@ -16,6 +16,9 @@
 
 ### Getting Started
 
+<b>&#128161; IMPORTANT NOTE</b>: Use this guide just as a reference.
+Prefer to use official documentation before/while installation process: [ArchWiki](https://wiki.archlinux.org/title/Installation_guide).
+
 Welcome to the Arch Linux with Xfce4 and i3 Window Manager Installation Guide!
 
 This guide provides you with a step-by-step walkthrough of installing
@@ -101,7 +104,7 @@ $ <b>ping 1.1.1.1</b>
 </pre>
 </dd></dl>
 
-2. Synchronize pacman packaes:
+2. Synchronize pacman packages:
 
 <dl><dd>
 <pre>
@@ -159,9 +162,9 @@ Command (m for help): <b>w</b>
 
 <dl><dd>
 <pre>
-$ <b>mkfs.fat -F 32 /dev/nvme0n1p1</b> <i># on EFI System partition</i>
-$ <b>mkfs -t ext4 /dev/nvme0n1p2</b>   <i># on Linux filesystem partition</i>
-$ <b>mkswap /dev/nvme0n1p3</b>         <i># on Linux swap partition</i>
+# <b>mkfs.fat -F 32 /dev/nvme0n1p1</b> <i># on EFI System partition</i>
+# <b>mkfs -t ext4 /dev/nvme0n1p2</b>   <i># on Linux filesystem partition</i>
+# <b>mkswap /dev/nvme0n1p3</b>         <i># on Linux swap partition</i>
 </pre>
 </dd></dl>
 
@@ -169,10 +172,10 @@ $ <b>mkswap /dev/nvme0n1p3</b>         <i># on Linux swap partition</i>
 
 <dl><dd>
 <pre>
-$ <b>mount /dev/nvme0n1p2 /mnt</b>
-$ <b>mkdir -p /mnt/boot/efi</b>
-$ <b>mount /dev/nvme0n1p1 /mnt/boot/efi</b>
-$ <b>swapon /dev/nvme0n1p3</b>
+# <b>mount /dev/nvme0n1p2 /mnt</b>
+# <b>mkdir -p /mnt/boot/efi</b>
+# <b>mount /dev/nvme0n1p1 /mnt/boot/efi</b>
+# <b>swapon /dev/nvme0n1p3</b>
 </pre>
 </dd></dl>
 
@@ -180,8 +183,8 @@ $ <b>swapon /dev/nvme0n1p3</b>
 
 <dl><dd>
 <pre>
-$ <b>pacstrap -i /mnt base linux linux-firmware sudo vim</b>
-$ <b>genfstab -U -p /mnt > /mnt/etc/fstab</b>
+# <b>pacstrap -i /mnt base linux linux-firmware sudo vim</b>
+# <b>genfstab -U -p /mnt > /mnt/etc/fstab</b>
 </pre>
 </dd></dl>
 
@@ -191,7 +194,7 @@ $ <b>genfstab -U -p /mnt > /mnt/etc/fstab</b>
 
 <dl><dd>
 <pre>
-$ <b>arch-chroot /mnt</b>
+# <b>arch-chroot /mnt</b>
 </pre>
 </dd></dl>
 
@@ -199,11 +202,11 @@ $ <b>arch-chroot /mnt</b>
 
 <dl><dd>
 <pre>
-$ <b>vim /etc/locale.gen</b>   <i># uncomment your locales, i.e. `en_US.UTF-8` or `en_GB.UTF-8`</i>
-$ <b>locale-gen</b>
-$ <b>echo "LANG=en_US.UTF-8" > /etc/locale.conf</b>                <i># choose your locale</i>
-$ <b>ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime</b>   <i># choose your timezone</i>
-$ <b>hwclock --systohc</b>
+# <b>vim /etc/locale.gen</b>   <i># uncomment your locales, i.e. `en_US.UTF-8` or `en_GB.UTF-8`</i>
+# <b>locale-gen</b>
+# <b>echo "LANG=en_US.UTF-8" > /etc/locale.conf</b>                <i># choose your locale</i>
+# <b>ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime</b>   <i># choose your timezone</i>
+# <b>hwclock --systohc</b>
 </pre>
 </dd></dl>
 
@@ -211,8 +214,8 @@ $ <b>hwclock --systohc</b>
 
 <dl><dd>
 <pre>
-$ <b>echo <i>yourhostname</i> > /etc/hostname</b>
-$ <b>vim /etc/hosts</b>
+# <b>echo <i>yourhostname</i> > /etc/hostname</b>
+# <b>vim /etc/hosts</b>
     <i>127.0.0.1 localhost</i>
     <i>::1       localhost</i>
     <i>127.0.1.1 yourhostname</i>
@@ -223,9 +226,9 @@ $ <b>vim /etc/hosts</b>
 
 <dl><dd>
 <pre>
-$ <b>useradd -m -G wheel,storage,power,audio,video -s /bin/bash yourusername</i></b>
-$ <b>passwd root</b>
-$ <b>passwd <i>yourusername</i></b>
+# <b>useradd -m -G wheel,storage,power,audio,video -s /bin/bash yourusername</i></b>
+# <b>passwd root</b>
+# <b>passwd <i>yourusername</i></b>
 </pre>
 </dd></dl>
 
@@ -233,7 +236,7 @@ $ <b>passwd <i>yourusername</i></b>
 
 <dl><dd>
 <pre>
-$ <b>visudo</b>
+# <b>visudo</b>
     <i>[uncomment following line in file]</i>
     <i>%wheel ALL=(ALL) ALL</i>
 </pre>
@@ -243,9 +246,9 @@ $ <b>visudo</b>
 
 <dl><dd>
 <pre>
-$ <b>pacman -S grub efibootmgr</b>
-$ <b>grub-install /dev/nvme0n1</b>
-$ <b>grub-mkconfig -o /boot/grub/grub.cfg</b>
+# <b>pacman -S grub efibootmgr</b>
+# <b>grub-install /dev/nvme0n1</b>
+# <b>grub-mkconfig -o /boot/grub/grub.cfg</b>
 </pre>
 </dd></dl>
 
@@ -253,10 +256,10 @@ $ <b>grub-mkconfig -o /boot/grub/grub.cfg</b>
 
 <dl><dd>
 <pre>
-$ <b>pacman -S dhcpcd networkmanager resolvconf</b>
-$ <b>systemctl enable dhcpcd</b>
-$ <b>systemctl enable NetworkManager</b>
-$ <b>systemctl enable systemd-resolved</b>
+# <b>pacman -S dhcpcd networkmanager resolvconf</b>
+# <b>systemctl enable dhcpcd</b>
+# <b>systemctl enable NetworkManager</b>
+# <b>systemctl enable systemd-resolved</b>
 </pre>
 </dd></dl>
 
@@ -264,10 +267,10 @@ $ <b>systemctl enable systemd-resolved</b>
 
 <dl><dd>
 <pre>
-$ <b>exit</b>
-$ <b>umount /mnt/boot/efi</b>
-$ <b>umount /mnt</b>
-$ <b>reboot</b>
+# <b>exit</b>
+# <b>umount /mnt/boot/efi</b>
+# <b>umount /mnt</b>
+# <b>reboot</b>
 </pre>
 </dd></dl>
 
@@ -281,7 +284,7 @@ $ <b>reboot</b>
 
 <dl><dd>
 <pre>
-$ <b>timedatectl set-ntp true</b>
+# <b>timedatectl set-ntp true</b>
 </pre>
 </dd></dl>
 
@@ -297,7 +300,7 @@ $ <b>nmcli device wifi connect &lt;Name of WiFi access point&gt; password &lt;pa
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S xorg xorg-apps xorg-xinit xorg-xlsfonts xdotool xclip xsel</b>
+# <b>pacman -S xorg xorg-apps xorg-xinit xorg-xlsfonts xdotool xclip xsel</b>
 </pre>
 </dd></dl>
 
@@ -305,39 +308,40 @@ $ <b>sudo pacman -S xorg xorg-apps xorg-xinit xorg-xlsfonts xdotool xclip xsel</
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S dbus</b>              <i># Message bus used by many applications</i>
-$ <b>sudo pacman -S intel-ucode</b>       <i># Microcode update files for Intel CPUs</i>
-$ <b>sudo pacman -S fuse2</b>             <i># Interface for programs to export a filesystem to the Linux kernel</i>
-$ <b>sudo pacman -S lshw</b>              <i># Provides detailed information on the hardware of the machine</i>
-$ <b>sudo pacman -S powertop</b>          <i># A tool to diagnose issues with power consumption and power management</i>
-$ <b>sudo pacman -S inxi</b>              <i># Full featured CLI system information tool</i>
-$ <b>sudo pacman -S acpi</b>              <i># Client for battery, power, and thermal readings</i>
+# <b>pacman -S dbus</b>              <i># Message bus used by many applications</i>
+# <b>pacman -S intel-ucode</b>       <i># Microcode update files for Intel CPUs</i>
+# <b>pacman -S amd-ucode</b>         <i># Microcode update files for AMD CPUs</i>
+# <b>pacman -S fuse2</b>             <i># Interface for programs to export a filesystem to the Linux kernel</i>
+# <b>pacman -S lshw</b>              <i># Provides detailed information on the hardware of the machine</i>
+# <b>pacman -S powertop</b>          <i># A tool to diagnose issues with power consumption and power management</i>
+# <b>pacman -S inxi</b>              <i># Full featured CLI system information tool</i>
+# <b>pacman -S acpi</b>              <i># Client for battery, power, and thermal readings</i>
 <div><div/>
-$ <b>sudo pacman -S base-devel</b>        <i># Basic tools to build Arch Linux packages</i>
-$ <b>sudo pacman -S git</b>               <i># Distributed version control system</i>
-$ <b>sudo pacman -S zip</b>               <i># Compressor/archiver for creating and modifying zipfiles</i>
-$ <b>sudo pacman -S unzip</b>             <i># For extracting and viewing files in .zip archives</i>
-$ <b>sudo pacman -S p7zip</b>             <i># For extracting and viewing files in .7z archives</i>
-$ <b>sudo pacman -S htop</b>              <i># Interactive CLI process viewer</i>
-$ <b>sudo pacman -S tree</b>              <i># A directory listing program</i>
+# <b>pacman -S base-devel</b>        <i># Basic tools to build Arch Linux packages</i>
+# <b>pacman -S git</b>               <i># Distributed version control system</i>
+# <b>pacman -S zip</b>               <i># Compressor/archiver for creating and modifying zipfiles</i>
+# <b>pacman -S unzip</b>             <i># For extracting and viewing files in .zip archives</i>
+# <b>pacman -S p7zip</b>             <i># For extracting and viewing files in .7z archives</i>
+# <b>pacman -S htop</b>              <i># Interactive CLI process viewer</i>
+# <b>pacman -S tree</b>              <i># A directory listing program</i>
 <div><div/>
-$ <b>sudo pacman -S dialog</b>            <i># A tool to display dialog boxes from shell scripts</i>
-$ <b>sudo pacman -S reflector</b>         <i># Script to retrieve and filter the latest Pacman mirror list</i>
-$ <b>sudo pacman -S bash-completion</b>   <i># Programmable completion for the bash shell</i>
+# <b>pacman -S dialog</b>            <i># A tool to display dialog boxes from shell scripts</i>
+# <b>pacman -S reflector</b>         <i># Script to retrieve and filter the latest Pacman mirror list</i>
+# <b>pacman -S bash-completion</b>   <i># Programmable completion for the bash shell</i>
 <div><div/>
-$ <b>sudo pacman -S iw</b>                <i># CLI configuration utility for wireless devices</i>
-$ <b>sudo pacman -S wpa_supplicant</b>    <i># A utility providing key negotiation for WPA wireless networks</i>
-$ <b>sudo pacman -S tcpdump</b>           <i># Powerful command-line packet analyzer</i>
-$ <b>sudo pacman -S mtr</b>               <i># Combines the functionality of traceroute and ping into one tool</i>
-$ <b>sudo pacman -S net-tools</b>         <i># Configuration tools for Linux networking</i>
-$ <b>sudo pacman -S conntrack-tools</b>   <i># Userspace tools to interact with the Netfilter tracking system</i>
-$ <b>sudo pacman -S ethtool</b>           <i># Utility for controlling network drivers and hardware</i>
-$ <b>sudo pacman -S wget</b>              <i># Network utility to retrieve files from the Web</i>
-$ <b>sudo pacman -S rsync</b>             <i># File copying tool for remote and local files</i>
-$ <b>sudo pacman -S socat</b>             <i># Multipurpose socket relay</i>
-$ <b>sudo pacman -S openbsd-netcat</b>    <i># Netcat program. OpenBSD variant.</i>
-$ <b>sudo pacman -S axel</b>              <i># Light command line download accelerator</i>
-$ <b>sudo pacman -S bind</b>              <i># I use dig utility for DNS resolution from this package</i>
+# <b>pacman -S iw</b>                <i># CLI configuration utility for wireless devices</i>
+# <b>pacman -S wpa_supplicant</b>    <i># A utility providing key negotiation for WPA wireless networks</i>
+# <b>pacman -S tcpdump</b>           <i># Powerful command-line packet analyzer</i>
+# <b>pacman -S mtr</b>               <i># Combines the functionality of traceroute and ping into one tool</i>
+# <b>pacman -S net-tools</b>         <i># Configuration tools for Linux networking</i>
+# <b>pacman -S conntrack-tools</b>   <i># Userspace tools to interact with the Netfilter tracking system</i>
+# <b>pacman -S ethtool</b>           <i># Utility for controlling network drivers and hardware</i>
+# <b>pacman -S wget</b>              <i># Network utility to retrieve files from the Web</i>
+# <b>pacman -S rsync</b>             <i># File copying tool for remote and local files</i>
+# <b>pacman -S socat</b>             <i># Multipurpose socket relay</i>
+# <b>pacman -S openbsd-netcat</b>    <i># Netcat program. OpenBSD variant.</i>
+# <b>pacman -S axel</b>              <i># Light command line download accelerator</i>
+# <b>pacman -S bind</b>              <i># I use dig utility for DNS resolution from this package</i>
 </pre>
 </dd></dl>
 
@@ -347,36 +351,36 @@ $ <b>sudo pacman -S bind</b>              <i># I use dig utility for DNS resolut
 <pre>
 <i># Instructions for installing Xfce4</i>
 <div></div>
-$ <b>sudo pacman -S xfce4</b>
-$ <b>sudo pacman -S xfce4-notifyd xfce4-screensaver xfce4-screenshooter</b>
-$ <b>sudo pacman -S thunar-archive-plugin thunar-media-tags-plugin</b>
-$ <b>sudo pacman -S network-manager-applet</b>
-$ <b>sudo pacman -S xfce4-xkb-plugin         xfce4-battery-plugin \
-                 xfce4-datetime-plugin    xfce4-mount-plugin   \
-                 xfce4-netload-plugin     xfce4-wavelan-plugin \
-                 xfce4-pulseaudio-plugin  xfce4-weather-plugin \
-                 xfce4-whiskermenu-plugin</b>
+# <b>pacman -S xfce4</b>
+# <b>pacman -S xfce4-notifyd xfce4-screensaver xfce4-screenshooter</b>
+# <b>pacman -S thunar-archive-plugin thunar-media-tags-plugin</b>
+# <b>pacman -S network-manager-applet</b>
+# <b>pacman -S xfce4-xkb-plugin         xfce4-battery-plugin \
+               xfce4-datetime-plugin    xfce4-mount-plugin   \
+               xfce4-netload-plugin     xfce4-wavelan-plugin \
+               xfce4-pulseaudio-plugin  xfce4-weather-plugin \
+               xfce4-whiskermenu-plugin</b>
 <div></div>
 <i># Instructions for installing i3</i>
 <div></div>
-$ <b>sudo pacman -S i3-wm i3status i3lock pango</b>
-$ <b>sudo pacman -S lxappearance</b>
+# <b>pacman -S i3-wm i3status i3lock pango</b>
+# <b>pacman -S lxappearance</b>
 <div></div>
 <i># You will most probably need these apps for i3</i>
 <div></div>
-$ <b>sudo pacman -S polybar</b>      <i># nice statusbar for i3-based UIs</i>
-$ <b>sudo pacman -S rofi</b>         <i># like dmenu, but more customizable</i>
-$ <b>sudo pacman -S alacritty</b>    <i># terminal emulator</i>
-$ <b>sudo pacman -S dunst</b>        <i># notification manager</i>
-$ <b>sudo pacman -S feh</b>          <i># fast and light image viewer</i>
-$ <b>sudo pacman -S xss-lock</b>     <i># screen lock controller</i>
-$ <b>sudo pacman -S flameshot</b>    <i># screenshot app</i>
-$ <b>sudo pacman -S gsimplecal</b>   <i># small calendar widget</i>
-$ <b>sudo pacman -S yazi</b>         <i># console file manager</i>
+# <b>pacman -S polybar</b>      <i># nice statusbar for i3-based UIs</i>
+# <b>pacman -S rofi</b>         <i># like dmenu, but more customizable</i>
+# <b>pacman -S alacritty</b>    <i># terminal emulator</i>
+# <b>pacman -S dunst</b>        <i># notification manager</i>
+# <b>pacman -S feh</b>          <i># fast and light image viewer</i>
+# <b>pacman -S xss-lock</b>     <i># screen lock controller</i>
+# <b>pacman -S flameshot</b>    <i># screenshot app</i>
+# <b>pacman -S gsimplecal</b>   <i># small calendar widget</i>
+# <b>pacman -S yazi</b>         <i># console file manager</i>
 <div></div>
 <i># additionals to yazi:</i>
 <div></div>
-$ <b>sudo pacman -S ueberzugpp</b>   <i># viewing images in terminal</i>
+# <b>pacman -S ueberzugpp</b>   <i># viewing images in terminal</i>
 </pre>
 </dd></dl>
 
@@ -384,8 +388,8 @@ $ <b>sudo pacman -S ueberzugpp</b>   <i># viewing images in terminal</i>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S ly</b>
-$ <b>sudo systemctl enable ly</b>
+# <b>pacman -S ly</b>
+# <b>systemctl enable ly</b>
 </pre>
 </dd></dl>
 
@@ -393,8 +397,8 @@ $ <b>sudo systemctl enable ly</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S ttf-dejavu ttf-freefont ttf-liberation ttf-droid terminus-font</b>
-$ <b>sudo pacman -S noto-fonts noto-fonts-emoji ttf-ubuntu-font-family ttf-roboto ttf-roboto-mono ttf-ibm-plex</b>
+# <b>pacman -S ttf-dejavu ttf-freefont ttf-liberation ttf-droid terminus-font</b>
+# <b>pacman -S noto-fonts noto-fonts-emoji ttf-ubuntu-font-family ttf-roboto ttf-roboto-mono ttf-ibm-plex</b>
 </pre>
 </dd></dl>
 
@@ -402,14 +406,14 @@ $ <b>sudo pacman -S noto-fonts noto-fonts-emoji ttf-ubuntu-font-family ttf-robot
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S sof-firmware</b>    # Sound Open Firmware
-$ <b>sudo pacman -S alsa-utils</b>      # Advanced Linux Sound Architecture - Utilities
-$ <b>sudo pacman -S alsa-plugins</b>    # Additional ALSA plugins
-$ <b>sudo pacman -S pipewire</b>        # Low-latency audio/video router and processor
-$ <b>sudo pacman -S pipewire-pulse</b>  # Pipewire PulseAudio replacement
-$ <b>sudo pacman -S pipewire-jack</b>   # Pipewire JACK replacement
-$ <b>sudo pacman -S pipewire-alsa</b>   # Pipewire ALSA configuration
-$ <b>sudo pacman -S qpwgraph</b>        # PipeWire Graph Qt GUI Interface
+# <b>pacman -S sof-firmware</b>    # Sound Open Firmware
+# <b>pacman -S alsa-utils</b>      # Advanced Linux Sound Architecture - Utilities
+# <b>pacman -S alsa-plugins</b>    # Additional ALSA plugins
+# <b>pacman -S pipewire</b>        # Low-latency audio/video router and processor
+# <b>pacman -S pipewire-pulse</b>  # Pipewire PulseAudio replacement
+# <b>pacman -S pipewire-jack</b>   # Pipewire JACK replacement
+# <b>pacman -S pipewire-alsa</b>   # Pipewire ALSA configuration
+# <b>pacman -S qpwgraph</b>        # PipeWire Graph Qt GUI Interface
 </pre>
 </dd></dl>
 
@@ -417,8 +421,8 @@ $ <b>sudo pacman -S qpwgraph</b>        # PipeWire Graph Qt GUI Interface
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S bluez bluez-utils blueman</b>
-$ <b>sudo systemctl enable bluetooth</b>
+# <b>pacman -S bluez bluez-utils blueman</b>
+# <b>systemctl enable bluetooth</b>
 </pre>
 </dd></dl>
 
@@ -426,9 +430,9 @@ $ <b>sudo systemctl enable bluetooth</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S cups cups-filters cups-pdf system-config-printer</b>
-$ <b>sudo pacman -S hplip</b>    <i># for HP devices</i>
-$ <b>sudo systemctl enable cups.service</b>
+# <b>pacman -S cups cups-filters cups-pdf system-config-printer</b>
+# <b>pacman -S hplip</b>    <i># for HP devices</i>
+# <b>systemctl enable cups.service</b>
 </pre>
 </dd></dl>
 
@@ -445,14 +449,14 @@ go to <code>/usr/share/applications/system-config-printer.desktop</code> and set
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S tlp tlp-rdw</b>
-$ <b>sudo systemctl enable tlp</b>
+# <b>pacman -S tlp tlp-rdw</b>
+# <b>systemctl enable tlp</b>
 <div></div>
 <i># execute following commands only if using TLP-RDW:</i>
 <div></div>
-$ <b>sudo systemctl enable NetworkManager-dispatcher.service</b>
-$ <b>sudo systemctl mask systemd-rfkill.service</b>
-$ <b>sudo systemctl mask systemd-rfkill.socket</b>
+# <b>systemctl enable NetworkManager-dispatcher.service</b>
+# <b>systemctl mask systemd-rfkill.service</b>
+# <b>systemctl mask systemd-rfkill.socket</b>
 </pre>
 </dd></dl>
 
@@ -462,7 +466,7 @@ $ <b>sudo systemctl mask systemd-rfkill.socket</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo systemctl enable fstrim.timer</b>
+# <b>systemctl enable fstrim.timer</b>
 </pre>
 </dd></dl>
 
@@ -470,8 +474,8 @@ $ <b>sudo systemctl enable fstrim.timer</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S arc-gtk-theme adapta-gtk-theme materia-gtk-theme</b>
-$ <b>sudo pacman -S papirus-icon-theme</b>
+# <b>pacman -S arc-gtk-theme adapta-gtk-theme materia-gtk-theme</b>
+# <b>pacman -S papirus-icon-theme</b>
 </pre>
 </dd></dl>
 
@@ -479,10 +483,10 @@ $ <b>sudo pacman -S papirus-icon-theme</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo reflector --country Germany,Austria,Switzerland \
-                 --fastest 10 \
-                 --threads $(nproc) \
-                 --save /etc/pacman.d/mirrorlist</b>
+# <b>reflector --country Germany,Austria,Switzerland \
+               --fastest 10 \
+               --threads $(nproc) \
+               --save /etc/pacman.d/mirrorlist</b>
 </pre>
 </dd></dl>
 
@@ -490,7 +494,7 @@ $ <b>sudo reflector --country Germany,Austria,Switzerland \
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S nm-connection-editor networkmanager-openvpn</b>
+# <b>pacman -S nm-connection-editor networkmanager-openvpn</b>
 </pre>
 </dd></dl>
 
@@ -498,7 +502,7 @@ $ <b>sudo pacman -S nm-connection-editor networkmanager-openvpn</b>
 
 <dl><dd>
 <pre>
-$ <b>pacman -S mesa vulkan-intel lib32-mesa lib32-vulkan-intel vulkan-tools mesa-utils</b>
+# <b>pacman -S mesa vulkan-intel lib32-mesa lib32-vulkan-intel vulkan-tools mesa-utils</b>
 </pre>
 </dd></dl>
 
@@ -510,7 +514,7 @@ $ <b>pacman -S mesa vulkan-intel lib32-mesa lib32-vulkan-intel vulkan-tools mesa
 
 <dl><dd>
 <pre>
-$ <b>reboot</b>
+# <b>reboot</b>
 </pre>
 </dd></dl>
 
@@ -522,7 +526,7 @@ $ <b>reboot</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo vim /etc/default/grub</b>
+# <b>vim /etc/default/grub</b>
   <i>Example: </i>
   <i>...</i>
   <i>GRUB_CMDLINE_LINUX_DEFAULT="quiet splash <b>resume=UUID=&lt;UUID of your swap partition&gt;</b>"</i>
@@ -535,7 +539,7 @@ $ <b>sudo vim /etc/default/grub</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo grub-mkconfig -o /boot/grub/grub.cfg</b>
+# <b>grub-mkconfig -o /boot/grub/grub.cfg</b>
 </pre>
 </dd></dl>
 
@@ -543,7 +547,7 @@ $ <b>sudo grub-mkconfig -o /boot/grub/grub.cfg</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo vim /etc/mkinitcpio.conf</b>
+# <b>vim /etc/mkinitcpio.conf</b>
   <i>Example: </i>
   <i>...</i>
   <i>HOOKS="base udev <b>resume</b> autodetect modconf block filesystems keyboard fsck"</i>
@@ -555,7 +559,7 @@ $ <b>sudo vim /etc/mkinitcpio.conf</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo mkinitcpio -p linux</b>
+# <b>mkinitcpio -p linux</b>
 </pre>
 </dd></dl>
 
@@ -563,7 +567,7 @@ $ <b>sudo mkinitcpio -p linux</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo systemctl hibernate</b>
+# <b>systemctl hibernate</b>
 </pre>
 </dd></dl>
 
@@ -580,34 +584,36 @@ $ <b>sudo systemctl hibernate</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S chromium</b>          <i># web-browser</i>
-$ <b>sudo pacman -S obsidian</b>          <i># note-taking app</i>
-$ <b>sudo pacman -S bitwarden</b>         <i># password manager for all devices (use keepassxc provider)</i>
-$ <b>sudo pacman -S bitwarden-cli</b>     <i># command line bitwarden client</i>
-$ <b>sudo pacman -S mousepad</b>          <i># simple graphical text editor</i>
-$ <b>sudo pacman -S file-roller</b>       <i># archive manager</i>
-$ <b>sudo pacman -S evince</b>            <i># pdf viewer</i>
-$ <b>sudo pacman -S xournalpp</b>         <i># pdf editor</i>
-$ <b>sudo pacman -S libreoffice</b>       <i># office packages</i>
-$ <b>sudo pacman -S gimp</b>              <i># image editor</i>
-$ <b>sudo pacman -S gpick</b>             <i># color picker</i>
-$ <b>sudo pacman -S inkscape</b>          <i># vector graphics editor</i>
-$ <b>sudo pacman -S fontforge</b>         <i># fonts editor</i>
-$ <b>sudo pacman -S gparted</b>           <i># grphical disk management tool</i>
-$ <b>sudo pacman -S vlc</b>               <i># video player</i>
-$ <b>sudo pacman -S remmina</b>           <i># remote desktop client</i>
-$ <b>sudo pacman -S shotcut</b>           <i># video editing tool</i>
-$ <b>sudo pacman -S evolution</b>         <i># email client</i>
-$ <b>sudo pacman -S redshift</b>          <i># adjusts the color temperature of your screen</i>
-$ <b>sudo pacman -S obs-studio</b>        <i># screencasting and streaming app</i>
-$ <b>sudo pacman -S wireshark-qt</b>      <i># network protocol analyzer</i>
-$ <b>sudo pacman -S spotify-launcher</b>  <i># spotify client</i>
-$ <b>sudo pacman -S telegram-desktop</b>  <i># my preffered messenger</i>
-$ <b>sudo pacman -S rclone</b>            <i># manage or migrate files on cloud storage</i>
-$ <b>sudo pacman -S openvpn</b>           <i># openvpn client</i>
-$ <b>sudo pacman -S wireguard-tools</b>   <i># wireguard client</i>
-$ <b>sudo pacman -S arandr</b>            <i># gui for xrandr</i>
-$ <b>sudo pacman -S mpv</b>               <i># media player</i>
+# <b>pacman -S chromium</b>          <i># web-browser</i>
+# <b>pacman -S firefox</b>           <i># web-browser</i>
+# <b>pacman -S vivaldi</b>           <i># web-browser</i>
+# <b>pacman -S obsidian</b>          <i># note-taking app</i>
+# <b>pacman -S bitwarden</b>         <i># password manager for all devices (use keepassxc provider)</i>
+# <b>pacman -S bitwarden-cli</b>     <i># command line bitwarden client</i>
+# <b>pacman -S mousepad</b>          <i># simple graphical text editor</i>
+# <b>pacman -S file-roller</b>       <i># archive manager</i>
+# <b>pacman -S evince</b>            <i># pdf viewer</i>
+# <b>pacman -S xournalpp</b>         <i># pdf editor</i>
+# <b>pacman -S libreoffice</b>       <i># office packages</i>
+# <b>pacman -S gimp</b>              <i># image editor</i>
+# <b>pacman -S gpick</b>             <i># color picker</i>
+# <b>pacman -S inkscape</b>          <i># vector graphics editor</i>
+# <b>pacman -S fontforge</b>         <i># fonts editor</i>
+# <b>pacman -S gparted</b>           <i># grphical disk management tool</i>
+# <b>pacman -S vlc</b>               <i># video player</i>
+# <b>pacman -S remmina</b>           <i># remote desktop client</i>
+# <b>pacman -S shotcut</b>           <i># video editing tool</i>
+# <b>pacman -S evolution</b>         <i># email client</i>
+# <b>pacman -S redshift</b>          <i># adjusts the color temperature of your screen</i>
+# <b>pacman -S obs-studio</b>        <i># screencasting and streaming app</i>
+# <b>pacman -S wireshark-qt</b>      <i># network protocol analyzer</i>
+# <b>pacman -S spotify-launcher</b>  <i># spotify client</i>
+# <b>pacman -S telegram-desktop</b>  <i># my preffered messenger</i>
+# <b>pacman -S rclone</b>            <i># manage or migrate files on cloud storage</i>
+# <b>pacman -S openvpn</b>           <i># openvpn client</i>
+# <b>pacman -S wireguard-tools</b>   <i># wireguard client</i>
+# <b>pacman -S arandr</b>            <i># gui for xrandr</i>
+# <b>pacman -S mpv</b>               <i># media player</i>
 </pre>
 </dd></dl>
 
@@ -627,25 +633,23 @@ $ <b>makepkg -si</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S neovim</b>          <i># powerful console editor</i>
-$ <b>sudo pacman -S zed</b>             <i># ultimate graphical editor</i>
-$ <b>sudo pacman -S tree-sitter</b>     <i># parsing system for programming tools</i>
-$ <b>sudo pacman -S tree-sitter-cli</b> <i># cli tool tree-sitter parsers</i>
-$ <b>sudo pacman -S stow</b>            <i># configuration manager</i>
-$ <b>sudo pacman -S sqlite3</b>         <i># console sqlite client</i>
-$ <b>sudo pacman -S tldr</b>            <i># collection of simplified man pages</i>
-$ <b>sudo pacman -S jq</b>              <i># cli json processor</i>
-$ <b>sudo pacman -S tmux</b>            <i># terminal session multiplexer</i>
-$ <b>sudo pacman -S nmap</b>            <i># network scanner with advanced features</i>
-$ <b>sudo pacman -S masscan</b>         <i># high performance network scanner</i>
-$ <b>sudo pacman -S pgcli</b>           <i># console client for PostgreSQL</i>
-$ <b>sudo pacman -S redis</b>           <i># console client for Redis</i>
-$ <b>sudo pacman -S apache</b>          <i># http server + some useful utilities (htpasswd)</i>
-$ <b>sudo pacman -S meld</b>            <i># git visual diff and merge tool</i>
-$ <b>sudo pacman -S websocat</b>        <i># command line client for websockets</i>
-$ <b>sudo pacman -S sshpass</b>         <i># noninteractive ssh password provider</i>
-$ <b>sudo pacman -S git-filter-repo</b> <i># faster and safer git-filter-branch alternative</i>
-$ <b>sudo pacman -S httpie</b>          <i># human-friendly CLI HTTP client for the API era</i>
+# <b>pacman -S neovim</b>          <i># powerful console editor</i>
+# <b>pacman -S zed</b>             <i># ultimate graphical editor</i>
+# <b>pacman -S tree-sitter</b>     <i># parsing system for programming tools</i>
+# <b>pacman -S tree-sitter-cli</b> <i># cli tool tree-sitter parsers</i>
+# <b>pacman -S stow</b>            <i># configuration manager</i>
+# <b>pacman -S sqlite3</b>         <i># console sqlite client</i>
+# <b>pacman -S tldr</b>            <i># collection of simplified man pages</i>
+# <b>pacman -S jq</b>              <i># cli json processor</i>
+# <b>pacman -S tmux</b>            <i># terminal session multiplexer</i>
+# <b>pacman -S pgcli</b>           <i># console client for PostgreSQL</i>
+# <b>pacman -S redis</b>           <i># console client for Redis</i>
+# <b>pacman -S apache</b>          <i># http server + some useful utilities (htpasswd)</i>
+# <b>pacman -S meld</b>            <i># git visual diff and merge tool</i>
+# <b>pacman -S websocat</b>        <i># command line client for websockets</i>
+# <b>pacman -S sshpass</b>         <i># noninteractive ssh password provider</i>
+# <b>pacman -S git-filter-repo</b> <i># faster and safer git-filter-branch alternative</i>
+# <b>pacman -S httpie</b>          <i># human-friendly CLI HTTP client for the API era</i>
 </pre>
 </dd></dl>
 
@@ -658,20 +662,20 @@ the ability to run <code>masscan</code> as non-root user.
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S ansible</b>          <i># infrastructure as a code tool (bare metal)</i>
-$ <b>sudo pacman -S podman</b>           <i># cli tool for container management</i>
-$ <b>sudo pacman -S podman-compose</b>   <i># run multi-container applications with podman</i>
-$ <b>sudo pacman -S docker</b>           <i># cli tool for container management</i>
-$ <b>sudo pacman -S docker-compose</b>   <i># run multi-container applications with docker</i>
-$ <b>sudo pacman -S kubectl</b>          <i># cli tool for managing kubernetes clusters</i>
-$ <b>sudo pacman -S helm</b>             <i># package manager for kubernetes</i>
-$ <b>sudo pacman -S terraform</b>        <i># infrastructure as a code tool (clouds)</i>
+# <b>pacman -S ansible</b>          <i># infrastructure as a code tool (bare metal)</i>
+# <b>pacman -S podman</b>           <i># cli tool for container management</i>
+# <b>pacman -S podman-compose</b>   <i># run multi-container applications with podman</i>
+# <b>pacman -S docker</b>           <i># cli tool for container management</i>
+# <b>pacman -S docker-compose</b>   <i># run multi-container applications with docker</i>
+# <b>pacman -S kubectl</b>          <i># cli tool for managing kubernetes clusters</i>
+# <b>pacman -S helm</b>             <i># package manager for kubernetes</i>
+# <b>pacman -S terraform</b>        <i># infrastructure as a code tool (clouds)</i>
 <div></div>
 <i># configure docker</i>
 <div></div>
-$ <b>sudo systemctl enable docker</b>            <i># enable docker daemon on system start</i>
-# <b>sudo usermod -a -G docker yourusername</b>  <i># to be able to run docker as non-root</i>
-$ <b>newgrp docker</b>                           <i># login to docker group without restart</i>
+# <b>systemctl enable docker</b>            <i># enable docker daemon on system start</i>
+# <b>usermod -a -G docker yourusername</b>  <i># to be able to run docker as non-root</i>
+# <b>newgrp docker</b>                           <i># login to docker group without restart</i>
 </pre>
 </dd></dl>
 
@@ -679,7 +683,7 @@ $ <b>newgrp docker</b>                           <i># login to docker group with
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S go</b>
+# <b>pacman -S go</b>
 $ <b>go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest</b>
 $ <b>go install github.com/hairyhenderson/gomplate/v4/cmd/gomplate@latest</b>
 </pre>
@@ -689,13 +693,14 @@ $ <b>go install github.com/hairyhenderson/gomplate/v4/cmd/gomplate@latest</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S jdk8-openjdk</b>    <i># OpenJDK Java  8 development kit</i>
-$ <b>sudo pacman -S jdk11-openjdk</b>   <i># OpenJDK Java 11 development kit</i>
-$ <b>sudo pacman -S jdk17-openjdk</b>   <i># OpenJDK Java 17 development kit</i>
-$ <b>sudo pacman -S jdk21-openjdk</b>   <i># OpenJDK Java 21 development kit</i>
-$ <b>sudo pacman -S jdk-openjdk</b>     <i># OpenJDK Java 22 development kit</i>
-$ <b>sudo pacman -S maven</b>           <i># Java project management tool</i>
-$ <b>sudo pacman -S gradle</b>          <i># Java project management tool</i>
+# <b>pacman -S jdk8-openjdk</b>    <i># OpenJDK Java  8 development kit</i>
+# <b>pacman -S jdk11-openjdk</b>   <i># OpenJDK Java 11 development kit</i>
+# <b>pacman -S jdk17-openjdk</b>   <i># OpenJDK Java 17 development kit</i>
+# <b>pacman -S jdk21-openjdk</b>   <i># OpenJDK Java 21 development kit</i>
+# <b>pacman -S jdk25-openjdk</b>   <i># OpenJDK Java 25 development kit</i>
+# <b>pacman -S jdk-openjdk</b>     <i># OpenJDK Java Latest development kit</i>
+# <b>pacman -S maven</b>           <i># Java project management tool</i>
+# <b>pacman -S gradle</b>          <i># Java project management tool</i>
 </pre>
 </dd></de>
 
@@ -710,22 +715,23 @@ JVM versions using <code>archlinux-java status</code> and set one using <code>ar
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S gcc</b>         <i># GNU Compiler Collection, C and C++ frontends</i>
-$ <b>sudo pacman -S gdb</b>         <i># GNU Debugger</i>
-$ <b>sudo pacman -S clang</b>       <i># C/C++ frontend compiler for LLVM</i>
-$ <b>sudo pacman -S cmake</b>       <i># C/C++ project management tool</i>
-$ <b>sudo pacman -S ninja</b>       <i># Build system with a focus on speed</i>
-$ <b>sudo pacman -S cuda</b>        <i># NVIDIA GPU programming toolkit</i>
-$ <b>sudo pacman -S nasm</b>        <i># Asssembler for the x86 CPU architecture</i>
-$ <b>sudo pacman -S boost</b>       <i># C++ library with general purpose utils and data structures</i>
-$ <b>sudo pacman -S cdrtools</b>    <i># CD/DVD/BluRay command line recording software</i>
-$ <b>sudo pacman -S qemu-full</b>   <i># Open source machine emulator and virtualizer</i>
-$ <b>sudo pacman -S flex</b>        <i># A tool for generating text-scanning programs</i>
-$ <b>sudo pacman -S bison</b>       <i># The GNU general-purpose parser generator</i>
-$ <b>sudo pacman -S gperf</b>       <i># Perfect hash function generator</i>
-$ <b>sudo pacman -S libusb</b>      <i># Library that provides generic access to USB devices</i>
-$ <b>sudo pacman -S ccache</b>      <i># Compiler cache that speeds up recompilation by caching previous compilations</i>
-$ <b>sudo pacman -S dfu-util</b>    <i># Tool intended to download and upload firmware using DFU protocol to devices connected over USB</i>
+# <b>pacman -S gcc</b>            <i># GNU Compiler Collection, C and C++ frontends</i>
+# <b>pacman -S gdb</b>            <i># GNU Debugger</i>
+# <b>pacman -S clang</b>          <i># C/C++ frontend compiler for LLVM</i>
+# <b>pacman -S cmake</b>          <i># C/C++ project management tool</i>
+# <b>pacman -S ninja</b>          <i># Build system with a focus on speed</i>
+# <b>pacman -S cuda</b>           <i># NVIDIA GPU programming toolkit</i>
+# <b>pacman -S nasm</b>           <i># Asssembler for the x86 CPU architecture</i>
+# <b>pacman -S boost</b>          <i># C++ library with general purpose utils and data structures</i>
+# <b>pacman -S cdrtools</b>       <i># CD/DVD/BluRay command line recording software</i>
+# <b>pacman -S qemu-desktop</b>   <i># Open source machine emulator and virtualizer</i>
+# <b>pacman -S qemu-full</b>      <i># Open source machine emulator and virtualizer (All architectures)</i>
+# <b>pacman -S flex</b>           <i># A tool for generating text-scanning programs</i>
+# <b>pacman -S bison</b>          <i># The GNU general-purpose parser generator</i>
+# <b>pacman -S gperf</b>          <i># Perfect hash function generator</i>
+# <b>pacman -S libusb</b>         <i># Library that provides generic access to USB devices</i>
+# <b>pacman -S ccache</b>         <i># Compiler cache that speeds up recompilation by caching previous compilations</i>
+# <b>pacman -S dfu-util</b>       <i># Tool intended to download and upload firmware using DFU protocol to devices connected over USB</i>
 </pre>
 </dd></dl>
 
@@ -733,10 +739,10 @@ $ <b>sudo pacman -S dfu-util</b>    <i># Tool intended to download and upload fi
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S python</b>             <i># python itself</i>
-$ <b>sudo pacman -S python-pip</b>         <i># python package manager</i>
-$ <b>sudo pacman -S python-virtualenv</b>  <i># python virtualenv</i>
-$ <b>sudo pacman -S python-poetry</b>      <i># python package manager (better one)</i>
+# <b>pacman -S python</b>             <i># python itself</i>
+# <b>pacman -S python-pip</b>         <i># python package manager</i>
+# <b>pacman -S python-virtualenv</b>  <i># python virtualenv</i>
+# <b>pacman -S python-poetry</b>      <i># python package manager (better one)</i>
 </pre>
 </dd></dl>
 
@@ -744,7 +750,7 @@ $ <b>sudo pacman -S python-poetry</b>      <i># python package manager (better o
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S lua</b>       <i># Collection of Lua tools</i>
+# <b>pacman -S lua</b>       <i># Collection of Lua tools</i>
 </pre>
 </dd></dl>
 
@@ -752,9 +758,9 @@ $ <b>sudo pacman -S lua</b>       <i># Collection of Lua tools</i>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S nodejs</b>    <i># JavaScript runtime</i>
-$ <b>sudo pacman -S npm</b>       <i># JavaScript package manager</i>
-$ <b>sudo pacman -S yarn</b>      <i># JavaScript package manager</i>
+# <b>pacman -S nodejs</b>    <i># JavaScript runtime</i>
+# <b>pacman -S npm</b>       <i># JavaScript package manager</i>
+# <b>pacman -S yarn</b>      <i># JavaScript package manager</i>
 </pre>
 </dd></dl>
 
@@ -762,7 +768,7 @@ $ <b>sudo pacman -S yarn</b>      <i># JavaScript package manager</i>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S rust</b>     <i># Rust compiler and tools for project management</i>
+# <b>pacman -S rust</b>     <i># Rust compiler and tools for project management</i>
 </pre>
 </dd></dl>
 
@@ -770,9 +776,9 @@ $ <b>sudo pacman -S rust</b>     <i># Rust compiler and tools for project manage
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S linux-headers</b>          <i># Headers for building Linux kernel modules</i>
-$ <b>sudo pacman -S virtualbox-host-dkms</b>   <i># VirtualBox Host kernel modules sources</i>
-$ <b>sudo pacman -S virtualbox</b>             <i># Hypervisor for x86 virtualization</i>
+# <b>pacman -S linux-headers</b>          <i># Headers for building Linux kernel modules</i>
+# <b>pacman -S virtualbox-host-dkms</b>   <i># VirtualBox Host kernel modules sources</i>
+# <b>pacman -S virtualbox</b>             <i># Hypervisor for x86 virtualization</i>
 </pre>
 </dd></dl>
 
@@ -780,7 +786,7 @@ $ <b>sudo pacman -S virtualbox</b>             <i># Hypervisor for x86 virtualiz
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S plantuml</b>    <i># Tool for creating UML diagrams</i>
+# <b>pacman -S plantuml</b>    <i># Tool for creating UML diagrams</i>
 </pre>
 </dd></dl>
 
@@ -788,8 +794,8 @@ $ <b>sudo pacman -S plantuml</b>    <i># Tool for creating UML diagrams</i>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S hugo</b>        <i># fast and flexible static site generator in go</i>
-$ <b>sudo pacman -S dart-sass</b>   <i># implementation of sass (required for hugo)</i>
+# <b>pacman -S hugo</b>        <i># fast and flexible static site generator in go</i>
+# <b>pacman -S dart-sass</b>   <i># implementation of sass (required for hugo)</i>
 </pre>
 </dd></dl>
 
@@ -797,7 +803,7 @@ $ <b>sudo pacman -S dart-sass</b>   <i># implementation of sass (required for hu
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S gnucash</b>   <i># Personal and small-business financial-accounting application</i>
+# <b>pacman -S gnucash</b>   <i># Personal and small-business financial-accounting application</i>
 </pre>
 </dd></dl>
 
@@ -805,8 +811,8 @@ $ <b>sudo pacman -S gnucash</b>   <i># Personal and small-business financial-acc
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S freecad</b>       <i># Feature based parametric 3D CAD modeler</i>
-$ <b>sudo pacman -S prusa-slicer</b>  <i># G-code generator for 3D printers</i>
+# <b>pacman -S freecad</b>        <i># Feature based parametric 3D CAD modeler</i>
+# <b>pacman -S prusa-slicer</b>   <i># G-code generator for 3D printers</i>
 </pre>
 </dd></dl>
 
@@ -814,12 +820,14 @@ $ <b>sudo pacman -S prusa-slicer</b>  <i># G-code generator for 3D printers</i>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S zaproxy</b>         <i># integrated penetration testing tool for finding vulnerabilities in web applications</i>
-$ <b>sudo pacman -S gobuster</b>        <i># directory, file, dns and vhost busting tool written in go</i>
-$ <b>sudo pacman -S hydra</b>           <i># very fast network logon cracker which support many different services</i>
-$ <b>sudo pacman -S radare2</b>         <i># open-source tools to disasm, debug, analyze and manipulate binary files</i>
-$ <b>sudo pacman -S ghidra</b>          <i># software reverse engineering framework</i>
-$ <b>r2pm -U && r2pm -ci r2ghidra</b>   <i># integrate ghidra decompiler into radare2</i>
+# <b>pacman -S zaproxy</b>    <i># integrated penetration testing tool for finding vulnerabilities in web applications</i>
+# <b>pacman -S gobuster</b>   <i># directory, file, dns and vhost busting tool written in go</i>
+# <b>pacman -S hydra</b>      <i># very fast network logon cracker which support many different services</i>
+# <b>pacman -S radare2</b>    <i># open-source tools to disasm, debug, analyze and manipulate binary files</i>
+# <b>pacman -S ghidra</b>     <i># software reverse engineering framework</i>
+# <b>pacman -S nmap</b>       <i># network scanner with advanced features</i>
+# <b>pacman -S masscan</b>    <i># high performance network scanner</i>
+# <b>r2pm -U && r2pm -ci r2ghidra</b>   <i># integrate ghidra decompiler into radare2</i>
 </pre>
 </dd></dl>
 
@@ -827,7 +835,7 @@ $ <b>r2pm -U && r2pm -ci r2ghidra</b>   <i># integrate ghidra decompiler into ra
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S 0ad</b>         <i># cross-platform, 3d and historically-based real-time strategy game</i>
+# <b>pacman -S 0ad</b>   <i># cross-platform, 3d and historically-based real-time strategy game</i>
 </pre>
 </dd></dl>
 
@@ -846,7 +854,7 @@ $ <b>sudo pacman -S 0ad</b>         <i># cross-platform, 3d and historically-bas
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -Syu</b>
+# <b>pacman -Syu</b>
 </pre>
 </dd></dl>
 
@@ -854,19 +862,20 @@ $ <b>sudo pacman -Syu</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S wine</b>         <i># Compatibility layer for running Windows programs</i>
-$ <b>sudo pacman -S wine-mono</b>    <i># Wine's replacement for Microsoft's .NET Framework</i>
-$ <b>sudo pacman -S wine-gecko</b>   <i># Wine's replacement for Microsoft's Internet Explorer</i>
-$ <b>sudo pacman -S winetricks</b>   <i># Installer for various runtime libraries in Wine</i>
-$ <b>sudo pacman -S zenity</b>       <i># Display dialog boxes from shell scripts (wine dependency)</i>
+# <b>pacman -S wine</b>         <i># Compatibility layer for running Windows programs</i>
+# <b>pacman -S wine-mono</b>    <i># Wine's replacement for Microsoft's .NET Framework</i>
+# <b>pacman -S wine-gecko</b>   <i># Wine's replacement for Microsoft's Internet Explorer</i>
+# <b>pacman -S winetricks</b>   <i># Installer for various runtime libraries in Wine</i>
+# <b>pacman -S zenity</b>       <i># Display dialog boxes from shell scripts (wine dependency)</i>
 </pre>
 </dd></dl>
 
-4. Configure smooth font in Wine applications:
+4. Configure fonts in Wine applications:
 
 <dl><dd>
 <pre>
-$ <b>winetricks settings fontsmooth=rgb</b>
+# <b>winetricks settings fontsmooth=rgb</b>
+# <b>winetricks corefonts</b>
 </pre>
 </dd></dl>
 
@@ -900,7 +909,7 @@ $ <b>tar -xvf install-tl-unx.tar.gz -C texlive --strip-components=1</b>
 <dl><dd>
 <pre>
 $ <b>cd ./texlive</b>
-$ <b>sudo ./install-tl -select-repository</b>
+# <b>./install-tl -select-repository</b>
 </pre>
 </dd></dl>
 
@@ -935,8 +944,8 @@ $ <b>sdkmanager --update</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S yubikey-manager</b>
-$ <b>sudo pacman -S yubikey-personalization-gui</b>
+# <b>pacman -S yubikey-manager</b>
+# <b>pacman -S yubikey-personalization-gui</b>
 </pre>
 </dd></dl>
 
@@ -1015,7 +1024,7 @@ _This can help if you have very tiny grub font on your 4k monitor_
 
 <dl><dd>
 <pre>
-$ <b>sudo grub-mkconfig -o /boot/grub/grub.cfg</b>
+# <b>grub-mkconfig -o /boot/grub/grub.cfg</b>
 </pre>
 </dd></dl>
 
@@ -1067,7 +1076,7 @@ $ <b>gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo cryptsetup luksFormat /dev/sdb1</b>
+# <b>cryptsetup luksFormat /dev/sdb1</b>
 </pre>
 </dd></dl>
 
@@ -1075,7 +1084,7 @@ $ <b>sudo cryptsetup luksFormat /dev/sdb1</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo cryptsetup open /dev/sdb1 <i>cryptdev</i></b>
+# <b>cryptsetup open /dev/sdb1 <i>cryptdev</i></b>
 </pre>
 </dd></dl>
 
@@ -1083,7 +1092,7 @@ $ <b>sudo cryptsetup open /dev/sdb1 <i>cryptdev</i></b>
 
 <dl><dd>
 <pre>
-$ <b>sudo mkfs.ext4 /dev/mapper/cryptdev</b>
+# <b>mkfs.ext4 /dev/mapper/cryptdev</b>
 </pre>
 </dd></dl>
 
@@ -1091,7 +1100,7 @@ $ <b>sudo mkfs.ext4 /dev/mapper/cryptdev</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo mount /dev/mapper/<i>cryptdev</i> /mnt</b>
+# <b>mount /dev/mapper/<i>cryptdev</i> /mnt</b>
 </pre>
 </dd></dl>
 
@@ -1099,8 +1108,8 @@ $ <b>sudo mount /dev/mapper/<i>cryptdev</i> /mnt</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo umount /mnt</b>
-$ <b>sudo cryptsetup close <i>cryptdev</i></b>
+# <b>umount /mnt</b>
+# <b>cryptsetup close <i>cryptdev</i></b>
 </pre>
 </dd></dl>
 
@@ -1115,8 +1124,8 @@ need to obtain LUKS slot number for the current key.
 
 <dl><dd>
 <pre>
-$ <b>sudo cryptsetup luksDump /dev/sdb1</b>             # most probably it will be 0
-$ <b>sudo cryptsetup luksChangeKey /dev/sdb1 -S 0</b>   # use your own slot number in -S parameter
+# <b>cryptsetup luksDump /dev/sdb1</b>             # most probably it will be 0
+# <b>cryptsetup luksChangeKey /dev/sdb1 -S 0</b>   # use your own slot number in -S parameter
 </pre>
 </dd></dl>
 
