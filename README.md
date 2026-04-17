@@ -4,7 +4,7 @@
 
 [![Author](https://img.shields.io/badge/Author-Maxim_Pershin-ff6f00)](https://github.com/silentz)
 [![License](https://img.shields.io/badge/License-Apache--2.0-blue)](./LICENSE.txt)
-![Last Updated](https://img.shields.io/badge/Last_Updated-August_2025-02b532)
+![Last Updated](https://img.shields.io/badge/Last_Updated-April_2026-02b532)
 
 </div>
 
@@ -580,34 +580,36 @@ $ <b>sudo systemctl hibernate</b>
 
 <dl><dd>
 <pre>
-$ <b>sudo pacman -S chromium</b>          <i># web-browser</i>
-$ <b>sudo pacman -S obsidian</b>          <i># note-taking app</i>
-$ <b>sudo pacman -S bitwarden</b>         <i># password manager for all devices (use keepassxc provider)</i>
-$ <b>sudo pacman -S bitwarden-cli</b>     <i># command line bitwarden client</i>
-$ <b>sudo pacman -S mousepad</b>          <i># simple graphical text editor</i>
-$ <b>sudo pacman -S file-roller</b>       <i># archive manager</i>
-$ <b>sudo pacman -S evince</b>            <i># pdf viewer</i>
-$ <b>sudo pacman -S xournalpp</b>         <i># pdf editor</i>
-$ <b>sudo pacman -S libreoffice</b>       <i># office packages</i>
-$ <b>sudo pacman -S gimp</b>              <i># image editor</i>
-$ <b>sudo pacman -S gpick</b>             <i># color picker</i>
-$ <b>sudo pacman -S inkscape</b>          <i># vector graphics editor</i>
-$ <b>sudo pacman -S fontforge</b>         <i># fonts editor</i>
-$ <b>sudo pacman -S gparted</b>           <i># grphical disk management tool</i>
-$ <b>sudo pacman -S vlc</b>               <i># video player</i>
-$ <b>sudo pacman -S remmina</b>           <i># remote desktop client</i>
-$ <b>sudo pacman -S shotcut</b>           <i># video editing tool</i>
-$ <b>sudo pacman -S evolution</b>         <i># email client</i>
-$ <b>sudo pacman -S redshift</b>          <i># adjusts the color temperature of your screen</i>
-$ <b>sudo pacman -S obs-studio</b>        <i># screencasting and streaming app</i>
-$ <b>sudo pacman -S wireshark-qt</b>      <i># network protocol analyzer</i>
-$ <b>sudo pacman -S spotify-launcher</b>  <i># spotify client</i>
-$ <b>sudo pacman -S telegram-desktop</b>  <i># my preffered messenger</i>
-$ <b>sudo pacman -S rclone</b>            <i># manage or migrate files on cloud storage</i>
-$ <b>sudo pacman -S openvpn</b>           <i># openvpn client</i>
-$ <b>sudo pacman -S wireguard-tools</b>   <i># wireguard client</i>
-$ <b>sudo pacman -S arandr</b>            <i># gui for xrandr</i>
-$ <b>sudo pacman -S mpv</b>               <i># media player</i>
+$ <b>sudo pacman -S chromium</b>           <i># web-browser</i>
+$ <b>sudo pacman -S obsidian</b>           <i># note-taking app</i>
+$ <b>sudo pacman -S bitwarden</b>          <i># password manager for all devices (use keepassxc provider)</i>
+$ <b>sudo pacman -S bitwarden-cli</b>      <i># command line bitwarden client</i>
+$ <b>sudo pacman -S mousepad</b>           <i># simple graphical text editor</i>
+$ <b>sudo pacman -S file-roller</b>        <i># archive manager</i>
+$ <b>sudo pacman -S evince</b>             <i># pdf viewer</i>
+$ <b>sudo pacman -S xournalpp</b>          <i># pdf editor</i>
+$ <b>sudo pacman -S libreoffice</b>        <i># office packages</i>
+$ <b>sudo pacman -S gimp</b>               <i># image editor</i>
+$ <b>sudo pacman -S gpick</b>              <i># color picker</i>
+$ <b>sudo pacman -S inkscape</b>           <i># vector graphics editor</i>
+$ <b>sudo pacman -S fontforge</b>          <i># fonts editor</i>
+$ <b>sudo pacman -S gparted</b>            <i># grphical disk management tool</i>
+$ <b>sudo pacman -S vlc</b>                <i># video player</i>
+$ <b>sudo pacman -S remmina</b>            <i># remote desktop client</i>
+$ <b>sudo pacman -S shotcut</b>            <i># video editing tool</i>
+$ <b>sudo pacman -S evolution</b>          <i># email client</i>
+$ <b>sudo pacman -S redshift</b>           <i># adjusts the color temperature of your screen</i>
+$ <b>sudo pacman -S obs-studio</b>         <i># screencasting and streaming app</i>
+$ <b>sudo pacman -S wireshark-qt</b>       <i># network protocol analyzer</i>
+$ <b>sudo pacman -S spotify-launcher</b>   <i># spotify client</i>
+$ <b>sudo pacman -S telegram-desktop</b>   <i># my preffered messenger</i>
+$ <b>sudo pacman -S rclone</b>             <i># manage or migrate files on cloud storage</i>
+$ <b>sudo pacman -S openvpn</b>            <i># openvpn client</i>
+$ <b>sudo pacman -S wireguard-tools</b>    <i># wireguard client</i>
+$ <b>sudo pacman -S arandr</b>             <i># gui for xrandr</i>
+$ <b>sudo pacman -S mpv</b>                <i># media player</i>
+$ <b>sudo pacman -S xdg-desktop-portal     <i># desktop integration portals for sandboxed apps</i>
+$ <b>sudo pacman -S xdg-desktop-portal-gtk <i># a backend implementation for xdg-desktop-portal using GTK</i>
 </pre>
 </dd></dl>
 
